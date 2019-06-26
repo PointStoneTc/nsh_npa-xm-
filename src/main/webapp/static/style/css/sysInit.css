@@ -1,0 +1,57 @@
+.checkstep {
+	padding: 5px;
+}
+
+.checkstep li {
+	color: #fc6a6a;
+	width: 345px;
+	height: 25px;
+}
+
+.checkstep li div {
+	float: left;
+}
+
+.checkstep .serial_number {
+	padding: 0 5px;
+	width: 24px;
+	border: 1px solid #ffffffe6;
+	text-align: center;
+	line-height: 16px;
+	height: 20px;
+	border-radius: 5px;
+	background-color: #fc6a6a;
+	color: #ffffff;
+}
+
+.checkstep .title {
+	padding: 0 5px;
+	width: 230px;
+}
+
+.checkstep .error_msg {
+	border-bottom: 1px solid red;
+	width: 65px;
+	margin-right: 5px
+}
+
+.checkstep .error_msg::before {
+	content: '错误:(';
+}
+
+.checkstep .error_msg::after {
+	content: ')';
+}
+
+.checkstep a {
+	color: #fc6a6a;
+}
+
+.checkstep a.selected {
+	color: #253da4;
+}
+
+.error_cell {
+	background-color: #fbf8d3;
+	color: #fc3f3f;
+}

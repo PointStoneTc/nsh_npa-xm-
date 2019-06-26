@@ -1,0 +1,216 @@
+.viewtable {
+	background-color: #ddd;
+}
+
+h3.lrq {
+	font-size: 12px;
+	padding: 5px 0;
+	margin-right: 10px;
+}
+
+h3.lrq::before {
+	content: "\5B";
+	margin-right: 5px;
+}
+
+h3.lrq::after {
+	content: "\5D";
+	margin-left: 5px;
+}
+
+.viewtable tr {
+	background-color: #f5f5f5;
+}
+
+.viewtable th {
+	text-align: right;
+	width: 90px !important;
+}
+
+.viewtable th label {
+	padding: 2px 5px;
+	font-weight: normal;
+	color: #4761f0;
+}
+
+.viewtable th label::after {
+	content: ':';
+}
+
+.viewtable td {
+	padding: 2px 5px;
+	background-color: #ffffff;
+}
+
+.viewtable td span {
+	text-align: right;
+}
+
+.split {
+	width: 100%;
+	height: 10px;
+	border-bottom-width: thin;
+	border-bottom-style: dashed;
+	margin: 10px 0px;
+}
+
+.blue_line {
+	border-bottom-color: #0080ff;
+}
+
+.orange_line {
+	border-bottom-color: #e3a62a;
+}
+
+.rmb {
+	color: red;
+}
+
+.rmb::before {
+	content: '￥';
+	margin-right: 5px;
+}
+
+.rate::after {
+	content: '%';
+	margin-left: 5px;
+}
+
+.circle {
+	width: 32px;
+	height: 32px;
+	border-radius: 25%;
+	font-size: 16px;
+	color: #ffffff;
+	line-height: 32px;
+	text-align: center;
+	background: #4671D5;
+	position: absolute;
+	top: 5px;
+	left: 5px;
+}
+
+.required_sign::before {
+	content: '*';
+	padding-right: 3px;
+	color: #ff0000;
+}
+
+.inputLocked {
+	background-color: #787878 !important;
+	border: 1px solid #787878 !important;
+	color: #ffffff;
+}
+
+.gray {
+	color: #b7b7b7;
+}
+
+/**
+ * 综合查询导出列表
+ */
+.query-pdf-list {
+	
+}
+
+.query-pdf-list li {
+	display: block;
+	width: 250px;
+	border: 1px solid #bdbdbd;
+	margin: 5px;
+	padding: 5px;
+	position: relative;
+	float: left;
+}
+
+.query-pdf-list li div {
+	border-bottom: 1px solid #bdbdbd;
+	min-height: 24px;
+}
+
+.query-pdf-list li div:last-child {
+	border-bottom: none;
+}
+
+.query-pdf-list li h3 {
+	text-align: center;
+	font-size: 12px;
+	font-weight: bold
+}
+
+.query-pdf-list li .numCode::before {
+	content: '(';
+	padding-right: 2px;
+}
+
+.query-pdf-list li .numCode::after {
+	content: ')';
+	padding-left: 2px;
+}
+
+.query-pdf-list li .title {
+	margin-right: 5px;
+}
+
+.query-pdf-list li .title::after {
+	content: ':';
+}
+
+.query-pdf-list li .ct {
+	margin-right: 5px;
+}
+
+.query-pdf-list li p {
+	padding: 0 0 0 40px;
+	margin: 0;
+}
+
+.query-pdf-list .delbtn {
+	position: absolute;
+	width: 16px;
+	height: 16px;
+	border: 1px solid #bdbdbd;
+	border-radius: 4px;
+	top: 6px;
+	left: 5px;
+	background: url('icons/clear.png') no-repeat center center;
+}
+
+.query-pdf-list .delbtn:hover {
+	border: 1px solid #53a4de;
+	cursor: pointer;
+}
+
+.query-pdf-list .oneItem {
+	padding-left: 25px;
+}
+
+.check_ok {
+	background: url('icons/ok.png') no-repeat center center;
+	width: 14px;
+	height: 22px;
+	display: none;
+}
+
+/**
+ *列表查询工具栏布局
+ */
+.queryToolbarTable {
+	
+}
+
+.queryToolbarTable th {
+	padding: 0 5px;
+}
+
+.queryToolbarTable td {
+	padding: 0 5px;
+}
+
+.queryToolbarTable .borderLeft {
+	border-left: 1px solid #d7d7d7;;
+}
+
+.queryToolbarTable .borderRight {
+	border-right: 1px solid #d7d7d7;
+}
