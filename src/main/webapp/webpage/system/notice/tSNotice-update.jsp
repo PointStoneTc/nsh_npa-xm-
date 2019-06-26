@@ -43,8 +43,7 @@
 		<table style="width: 100%;" cellpadding="0" cellspacing="1"
 			class="formtable">
 			<tr>
-				<td align="right"><label class="Validform_label"> 标题:
-				</label></td>
+				<td align="right"><label class="Validform_label"> 标题: </label></td>
 				<td class="value"><input id="noticeTitle" name="noticeTitle"
 					type="text" style="width: 95%" class="inputxt"
 					value='${tSNoticePage.noticeTitle}'> <span
@@ -81,8 +80,7 @@
 					class="Validform_label" style="display: none;">通知公告内容</label></td>
 			</tr>
 			<tr>
-				<td align="right"><label class="Validform_label"> 类型:
-				</label></td>
+				<td align="right"><label class="Validform_label"> 类型: </label></td>
 				<td class="value">
 					<%--  <input type="radio" name="noticeType" value="1" datatype="*"  <c:if test="${tSNoticePage.noticeType=='1'}">checked="checked"</c:if> 
 						     	 <c:if test="${empty tSNoticePage.noticeType}">checked="checked"</c:if> />通知 --%>
@@ -99,9 +97,8 @@
 					value="1" datatype="*"
 					<c:if test="${tSNoticePage.noticeLevel=='1'}">checked="checked"</c:if>
 					<c:if test="${empty tSNoticePage.noticeLevel}">checked="checked"</c:if> />全员
-					&nbsp;&nbsp;<br />
-				<input type="radio" onclick="dataytpeSelect('roleName')"
-					name="noticeLevel" value="2"
+					&nbsp;&nbsp;<br /> <input type="radio"
+					onclick="dataytpeSelect('roleName')" name="noticeLevel" value="2"
 					<c:if test="${tSNoticePage.noticeLevel=='2'}">checked="checked"</c:if> />角色授权
 
 					<span id="roleName_span"
@@ -113,8 +110,7 @@
 							hiddenid="id" url="userController.do?roles" name="roleList"
 							icon="icon-search" title="common.role.list" textname="roleName"
 							isclear="true" isInit="true"></t:choose> &nbsp;&nbsp;
-				</span> <br />
-				<input type="radio" onclick="dataytpeSelect('userName')"
+				</span> <br /> <input type="radio" onclick="dataytpeSelect('userName')"
 					name="noticeLevel" value="3"
 					<c:if test="${tSNoticePage.noticeLevel=='3'}">checked="checked"</c:if> />用户授权
 					<span id="userName_span"

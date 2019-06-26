@@ -13,24 +13,30 @@
 <meta name="description" content="JEECG 企业级快速开发平台，她采用强大代码生成，在线开发能力">
 
 <link rel="shortcut icon" href="images/favicon.ico">
-<link href="plug-in/hplus/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
-<link href="plug-in/hplus/css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
-<link rel="stylesheet" href="plug-in/ace/assets/css/font-awesome.min.css" />
+<link href="plug-in/hplus/css/bootstrap.min.css?v=3.3.6"
+	rel="stylesheet">
+<link href="plug-in/hplus/css/font-awesome.min.css?v=4.4.0"
+	rel="stylesheet">
+<link rel="stylesheet"
+	href="plug-in/ace/assets/css/font-awesome.min.css" />
 <!--[if IE 7]>
     <link rel="stylesheet" href="plug-in/ace/assets/css/font-awesome-ie7.min.css" />
     <![endif]-->
 <!-- Sweet Alert -->
-<link href="plug-in/hplus/css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+<link href="plug-in/hplus/css/plugins/sweetalert/sweetalert.css"
+	rel="stylesheet">
 <link href="plug-in/hplus/css/animate.css" rel="stylesheet">
 <link href="plug-in/hplus/css/style.css?v=4.1.0" rel="stylesheet">
 <!--右键菜单-->
 <link href="plug-in/hplus/smartMenu.css" rel="stylesheet">
 </head>
 
-<body class="fixed-sidebar full-height-layout gray-bg" style="overflow: hidden">
+<body class="fixed-sidebar full-height-layout gray-bg"
+	style="overflow: hidden">
 	<div id="wrapper">
 		<!--左侧导航开始-->
-		<nav class="navbar-default navbar-static-side" role="navigation" style="z-index: 1991;">
+		<nav class="navbar-default navbar-static-side" role="navigation"
+			style="z-index: 1991;">
 			<div class="nav-close">
 				<i class="fa fa-times-circle"></i>
 			</div>
@@ -38,7 +44,8 @@
 				<ul class="nav" id="side-menu">
 					<li class="nav-header">
 						<div class="dropdown profile-element">
-							<span><img alt="image" width="180" height="61" src="plug-in/login/images/jeecg-aceplus.png" /></span>
+							<span><img alt="image" width="180" height="61"
+								src="plug-in/login/images/jeecg-aceplus.png" /></span>
 						</div>
 						<div class="logo-element">JEECG</div>
 					</li>
@@ -50,35 +57,51 @@
 		<!--右侧部分开始-->
 		<div id="page-wrapper" class="gray-bg dashbard-1">
 			<div class="row border-bottom">
-				<nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+				<nav class="navbar navbar-static-top" role="navigation"
+					style="margin-bottom: 0">
 					<div class="navbar-header" style="height: 60px;">
-						<a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
-						<form role="search" class="navbar-form-custom" method="post" action="search_results.html">
+						<a class="navbar-minimalize minimalize-styl-2 btn btn-primary "
+							href="#"><i class="fa fa-bars"></i> </a>
+						<form role="search" class="navbar-form-custom" method="post"
+							action="search_results.html">
 							<div class="form-group">
-								<input type="text" placeholder="欢迎使用Jeecg快速开发平台 …" class="form-control" name="top-search" id="top-search">
+								<input type="text" placeholder="欢迎使用Jeecg快速开发平台 …"
+									class="form-control" name="top-search" id="top-search">
 							</div>
 						</form>
 					</div>
 
 					<ul class="nav navbar-top-links navbar-right">
-						<li class="dropdown" onfocus="bindFrameClick()"><a class="dropdown-toggle count-info" data-toggle="dropdown" href="#"> <span><strong class="font-bold">${userName }</strong></span>
+						<li class="dropdown" onfocus="bindFrameClick()"><a
+							class="dropdown-toggle count-info" data-toggle="dropdown"
+							href="#"> <span><strong class="font-bold">${userName }</strong></span>
 								<span>${roleName }<b class="caret"></b></span>
 						</a>
 							<ul class="dropdown-menu dropdown-alerts">
-								<li><a href="javascript:add('<t:mutiLang langKey="common.change.password"/>','userController.do?changepassword','',550,200)"> <t:mutiLang
-											langKey="common.change.password" />
+								<li><a
+									href="javascript:add('<t:mutiLang langKey="common.change.password"/>','userController.do?changepassword','',550,200)">
+										<t:mutiLang langKey="common.change.password" />
 								</a></li>
-								<li><a href="javascript:openwindow('<t:mutiLang langKey="common.profile"/>','userController.do?userinfo')"><t:mutiLang langKey="common.profile" /></a></li>
+								<li><a
+									href="javascript:openwindow('<t:mutiLang langKey="common.profile"/>','userController.do?userinfo')"><t:mutiLang
+											langKey="common.profile" /></a></li>
 								<%--  <li><a href="javascript:openwindow('<t:mutiLang langKey="common.ssms.getSysInfos"/>','tSSmsController.do?getSysInfos')"><t:mutiLang langKey="common.ssms.getSysInfos"/></a></li> --%>
-								<li><a href="javascript:add('<t:mutiLang langKey="common.change.style"/>','userController.do?changestyle','',550,250)"><t:mutiLang langKey="common.my.style" /></a></li>
-								<li><a href="javascript:clearLocalstorage()"><t:mutiLang langKey="common.clear.localstorage" /></a></li>
+								<li><a
+									href="javascript:add('<t:mutiLang langKey="common.change.style"/>','userController.do?changestyle','',550,250)"><t:mutiLang
+											langKey="common.my.style" /></a></li>
+								<li><a href="javascript:clearLocalstorage()"><t:mutiLang
+											langKey="common.clear.localstorage" /></a></li>
 								<li><a href="javascript:toSwagger()">Swagger接口</a></li>
 								<%-- <li><a href="javascript:toJeecgYun()">云应用中心</a></li>--%>
 							</ul></li>
 
-						<li class="dropdown hidden-xs"><a class="right-sidebar-toggle" aria-expanded="false"> <i class="fa fa-tasks"></i> 通知
+						<li class="dropdown hidden-xs"><a
+							class="right-sidebar-toggle" aria-expanded="false"> <i
+								class="fa fa-tasks"></i> 通知
 						</a></li>
-						<li class="dropdown"><a href="javascript:logout()" class="roll-nav roll-right J_tabExit"><i class="fa fa fa-sign-out"></i> 退出</a></li>
+						<li class="dropdown"><a href="javascript:logout()"
+							class="roll-nav roll-right J_tabExit"><i
+								class="fa fa fa-sign-out"></i> 退出</a></li>
 					</ul>
 				</nav>
 			</div>
@@ -88,7 +111,8 @@
 				</button>
 				<nav class="page-tabs J_menuTabs">
 					<div class="page-tabs-content">
-						<a href="javascript:;" class="active J_menuTab" data-id="loginController.do?hplushome">首页</a>
+						<a href="javascript:;" class="active J_menuTab"
+							data-id="loginController.do?hplushome">首页</a>
 					</div>
 					<button class="roll-nav roll-right J_tabRight">
 						<i class="fa fa-forward"></i>
@@ -131,11 +155,14 @@
 }
 -->
 </style>
-			<div class="row J_mainContent" id="content-main" style="margin-left: -13px;">
+			<div class="row J_mainContent" id="content-main"
+				style="margin-left: -13px;">
 				<div class="proccess" id="panelloadingDiv">
 					<b>&nbsp;</b>
 				</div>
-				<iframe class="J_iframe" name="iframe0" width="100%" height="100%" src="loginController.do?hplushome" frameborder="0" data-id="loginController.do?hplushome" seamless></iframe>
+				<iframe class="J_iframe" name="iframe0" width="100%" height="100%"
+					src="loginController.do?hplushome" frameborder="0"
+					data-id="loginController.do?hplushome" seamless></iframe>
 			</div>
 			<div class="footer" style="border-top: none;">
 				<div class="pull-right">
@@ -150,11 +177,14 @@
 		<div id="right-sidebar">
 			<div class="sidebar-container">
 				<ul class="nav nav-tabs navs-3">
-					<li class="active"><a data-toggle="tab" href="#tab-1"> <i class="fa fa-gear"></i> 主题
+					<li class="active"><a data-toggle="tab" href="#tab-1"> <i
+							class="fa fa-gear"></i> 主题
 					</a></li>
-					<li class=""><a data-toggle="tab" href="#tab-2"> <i class="fa fa-comments-o" aria-hidden="true"></i>通知
+					<li class=""><a data-toggle="tab" href="#tab-2"> <i
+							class="fa fa-comments-o" aria-hidden="true"></i>通知
 					</a></li>
-					<li><a data-toggle="tab" href="#tab-3"> <i class="fa fa-info-circle" aria-hidden="true"></i>公告
+					<li><a data-toggle="tab" href="#tab-3"> <i
+							class="fa fa-info-circle" aria-hidden="true"></i>公告
 					</a></li>
 				</ul>
 
@@ -164,7 +194,8 @@
 							<h3>
 								<i class="fa fa-comments-o"></i> 主题设置
 							</h3>
-							<small><i class="fa fa-tim"></i> 你可以从这里选择和预览主题的布局和样式，这些设置会被保存在本地，下次打开的时候会直接应用这些设置。</small>
+							<small><i class="fa fa-tim"></i>
+								你可以从这里选择和预览主题的布局和样式，这些设置会被保存在本地，下次打开的时候会直接应用这些设置。</small>
 						</div>
 						<div class="skin-setttings">
 							<div class="title">主题设置</div>
@@ -172,8 +203,11 @@
 								<span>收起左侧菜单</span>
 								<div class="switch">
 									<div class="onoffswitch">
-										<input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="collapsemenu"> <label class="onoffswitch-label" for="collapsemenu"> <span
-											class="onoffswitch-inner"></span> <span class="onoffswitch-switch"></span>
+										<input type="checkbox" name="collapsemenu"
+											class="onoffswitch-checkbox" id="collapsemenu"> <label
+											class="onoffswitch-label" for="collapsemenu"> <span
+											class="onoffswitch-inner"></span> <span
+											class="onoffswitch-switch"></span>
 										</label>
 									</div>
 								</div>
@@ -183,8 +217,11 @@
 
 								<div class="switch">
 									<div class="onoffswitch">
-										<input type="checkbox" name="fixednavbar" class="onoffswitch-checkbox" id="fixednavbar"> <label class="onoffswitch-label" for="fixednavbar"> <span
-											class="onoffswitch-inner"></span> <span class="onoffswitch-switch"></span>
+										<input type="checkbox" name="fixednavbar"
+											class="onoffswitch-checkbox" id="fixednavbar"> <label
+											class="onoffswitch-label" for="fixednavbar"> <span
+											class="onoffswitch-inner"></span> <span
+											class="onoffswitch-switch"></span>
 										</label>
 									</div>
 								</div>
@@ -194,23 +231,29 @@
 
 								<div class="switch">
 									<div class="onoffswitch">
-										<input type="checkbox" name="boxedlayout" class="onoffswitch-checkbox" id="boxedlayout"> <label class="onoffswitch-label" for="boxedlayout"> <span
-											class="onoffswitch-inner"></span> <span class="onoffswitch-switch"></span>
+										<input type="checkbox" name="boxedlayout"
+											class="onoffswitch-checkbox" id="boxedlayout"> <label
+											class="onoffswitch-label" for="boxedlayout"> <span
+											class="onoffswitch-inner"></span> <span
+											class="onoffswitch-switch"></span>
 										</label>
 									</div>
 								</div>
 							</div>
 							<div class="title">皮肤选择</div>
 							<div class="setings-item default-skin nb">
-								<span class="skin-name "> <a href="#" class="s-skin-0"> 默认皮肤 </a>
+								<span class="skin-name "> <a href="#" class="s-skin-0">
+										默认皮肤 </a>
 								</span>
 							</div>
 							<div class="setings-item blue-skin nb">
-								<span class="skin-name "> <a href="#" class="s-skin-1"> 蓝色主题 </a>
+								<span class="skin-name "> <a href="#" class="s-skin-1">
+										蓝色主题 </a>
 								</span>
 							</div>
 							<div class="setings-item yellow-skin nb">
-								<span class="skin-name "> <a href="#" class="s-skin-3"> 黄色/紫色主题 </a>
+								<span class="skin-name "> <a href="#" class="s-skin-3">
+										黄色/紫色主题 </a>
 								</span>
 							</div>
 						</div>
@@ -218,26 +261,30 @@
 					<div id="tab-2" class="tab-pane">
 						<div class="sidebar-title">
 							<h3>
-								<i class="fa fa-comments-o"></i> 系统消息 <small id="messageCount"><i class="fa fa-tim"></i> 您当前有0条未读通知</small>
+								<i class="fa fa-comments-o"></i> 系统消息 <small id="messageCount"><i
+									class="fa fa-tim"></i> 您当前有0条未读通知</small>
 							</h3>
 						</div>
 						<ul class="sidebar-list">
 							<li id="messageContent"></li>
 
-							<li><a href="javascript:goAllMessage();" id="messageFooter"> 查看全部 <i class="icon-arrow-right"></i>
+							<li><a href="javascript:goAllMessage();" id="messageFooter">
+									查看全部 <i class="icon-arrow-right"></i>
 							</a></li>
 						</ul>
 					</div>
 					<div id="tab-3" class="tab-pane">
 						<div class="sidebar-title">
 							<h3>
-								<i class="fa fa-cube"></i> 最新公告<small id="noticeCount"><i class="fa fa-tim"></i> 您当前有0个公告</small>
+								<i class="fa fa-cube"></i> 最新公告<small id="noticeCount"><i
+									class="fa fa-tim"></i> 您当前有0个公告</small>
 							</h3>
 
 						</div>
 						<ul class="sidebar-list">
 							<li id="noticeContent"></li>
-							<li><a href="javascript:goAllNotice();" id="noticeFooter"> 查看所有公告 <i class="icon-arrow-right"></i>
+							<li><a href="javascript:goAllNotice();" id="noticeFooter">
+									查看所有公告 <i class="icon-arrow-right"></i>
 							</a></li>
 						</ul>
 					</div>
@@ -250,7 +297,8 @@
 	<script src="plug-in/hplus/js/jquery.min.js?v=2.1.4"></script>
 	<script src="plug-in/hplus/js/bootstrap.min.js?v=3.3.6"></script>
 	<script src="plug-in/hplus/js/plugins/metisMenu/jquery.metisMenu.js"></script>
-	<script src="plug-in/hplus/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+	<script
+		src="plug-in/hplus/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
 	<script src="plug-in/hplus/js/plugins/layer/layer.min.js"></script>
 
 	<!-- 自定义js -->
@@ -258,7 +306,8 @@
 	<!--右键菜单-->
 	<script type="text/javascript" src="plug-in/hplus/jquery-smartMenu.js"></script>
 	<script type="text/javascript" src="plug-in/hplus/contabs.js"></script>
-	<script type="text/javascript" src="plug-in/jquery-plugs/i18n/jquery.i18n.properties.js"></script>
+	<script type="text/javascript"
+		src="plug-in/jquery-plugs/i18n/jquery.i18n.properties.js"></script>
 	<t:base type="tools"></t:base>
 	<!-- 第三方插件 -->
 	<script src="plug-in/hplus/js/plugins/pace/pace.min.js"></script>

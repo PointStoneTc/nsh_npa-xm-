@@ -706,17 +706,41 @@
 }
 
 .el-select-group__wrap
+
+
+
+
 :not
+
+
  
+
+
 (
 :last-of-type
+
+
  
+
+
 ){
 padding-bottom
+
+
+
+
 :
+
+
  
+
+
 24
 px
+
+
+
+
 
 
 }
@@ -973,79 +997,181 @@ px
 }
 
 .el-pagination
+
+
  
+
+
 button
 ,
 .el-pagination
+
+
  
+
+
 span
+
+
+
+
 :not
+
+
  
+
+
 (
 [
 class
 *=
 suffix
 ]
+
+
  
+
+
 ){
 display
-:
- 
-inline-block
-;
 
-	
-font-size
+
+
+
 :
+
+
  
+
+
+inline-block
+
+
+
+
+;
+font-size
+
+
+
+
+:
+
+
+ 
+
+
 13
 px
-;
 
-	
+
+
+
+;
 min-width
+
+
+
+
 :
+
+
  
+
+
 35
 .5px
-;
 
-	
+
+
+
+;
 height
+
+
+
+
 :
+
+
  
+
+
 28
 px
-;
 
-	
+
+
+
+;
 line-height
+
+
+
+
 :
+
+
  
+
+
 28
 px
-;
 
-	
+
+
+
+;
 vertical-align
+
+
+
+
 :
+
+
  
+
+
 top
-;
 
-	
+
+
+
+;
 -webkit-box-sizing
-:
- 
-border-box
-;
 
-	
-box-sizing
+
+
+
 :
+
+
  
+
+
 border-box
+
+
+
+
+;
+box-sizing
+
+
+
+
+:
+
+
+ 
+
+
+border-box
+
+
+
+
 
 
 }
@@ -1145,14 +1271,30 @@ border-box
 }
 
 .el-pagination--small
+
+
  
+
+
 button
 ,
 .el-pagination--small
+
+
  
+
+
 span
+
+
+
+
 :not
+
+
  
+
+
 (
 [
 class
@@ -1160,21 +1302,47 @@ class
 suffix
 ]
 
-	
-){
-height
-:
- 
-22
-px
-;
+
 
 	
-line-height
+
+
+){
+height
+
+
+
+
 :
+
+
  
+
+
 22
 px
+
+
+
+
+;
+line-height
+
+
+
+
+:
+
+
+ 
+
+
+22
+px
+
+
+
+
 
 
 }

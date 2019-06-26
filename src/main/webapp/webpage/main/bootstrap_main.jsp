@@ -92,8 +92,8 @@
 								<ul class="dropdown-menu">
 									<li
 										onclick="exit('loginController.do?logout','<t:mutiLang langKey="common.exit.confirm"/>',1);"><a
-										href="javascript:;"><i class="icon-off"></i>
-										<t:mutiLang langKey="common.exit" /></a></li>
+										href="javascript:;"><i class="icon-off"></i> <t:mutiLang
+												langKey="common.exit" /></a></li>
 								</ul></li>
 						</ul>
 					</div>
@@ -119,8 +119,8 @@
 						Framework <t:mutiLang langKey="system.version.number" />
 				</a></li>
 				<li style="display: inline;">&nbsp;<t:mutiLang
-						langKey="common.copyright" />
-					<t:mutiLang langKey="common.browser" />:<a
+						langKey="common.copyright" /> <t:mutiLang
+						langKey="common.browser" />:<a
 					title="JEECG Framework  <t:mutiLang langKey="system.version.number"/>"
 					href="http://www.jeecg.org">JEECG Framework <t:mutiLang
 							langKey="system.version.number" /></a></li>

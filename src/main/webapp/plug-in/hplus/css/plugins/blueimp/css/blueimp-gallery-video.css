@@ -82,7 +82,7 @@
 
 /* Replace PNGs with SVGs for capable browsers (excluding IE<9) */
 body:last-child .blueimp-gallery>.slides>.slide>.video-content:not (.video-loading
-	) >a {
+	 ) >a {
 	background-image: url(../img/video-play.svg);
 }
 

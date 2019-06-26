@@ -123,54 +123,134 @@
 }
 
 .el-tabs__item
+
+
+
+
 :focus
+
+
+
+
 .is-active
+
+
+
+
 .is-focus
+
+
+
+
 :not
+
+
  
+
+
 (
 :active
+
+
  
+
+
 ){
 -webkit-box-shadow
-:
- 
-0
-0
-2
-px
- 
-2
-px
- 
-#409eff
- 
-inset
-;
 
-	
+
+
+
+:
+
+
+ 
+
+
+0
+0
+2
+px
+
+
+ 
+
+
+2
+px
+
+
+ 
+
+
+#409eff
+
+
+ 
+
+
+inset
+
+
+
+
+;
 box-shadow
-:
- 
-0
-0
-2
-px
- 
-2
-px
- 
-#409eff
- 
-inset
-;
 
-	
-border-radius
+
+
+
 :
+
+
  
+
+
+0
+0
+2
+px
+
+
+ 
+
+
+2
+px
+
+
+ 
+
+
+#409eff
+
+
+ 
+
+
+inset
+
+
+
+
+;
+border-radius
+
+
+
+
+:
+
+
+ 
+
+
 3
 px
+
+
+
+
 
 
 }
@@ -362,26 +442,70 @@ px
 }
 
 .el-tabs--bottom
+
+
+
+
 .el-tabs--border-card
+
+
  
+
+
 .el-tabs__item
+
+
+
+
 .is-bottom
+
+
+
+
 :not
+
+
  
+
+
 (
 .is-active
 
+
+
 	
+
+
 ){
 border
+
+
+
+
 :
+
+
  
+
+
 1
 px
+
+
  
+
+
 solid
+
+
  
+
+
 transparent
+
+
+
+
 
 
 }
@@ -690,7 +814,15 @@ to {
 -webkit-transform-origin
 
 
+
+
+
+
 :
+
+
+
+
 
 
 0
@@ -698,7 +830,15 @@ to {
 transform-origin
 
 
+
+
+
+
 :
+
+
+
+
 
 
 0
@@ -706,21 +846,45 @@ transform-origin
 -webkit-transform
 
 
+
+
+
+
 :translateX
+
+
+
+
 
 
 (100%);
 transform
 
 
+
+
+
+
 :translateX
+
+
+
+
 
 
 (100%);
 opacity
 
 
+
+
+
+
 :
+
+
+
+
 
 
 0
@@ -739,7 +903,15 @@ keyframes slideInRight-leave { 0%{
 -webkit-transform-origin
 
 
+
+
+
+
 :
+
+
+
+
 
 
 0
@@ -747,7 +919,15 @@ keyframes slideInRight-leave { 0%{
 transform-origin
 
 
+
+
+
+
 :
+
+
+
+
 
 
 0
@@ -755,21 +935,45 @@ transform-origin
 -webkit-transform
 
 
+
+
+
+
 :translateX
+
+
+
+
 
 
 (100%);
 transform
 
 
+
+
+
+
 :translateX
+
+
+
+
 
 
 (100%);
 opacity
 
 
+
+
+
+
 :
+
+
+
+
 
 
 0
@@ -824,7 +1028,15 @@ to {
 -webkit-transform-origin
 
 
+
+
+
+
 :
+
+
+
+
 
 
 0
@@ -832,7 +1044,15 @@ to {
 transform-origin
 
 
+
+
+
+
 :
+
+
+
+
 
 
 0
@@ -840,21 +1060,45 @@ transform-origin
 -webkit-transform
 
 
+
+
+
+
 :translateX
+
+
+
+
 
 
 (-100%);
 transform
 
 
+
+
+
+
 :translateX
+
+
+
+
 
 
 (-100%);
 opacity
 
 
+
+
+
+
 :
+
+
+
+
 
 
 0
@@ -872,7 +1116,15 @@ keyframes slideInLeft-leave { 0%{
 -webkit-transform-origin
 
 
+
+
+
+
 :
+
+
+
+
 
 
 0
@@ -880,7 +1132,15 @@ keyframes slideInLeft-leave { 0%{
 transform-origin
 
 
+
+
+
+
 :
+
+
+
+
 
 
 0
@@ -888,21 +1148,45 @@ transform-origin
 -webkit-transform
 
 
+
+
+
+
 :translateX
+
+
+
+
 
 
 (-100%);
 transform
 
 
+
+
+
+
 :translateX
+
+
+
+
 
 
 (-100%);
 opacity
 
 
+
+
+
+
 :
+
+
+
+
 
 
 0

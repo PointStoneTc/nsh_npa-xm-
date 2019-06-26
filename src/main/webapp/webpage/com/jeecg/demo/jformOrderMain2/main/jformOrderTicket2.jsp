@@ -46,8 +46,8 @@
 		<tbody id="add_jformOrderTicket2_table">
 			<c:if test="${fn:length(jformOrderTicket2List)  <= 0 }">
 				<tr>
-					<td><input style="width: 20px;" type="checkbox" name="ck" /> <input
-						name="jformOrderTicket2List[0].id" type="hidden" /> <input
+					<td><input style="width: 20px;" type="checkbox" name="ck" />
+						<input name="jformOrderTicket2List[0].id" type="hidden" /> <input
 						name="jformOrderTicket2List[0].fckId" type="hidden" /></td>
 
 					<td scope="row">

@@ -48,8 +48,8 @@
 		<tbody id="add_jformOrderCustomer2_table">
 			<c:if test="${fn:length(jformOrderCustomer2List)  <= 0 }">
 				<tr>
-					<td><input style="width: 20px;" type="checkbox" name="ck" /> <input
-						name="jformOrderCustomer2List[0].id" type="hidden" /> <input
+					<td><input style="width: 20px;" type="checkbox" name="ck" />
+						<input name="jformOrderCustomer2List[0].id" type="hidden" /> <input
 						name="jformOrderCustomer2List[0].fkId" type="hidden" /></td>
 
 					<td scope="row">

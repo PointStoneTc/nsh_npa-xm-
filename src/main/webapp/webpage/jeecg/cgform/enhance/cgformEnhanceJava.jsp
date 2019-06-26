@@ -59,11 +59,11 @@
 				</label></td>
 				<td class="value"><input type="radio" name="activeStatus"
 					value="0"
-					${cgformEnhanceJavaPage.activeStatus eq 0 ? 'checked' : '' } />
-				<t:mutiLang langKey="common.disable" /> <input type="radio"
+					${cgformEnhanceJavaPage.activeStatus eq 0 ? 'checked' : '' } /> <t:mutiLang
+						langKey="common.disable" /> <input type="radio"
 					name="activeStatus" value="1"
 					${empty cgformEnhanceJavaPage.activeStatus or cgformEnhanceJavaPage.activeStatus eq '1' ? 'checked' : '' } />
-				<t:mutiLang langKey="common.enable" /> <span
+					<t:mutiLang langKey="common.enable" /> <span
 					class="Validform_checktip"></span></td>
 			</tr>
 		</table>

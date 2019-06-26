@@ -102,11 +102,12 @@
 						concat('%',<%="${abc}"%>,'%') group by broswer。(mysql模糊查询)<br />
 						&nbsp;&nbsp;&nbsp;&nbsp;select broswer name,count(1) value,
 						'#286FBB' color from t_s_log where id = like '%'||<%="${abc}"%>||'%'
-						group by broswer。(oracle模糊查询)<br /> &nbsp;&nbsp;&nbsp;&nbsp;select
-						broswer name,count(1) value, '#286FBB' color from t_s_log where id
-						= like '%'+<%="${abc}"%>+'%' group by broswer。(sqlserver模糊查询)<br />
-						&nbsp;&nbsp;&nbsp;&nbsp;<font color="red">注：必要用
-							name,value,color 列。 name 为X轴数据,value 为Y轴数据,color为图表的颜色</font>
+						group by broswer。(oracle模糊查询)<br />
+						&nbsp;&nbsp;&nbsp;&nbsp;select broswer name,count(1) value,
+						'#286FBB' color from t_s_log where id = like '%'+<%="${abc}"%>+'%'
+						group by broswer。(sqlserver模糊查询)<br /> &nbsp;&nbsp;&nbsp;&nbsp;<font
+							color="red">注：必要用 name,value,color 列。 name 为X轴数据,value
+							为Y轴数据,color为图表的颜色</font>
 					<p /></td>
 			</tr>
 			<tr>

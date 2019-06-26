@@ -136,13 +136,25 @@
 background-position
 
 
+
+
+
+
 :
+
+
+
+
 
 
 32
 px
 
+
+
  
+
+
 
 0
 }
@@ -156,13 +168,25 @@ keyframes progress { 0%{
 background-position
 
 
+
+
+
+
 :
+
+
+
+
 
 
 32
 px
 
+
+
  
+
+
 
 0
 }
@@ -738,19 +762,47 @@ px
 }
 
 .el-upload-cover__interact
+
+
  
+
+
 .btn
+
+
+
+
 :not
+
+
  
+
+
 (
 :first-child
+
+
  
+
+
 ){
 margin-left
+
+
+
+
 :
+
+
  
+
+
 35
 px
+
+
+
+
 
 
 }

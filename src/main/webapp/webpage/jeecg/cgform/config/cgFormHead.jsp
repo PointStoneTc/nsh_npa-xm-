@@ -273,9 +273,7 @@ String langurl = basePath + "/plug-in/mutiLang/" + lang +".js";
 				<div class="t_table" id="t_table_database">
 					<table id="tab_div_database" class="table-list">
 					</table>
-					<br>
-					<br>
-					<br>
+					<br> <br> <br>
 					<div style="height: 43px"></div>
 				</div>
 			</div>
@@ -287,9 +285,7 @@ String langurl = basePath + "/plug-in/mutiLang/" + lang +".js";
 				<div class="t_table" id="t_table_page">
 					<table id="tab_div_page" class="table-list">
 					</table>
-					<br>
-					<br>
-					<br>
+					<br> <br> <br>
 				</div>
 			</div>
 			<div title='<t:mutiLang langKey="validate.dict"/>'
@@ -300,9 +296,7 @@ String langurl = basePath + "/plug-in/mutiLang/" + lang +".js";
 				<div class="t_table" id="t_table_check">
 					<table id="tab_div_check" class="table-list">
 					</table>
-					<br>
-					<br>
-					<br>
+					<br> <br> <br>
 				</div>
 			</div>
 			<div title='<t:mutiLang langKey="common.fk"/>'
@@ -313,9 +307,7 @@ String langurl = basePath + "/plug-in/mutiLang/" + lang +".js";
 				<div class="t_table" id="t_table_key">
 					<table id="tab_div_key" class="table-list">
 					</table>
-					<br>
-					<br>
-					<br>
+					<br> <br> <br>
 				</div>
 			</div>
 			<!--  add-start author： wangkun  date:20160611 for: TASK #1090 【online】online表单缺少索引配置 代码修改痕迹-->
@@ -336,9 +328,7 @@ String langurl = basePath + "/plug-in/mutiLang/" + lang +".js";
 					<table id="tab_div_index" class="table-list">
 
 					</table>
-					<br>
-					<br>
-					<br>
+					<br> <br> <br>
 				</div>
 			</div>
 			<!--  add-end author： wangkun  date:20160611 for: TASK #1090 【online】online表单缺少索引配置 代码修改痕迹-->

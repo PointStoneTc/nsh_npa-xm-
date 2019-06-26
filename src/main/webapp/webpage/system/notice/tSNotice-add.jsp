@@ -89,9 +89,8 @@
 					style="white-space: nowrap;"> 授权级别: </label></td>
 				<td class="value"><input type="radio" name="noticeLevel"
 					value="1" datatype="*" checked="checked" onclick="dataytpeSelect()" />全员
-					&nbsp;&nbsp;<br />
-				<input type="radio" name="noticeLevel" value="2"
-					onclick="dataytpeSelect('roleName')" />角色授权 <span
+					&nbsp;&nbsp;<br /> <input type="radio" name="noticeLevel"
+					value="2" onclick="dataytpeSelect('roleName')" />角色授权 <span
 					id="roleName_span" style="display: none"> <input
 						name="roleid" name="roleid" type="hidden" value="" id="roleid">
 						<input name="roleName" class="inputxt" value="" id="roleName"
@@ -100,9 +99,8 @@
 							icon="icon-search" title="common.role.list" textname="roleName"
 							isclear="true" isInit="true"></t:choose>
 
-				</span> &nbsp;&nbsp;<br />
-				<input type="radio" name="noticeLevel" value="3"
-					onclick="dataytpeSelect('userName')" />用户授权 <span
+				</span> &nbsp;&nbsp;<br /> <input type="radio" name="noticeLevel"
+					value="3" onclick="dataytpeSelect('userName')" />用户授权 <span
 					id="userName_span" style="display: none"> <input
 						name="userid" name="userid" type="hidden" value="" id="userid">
 						<input name="userName" class="inputxt" value="" id="userName"

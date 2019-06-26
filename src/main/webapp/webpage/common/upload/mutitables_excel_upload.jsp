@@ -16,8 +16,9 @@
 	<t:formvalid formid="formobj" layout="div" dialog="true">
 		<fieldset class="step">
 			<div class="form">
-				<t:upload name="fiels" buttonText="选择要导入的文件" uploader="${controller_name}.do?${empty method_name?'importExcel':method_name }&mainId=${mainId}" extend="*.xls;*.xlsx"
-					id="file_upload" formData="documentTitle"></t:upload>
+				<t:upload name="fiels" buttonText="选择要导入的文件"
+					uploader="${controller_name}.do?${empty method_name?'importExcel':method_name }&mainId=${mainId}"
+					extend="*.xls;*.xlsx" id="file_upload" formData="documentTitle"></t:upload>
 			</div>
 			<!-- '+getdbname2()+' -->
 			<div class="form" id="filediv" style="height: 50px"></div>

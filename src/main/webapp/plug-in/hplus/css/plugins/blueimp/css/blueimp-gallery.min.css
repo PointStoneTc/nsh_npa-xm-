@@ -1,4 +1,4 @@
-@charset "UTF-8"; 
+@charset "UTF-8";
 
 .blueimp-gallery, .blueimp-gallery>.slides>.slide>.slide-content {
 	position: absolute;
@@ -223,7 +223,7 @@ body:last-child .blueimp-gallery-playing>.play-pause {
 	position: relative
 }
 
- @charset "UTF-8"; 
+@charset "UTF-8";
 
 .blueimp-gallery>.indicator {
 	position: absolute;
@@ -288,7 +288,7 @@ body:last-child .blueimp-gallery-playing>.play-pause {
 	display: inline
 }
 
- @charset "UTF-8"; 
+@charset "UTF-8";
 
 .blueimp-gallery>.slides>.slide>.video-content>img {
 	position: absolute;
@@ -361,7 +361,7 @@ body:last-child .blueimp-gallery-playing>.play-pause {
 }
 
 body:last-child .blueimp-gallery>.slides>.slide>.video-content:not (.video-loading
-	)>a {
+	 )>a {
 	background-image: url(../img/video-play.svg)
 }
 

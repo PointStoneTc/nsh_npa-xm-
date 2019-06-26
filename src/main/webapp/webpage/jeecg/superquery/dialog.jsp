@@ -154,8 +154,8 @@ input, select {
 			<li class="conditions oop" data-index="#index#"><span> <input
 					name="cons[#index#].tree" onclick="treeClick(this)" type="text"
 					style="width: 120px;" class="tree queryTree" readonly="readonly" />
-					&nbsp; <input name="cons[#index#].hidd" type="hidden" value="" /> <input
-					name="cons[#index#].tableCode" type="hidden" value="" />
+					&nbsp; <input name="cons[#index#].hidd" type="hidden" value="" />
+					<input name="cons[#index#].tableCode" type="hidden" value="" />
 			</span> <span> <select class="field" id="field"
 					name="cons[#index#].fld" onchange="changeField(this)">
 

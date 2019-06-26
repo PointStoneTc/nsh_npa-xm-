@@ -1,4 +1,5 @@
-<%@ page language="java" import="java.util.*" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" import="java.util.*"
+	contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include file="/context/mytags.jsp"%>
 <!DOCTYPE html>
 <html>
@@ -8,7 +9,8 @@
 <title>Jeecg 微云快速开发平台</title>
 <t:base type="jquery"></t:base>
 <link rel="shortcut icon" href="images/favicon.ico">
-<link href="plug-in/hplus/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+<link href="plug-in/hplus/css/bootstrap.min.css?v=3.3.6"
+	rel="stylesheet">
 <link href="plug-in/hplus/css/font-awesome.css?v=4.4.0" rel="stylesheet">
 <link href="plug-in/hplus/css/animate.css" rel="stylesheet">
 <link href="plug-in/hplus/css/style.css?v=4.1.0" rel="stylesheet">

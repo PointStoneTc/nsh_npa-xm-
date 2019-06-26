@@ -829,82 +829,210 @@
 }
 
 .rtl
+
+
  
+
+
 .btn-group
 >
 .btn
+
+
+
+
 :first-child
+
+
+
+
 :not
+
+
  
+
+
 (
 :last-child
+
+
  
+
+
 )
 :not
+
+
  
+
+
 (
 .dropdown-toggle
 
+
+
 	
+
+
 )
 {
 border-bottom-right-radius
+
+
+
+
 :
+
+
  
+
+
 0;
 border-top-right-radius
+
+
+
+
 :
+
+
  
+
+
 0;
 border-bottom-left-radius
+
+
+
+
 :
+
+
  
+
+
 0;
 border-top-left-radius
+
+
+
+
 :
+
+
  
+
+
 0;
 }
 .rtl
+
+
  
+
+
 .btn-group
 >
 .btn
+
+
+
+
 :last-child
+
+
+
+
 :not
+
+
  
+
+
 (
 :first-child
+
+
  
+
+
 ),
 .rtl
+
+
  
+
+
 .btn-group
 >
 .dropdown-toggle
+
+
+
+
 :not
 
+
+
 	
+
+
 (
 :first-child
+
+
  
+
+
 )
 {
 border-bottom-left-radius
+
+
+
+
 :
+
+
  
+
+
 0;
 border-top-left-radius
+
+
+
+
 :
+
+
  
+
+
 0;
 border-bottom-right-radius
+
+
+
+
 :
+
+
  
+
+
 0;
 border-top-right-radius
+
+
+
+
 :
+
+
  
+
+
 0;
 }
 .rtl .btn-group>.btn-group {
@@ -939,56 +1067,132 @@ border-top-right-radius
 }
 
 .rtl
+
+
  
+
+
 .btn-group-vertical
 >
 .btn
+
+
+
+
 :first-child
+
+
+
+
 :not
+
+
  
+
+
 (
 :last-child
+
+
  
+
+
 )
 {
 border-top-right-radius
+
+
+
+
 :
+
+
  
+
+
 0;
 border-top-left-radius
+
+
+
+
 :
+
+
  
+
+
 4
 px
+
+
+
+
 ;
-
-
 }
 .rtl
+
+
  
+
+
 .btn-group-vertical
 >
 .btn
+
+
+
+
 :last-child
+
+
+
+
 :not
+
+
  
+
+
 (
 :first-child
+
+
  
+
+
 )
 {
 border-bottom-left-radius
+
+
+
+
 :
+
+
  
+
+
 0;
 border-bottom-right-radius
+
+
+
+
 :
+
+
  
+
+
 4
 px
+
+
+
+
 ;
-
-
 }
 .rtl .input-group .form-control {
 	float: right;
@@ -2752,40 +2956,88 @@ px
 }
 
 .rtl
+
+
  
+
+
 .btn-group
 >
 .btn-app
+
+
+
+
 :first-child
+
+
+
+
 :not
+
+
  
+
+
 (
 :last-child
+
+
  
+
+
 )
 :not
+
+
  
+
+
 (
 .dropdown-toggle
 
+
+
 	
+
+
 )
 {
 margin-right
-:
- 
-auto
-;
 
-	
-margin-left
+
+
+
 :
+
+
  
+
+
+auto
+
+
+
+
+;
+margin-left
+
+
+
+
+:
+
+
+ 
+
+
 24
 px
+
+
+
+
 ;
-
-
 }
 .rtl .btn-group>.btn-app+.btn-app.dropdown-toggle {
 	margin-left: auto;
@@ -3152,50 +3404,118 @@ px
 }
 
 .rtl
+
+
  
+
+
 .pricing-box
+
+
+
+
 :not
+
+
  
+
+
 (
 :first-child
+
+
  
+
+
 )
 {
 padding-left
+
+
+
+
 :
+
+
  
+
+
 0;
 padding-right
+
+
+
+
 :
+
+
  
+
+
 7
 px
+
+
+
+
 ;
-
-
 }
 .rtl
+
+
  
+
+
 .pricing-box
+
+
+
+
 :not
+
+
  
+
+
 (
 :last-child
+
+
  
+
+
 )
 {
 padding-right
+
+
+
+
 :
+
+
  
+
+
 0;
 padding-left
+
+
+
+
 :
+
+
  
+
+
 7
 px
+
+
+
+
 ;
-
-
 }
 .rtl .pricing-box .price {
 	text-align: center;

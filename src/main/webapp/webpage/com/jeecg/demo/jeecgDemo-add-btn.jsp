@@ -78,9 +78,8 @@
 				</td>
 				<td class="value"><input id="birthday" name="birthday"
 					type="text" style="width: 150px" class="Wdate"
-					onClick="WdatePicker()" /> <span
-					class="Validform_checktip"></span> <label class="Validform_label"
-					style="display: none;">生日</label></td>
+					onClick="WdatePicker()" /> <span class="Validform_checktip"></span>
+					<label class="Validform_label" style="display: none;">生日</label></td>
 			</tr>
 
 			<tr>

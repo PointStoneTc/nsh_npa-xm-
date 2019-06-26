@@ -19,22 +19,44 @@ audio, canvas, video {
 }
 
 audio
+
+
+
+
 :not
+
+
  
+
+
 (
 [
 controls
 ]
+
+
  
+
+
 )
 {
 display
+
+
+
+
 :
+
+
  
+
+
 none
+
+
+
+
 ;
-
-
 }
 html {
 	font-size: 100%;

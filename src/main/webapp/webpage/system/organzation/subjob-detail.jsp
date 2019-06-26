@@ -36,7 +36,7 @@
 			<tr>
 				<td align="right" style="width: 30%; height: 30px"><label
 					class="Validform_label"> 岗位名称: </label></td>
-				<td class="value">${depart.departname } <%-- <input id="departname" name="departname" value="${depart.departname }" type="text" style="width: 150px" class="inputxt"  ignore="ignore" />
+				<td class="value">${depart.departname }<%-- <input id="departname" name="departname" value="${depart.departname }" type="text" style="width: 150px" class="inputxt"  ignore="ignore" />
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">岗位名称</label> --%>
 				</td>
@@ -44,7 +44,7 @@
 			<tr>
 				<td align="right" style="height: 30px"><label
 					class="Validform_label"> 岗位描述: </label></td>
-				<td class="value">${depart.description } <%--  <textarea id="description" name="description" rows="5" cols="80">${depart.description }</textarea>
+				<td class="value">${depart.description }<%--  <textarea id="description" name="description" rows="5" cols="80">${depart.description }</textarea>
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">岗位描述</label> --%>
 				</td>
@@ -64,7 +64,7 @@
 			<tr>
 				<td align="right" style="height: 30px"><label
 					class="Validform_label"> 电话: </label></td>
-				<td class="value" style="height: 30px">${depart.mobile } <%--  <input id="mobile" name="mobile" value="${depart.mobile }" type="text" style="width: 150px" class="inputxt"  ignore="ignore" />
+				<td class="value" style="height: 30px">${depart.mobile }<%--  <input id="mobile" name="mobile" value="${depart.mobile }" type="text" style="width: 150px" class="inputxt"  ignore="ignore" />
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">电话</label> --%>
 				</td>
@@ -72,7 +72,7 @@
 			<tr>
 				<td align="right" style="height: 30px"><label
 					class="Validform_label"> 传真: </label></td>
-				<td class="value">${depart.fax } <%--  <input id="fax" name="fax" type="text" value="${depart.fax }" style="width: 150px" class="inputxt"  ignore="ignore" />
+				<td class="value">${depart.fax }<%--  <input id="fax" name="fax" type="text" value="${depart.fax }" style="width: 150px" class="inputxt"  ignore="ignore" />
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">传真</label> --%>
 				</td>
@@ -80,7 +80,7 @@
 			<tr>
 				<td align="right" style="height: 30px"><label
 					class="Validform_label"> 地址: </label></td>
-				<td class="value">${depart.address } <%-- <input id="address" name="address" value="${depart.address }" type="text" style="width: 150px" class="inputxt"  ignore="ignore" />
+				<td class="value">${depart.address }<%-- <input id="address" name="address" value="${depart.address }" type="text" style="width: 150px" class="inputxt"  ignore="ignore" />
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">地址</label> --%>
 				</td>

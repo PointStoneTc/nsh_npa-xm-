@@ -540,13 +540,63 @@
 	opacity: 0 !important
 }
 
-.table.rowlink td:not (.rowlink-skip ), .table .rowlink td:not (.rowlink-skip
-	){
-	cursor: pointer
-}
+.table
 
+
+.rowlink
+
+ 
+
+td
+
+
+:not
+
+ 
+
+(
+.rowlink-skip
+
+ 
+
+),
+.table
+
+ 
+
+.rowlink
+
+ 
+
+td
+
+
+:not
+
+ 
+
+(
+.rowlink-skip
+
+
+	
+
+){
+cursor
+
+
+:
+
+ 
+
+pointer
+
+
+
+
+}
 .table.rowlink td:not (.rowlink-skip ) a, .table .rowlink td:not (.rowlink-skip
-	) a {
+	 ) a {
 	color: inherit;
 	font: inherit;
 	text-decoration: inherit
@@ -676,7 +726,25 @@
 .form-group.has-success .fileinput .thumbnail {
 	border-color: #d6e9c6
 }
+.input-group-addon
 
-.input-group-addon:not (:first-child ){
-	border-left: 0
+
+:not
+
+ 
+
+(
+:first-child
+
+ 
+
+){
+border-left
+
+
+:
+
+ 
+
+0
 }

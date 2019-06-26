@@ -1,32 +1,51 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@include file="/context/mytags.jsp"%>
 <t:base type="jquery,easyui,tools,DatePicker"></t:base>
 
-<t:datagrid name="userList" title="common.operation" actionUrl="userController.do?datagrid" fit="true" fitColumns="true" idField="id" queryMode="group" pageSize="30"
+<t:datagrid name="userList" title="common.operation"
+	actionUrl="userController.do?datagrid" fit="true" fitColumns="true"
+	idField="id" queryMode="group" pageSize="30"
 	sortName="createDate,userName" sortOrder="asc,desc">
 	<t:dgCol title="common.id" field="id" hidden="true"></t:dgCol>
-	<t:dgCol title="common.username" sortable="false" field="userName" query="true" width="100"></t:dgCol>
-	<t:dgCol title="common.real.name" field="realName" query="false" width="100"></t:dgCol>
-	<t:dgCol title="common.user.type" field="userType" dictionary="user_type" width="80"></t:dgCol>
+	<t:dgCol title="common.username" sortable="false" field="userName"
+		query="true" width="100"></t:dgCol>
+	<t:dgCol title="common.real.name" field="realName" query="false"
+		width="100"></t:dgCol>
+	<t:dgCol title="common.user.type" field="userType"
+		dictionary="user_type" width="80"></t:dgCol>
 	<%--<t:dgCol title="common.department" field="TSDepart_id" query="true" replace="${departsReplace}"></t:dgCol>--%>
-	<t:dgCol title="common.department" sortable="false" field="userOrgList.tsDepart.departname" query="false" width="100"></t:dgCol>
+	<t:dgCol title="common.department" sortable="false"
+		field="userOrgList.tsDepart.departname" query="false" width="100"></t:dgCol>
 	<t:dgCol title="common.role" field="userKey" width="100"></t:dgCol>
-	<t:dgCol title="common.createby" field="createBy" hidden="true" width="100"></t:dgCol>
-	<t:dgCol title="common.createtime" field="createDate" formatter="yyyy-MM-dd" width="50" hidden="false"></t:dgCol>
+	<t:dgCol title="common.createby" field="createBy" hidden="true"
+		width="100"></t:dgCol>
+	<t:dgCol title="common.createtime" field="createDate"
+		formatter="yyyy-MM-dd" width="50" hidden="false"></t:dgCol>
 	<t:dgCol title="common.updateby" field="updateBy" hidden="true"></t:dgCol>
-	<t:dgCol title="common.updatetime" field="updateDate" formatter="yyyy-MM-dd" hidden="true"></t:dgCol>
-	<t:dgCol title="common.status" sortable="true" field="status" width="50" replace="common.active_1,common.inactive_0,super.admin_-1"></t:dgCol>
+	<t:dgCol title="common.updatetime" field="updateDate"
+		formatter="yyyy-MM-dd" hidden="true"></t:dgCol>
+	<t:dgCol title="common.status" sortable="true" field="status"
+		width="50" replace="common.active_1,common.inactive_0,super.admin_-1"></t:dgCol>
 
 	<t:dgCol title="common.operation" field="opt" width="100"></t:dgCol>
-	<t:dgFunOpt funname="deleteDialog(id)" title="common.delete" urlclass="ace_button" urlfont="fa-trash-o"></t:dgFunOpt>
-	<t:dgToolBar title="common.add.param" langArg="common.user" icon="icon-add" url="userController.do?addorupdate" funname="add" height="420"></t:dgToolBar>
-	<t:dgToolBar title="common.edit.param" langArg="common.user" icon="icon-edit" url="userController.do?addorupdate" funname="update"></t:dgToolBar>
-	<t:dgToolBar title="common.password.reset" icon="icon-edit" url="userController.do?changepasswordforuser" funname="update"></t:dgToolBar>
-	<t:dgToolBar title="common.lock.user" icon="icon-edit" url="userController.do?lock&lockvalue=0" funname="lockObj"></t:dgToolBar>
-	<t:dgToolBar title="common.unlock.user" icon="icon-edit" url="userController.do?lock&lockvalue=1" funname="unlockObj"></t:dgToolBar>
+	<t:dgFunOpt funname="deleteDialog(id)" title="common.delete"
+		urlclass="ace_button" urlfont="fa-trash-o"></t:dgFunOpt>
+	<t:dgToolBar title="common.add.param" langArg="common.user"
+		icon="icon-add" url="userController.do?addorupdate" funname="add"
+		height="420"></t:dgToolBar>
+	<t:dgToolBar title="common.edit.param" langArg="common.user"
+		icon="icon-edit" url="userController.do?addorupdate" funname="update"></t:dgToolBar>
+	<t:dgToolBar title="common.password.reset" icon="icon-edit"
+		url="userController.do?changepasswordforuser" funname="update"></t:dgToolBar>
+	<t:dgToolBar title="common.lock.user" icon="icon-edit"
+		url="userController.do?lock&lockvalue=0" funname="lockObj"></t:dgToolBar>
+	<t:dgToolBar title="common.unlock.user" icon="icon-edit"
+		url="userController.do?lock&lockvalue=1" funname="unlockObj"></t:dgToolBar>
 	<t:dgToolBar title="excelImport" icon="icon-put" funname="ImportXls"></t:dgToolBar>
 	<t:dgToolBar title="excelOutput" icon="icon-putout" funname="ExportXls"></t:dgToolBar>
-	<t:dgToolBar title="templateDownload" icon="icon-putout" funname="ExportXlsByT"></t:dgToolBar>
+	<t:dgToolBar title="templateDownload" icon="icon-putout"
+		funname="ExportXlsByT"></t:dgToolBar>
 </t:datagrid>
 <script>
   $(function() {
@@ -39,7 +58,8 @@
 </script>
 <div id="realNameSearchColums" style="display: none;">
 	<div name="searchColumsRealName">
-		<t:userSelect hasLabel="true" selectedNamesInputId="realName" windowWidth="1000px" windowHeight="600px" title="用户名称"></t:userSelect>
+		<t:userSelect hasLabel="true" selectedNamesInputId="realName"
+			windowWidth="1000px" windowHeight="600px" title="用户名称"></t:userSelect>
 	</div>
 </div>
 <div id="tempSearchColums" style="display: none;">

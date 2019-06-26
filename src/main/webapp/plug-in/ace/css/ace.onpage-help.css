@@ -163,44 +163,100 @@ It's used for Ace demo only, to style the button that launches help, help conten
 }
 
 .onpage-help-content
+
+
  
+
+
 .info-list
 >
 li
+
+
+
+
 :not
+
+
  
+
+
 (
 .hr
+
+
  
+
+
 )
 {
 margin-top
+
+
+
+
 :
+
+
  
+
+
 0;
 margin-bottom
+
+
+
+
 :
+
+
  
+
+
 0;
 padding
+
+
+
+
 :
+
+
  
+
+
 16
 px
+
+
  
+
+
 12
 px
-;
 
-	
+
+
+
+;
 line-height
+
+
+
+
 :
+
+
  
+
+
 22
 px
+
+
+
+
 ;
-
-
 }
 .onpage-help-content .info-list>li:not (.hr ):nth-child(even) {
 	background-color: #FFF;

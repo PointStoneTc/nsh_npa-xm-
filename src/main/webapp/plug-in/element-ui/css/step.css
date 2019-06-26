@@ -98,28 +98,62 @@
 }
 
 .el-step__icon-inner
+
+
+
+
 [
 class
 *=
 el-icon
 ]
+
+
+
+
 :not
+
+
  
+
+
 (
 .is-status
+
+
  
+
+
 ){
 font-size
+
+
+
+
 :
+
+
  
+
+
 25
 px
-;
 
-	
+
+
+
+;
 font-weight
+
+
+
+
 :
+
+
  
+
+
 400
 }
 .el-step__icon-inner.is-status {
@@ -289,26 +323,62 @@ font-weight
 }
 
 .el-step
+
+
+
+
 .is-simple
+
+
  
+
+
 .el-step__icon-inner
+
+
+
+
 [
 class
 *=
 el-icon
 ]
+
+
+
+
 :not
+
+
  
+
+
 (
 .is-status
 
+
+
 	
+
+
 ){
 font-size
+
+
+
+
 :
+
+
  
+
+
 18
 px
+
+
+
+
 
 
 }

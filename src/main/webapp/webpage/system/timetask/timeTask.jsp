@@ -50,14 +50,16 @@
 						langKey="common.task.runServerIp" />:</label> <input class="inputxt"
 					id="runServerIp" name="runServerIp"
 					value="${empty timeTaskPage.runServerIp ? '本地' : timeTaskPage.runServerIp}"
-					datatype="*" style="width: 50%" /> <span class="Validform_checktip"></span>
+					datatype="*" style="width: 50%" /> <span
+					class="Validform_checktip"></span>
 			</div>
 			<div class="form">
 				<label class="Validform_label"><t:mutiLang
 						langKey="common.task.runServer" />:</label> <input class="inputxt"
 					id="runServer" name="runServer"
 					value="${empty timeTaskPage.runServer ? '本地' : timeTaskPage.runServer}"
-					datatype="*" style="width: 50%" /> <span class="Validform_checktip"></span>
+					datatype="*" style="width: 50%" /> <span
+					class="Validform_checktip"></span>
 			</div>
 		</fieldset>
 	</t:formvalid>

@@ -4,10 +4,36 @@
 <link rel="stylesheet" href="plug-in/themes/fineui/css/mainform.css"
 	type="text/css" />
 <style>
-.conc-wrapper input:not ([type='radio'] ){
-	width: 95%;
-}
+.conc-wrapper
 
+ 
+
+input
+
+
+:not
+
+ 
+
+(
+[
+type
+=
+'radio'
+]
+
+ 
+
+){
+width
+
+
+:
+
+ 
+
+95%;
+}
 .conc-wrapper input[type='checkbox'], input[type='radio'] {
 	width: auto;
 }

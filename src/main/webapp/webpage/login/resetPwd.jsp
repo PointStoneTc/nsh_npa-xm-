@@ -58,19 +58,158 @@ input {
 	width: 85%;
 }
 
-input:not ([type=button] ) {
-	font-size: .875rem;
-	line-height: 1.6;
-	padding: 12px 20px;
-	-webkit-transition: all .2s;
-	transition: all .2s;
-	color: #666;
-	border: 1px solid #dce4e6;
-	border-radius: 3px;
-	outline: 0;
-	background: #f3f6f8
-}
+input
 
+
+:not
+
+ 
+
+(
+[
+type
+=
+button
+]
+
+ 
+
+)
+{
+font-size
+
+
+:
+
+ 
+
+.875rem
+
+
+;
+line-height
+
+
+:
+
+ 
+
+1
+.6
+
+
+;
+padding
+
+
+:
+
+ 
+
+12
+px
+
+ 
+
+20
+px
+
+
+;
+-webkit-transition
+
+
+:
+
+ 
+
+all
+
+ 
+
+.2s
+
+
+;
+transition
+
+
+:
+
+ 
+
+all
+
+ 
+
+.2s
+
+
+;
+color
+
+
+:
+
+ 
+
+#666
+
+
+;
+border
+
+
+:
+
+ 
+
+1
+px
+
+ 
+
+solid
+
+ 
+
+#dce4e6
+
+
+;
+border-radius
+
+
+:
+
+ 
+
+3
+px
+
+
+;
+outline
+
+
+:
+
+ 
+
+0;
+background
+
+
+:
+
+ 
+
+#f3f6f8
+
+
+
+
+}
 .btn {
 	padding: 10px 14px;
 }

@@ -33,10 +33,42 @@
 	content: "\e001";
 }
 
-.footable.breakpoint>tbody>tr:hover:not (.footable-row-detail ) {
-	cursor: pointer;
-}
+.footable
 
+
+.breakpoint
+>
+tbody
+>
+tr
+
+
+:hover
+
+
+:not
+
+ 
+
+(
+.footable-row-detail
+
+ 
+
+)
+{
+cursor
+
+
+:
+
+ 
+
+pointer
+
+
+;
+}
 .footable.breakpoint>tbody>tr>td.footable-cell-detail {
 	background: #eee;
 	border-top: none;

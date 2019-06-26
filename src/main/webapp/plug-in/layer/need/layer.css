@@ -62,11 +62,37 @@
 
 100%{
 opacity
+
+
+
+
 :
-1;-webkit-transform
+
+
+
+
+1;
+-webkit-transform
+
+
+
+
 :scale(1)
-;transform
+
+
+
+
+;
+transform
+
+
+
+
 :scale(1)
+
+
+
+
 }
 }
 .layermanim {
@@ -145,7 +171,15 @@ opacity
 
 40%{
 -webkit-transform
+
+
+
+
 :scale(1)
+
+
+
+
 }
 }
 @
@@ -156,9 +190,26 @@ keyframes bouncedelay { 0%,100%,80%{
 
 40%{
 transform
+
+
+
+
 :scale(1)
-;-webkit-transform
+
+
+
+
+;
+-webkit-transform
+
+
+
+
 :scale(1)
+
+
+
+
 }
 }
 .layermbox2 .layermcont i:first-child {

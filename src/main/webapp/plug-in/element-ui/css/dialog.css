@@ -154,7 +154,15 @@ keyframes v-modal-out { 100%{
 -webkit-transform
 
 
+
+
+
+
 :translate3d
+
+
+
+
 
 
 (0
@@ -163,7 +171,15 @@ keyframes v-modal-out { 100%{
 transform
 
 
+
+
+
+
 :translate3d
+
+
+
+
 
 
 (0
@@ -172,7 +188,15 @@ transform
 opacity
 
 
+
+
+
+
 :
+
+
+
+
 
 
 1
@@ -189,7 +213,15 @@ keyframes dialog-fade-in { 0%{
 -webkit-transform
 
 
+
+
+
+
 :translate3d
+
+
+
+
 
 
 (0
@@ -198,7 +230,15 @@ keyframes dialog-fade-in { 0%{
 transform
 
 
+
+
+
+
 :translate3d
+
+
+
+
 
 
 (0
@@ -207,7 +247,15 @@ transform
 opacity
 
 
+
+
+
+
 :
+
+
+
+
 
 
 1
@@ -224,7 +272,15 @@ opacity
 -webkit-transform
 
 
+
+
+
+
 :translate3d
+
+
+
+
 
 
 (0
@@ -236,7 +292,15 @@ px
 transform
 
 
+
+
+
+
 :translate3d
+
+
+
+
 
 
 (0
@@ -248,7 +312,15 @@ px
 opacity
 
 
+
+
+
+
 :
+
+
+
+
 
 
 0
@@ -264,7 +336,15 @@ keyframes dialog-fade-out { 0%{
 -webkit-transform
 
 
+
+
+
+
 :translate3d
+
+
+
+
 
 
 (0
@@ -276,7 +356,15 @@ px
 transform
 
 
+
+
+
+
 :translate3d
+
+
+
+
 
 
 (0
@@ -288,7 +376,15 @@ px
 opacity
 
 
+
+
+
+
 :
+
+
+
+
 
 
 0

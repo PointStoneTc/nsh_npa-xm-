@@ -597,7 +597,7 @@ a:hover, a:active, a:focus {
 		border-bottom-right-radius: 4px
 	}
 	.sidebar-mini.sidebar-collapse .sidebar-menu>li:hover>a>span:not (.pull-right
-		), .sidebar-mini.sidebar-collapse .sidebar-menu>li:hover>.treeview-menu
+		 ), .sidebar-mini.sidebar-collapse .sidebar-menu>li:hover>.treeview-menu
 		{
 		display: block !important;
 		position: absolute;

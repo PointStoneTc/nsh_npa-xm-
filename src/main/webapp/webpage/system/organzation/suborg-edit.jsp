@@ -32,7 +32,7 @@
 			<tr>
 				<td align="right" style="width: 30%; height: 30px"><label
 					class="Validform_label"> 编码: </label></td>
-				<td class="value">${depart.orgCode } <input id="orgCode"
+				<td class="value">${depart.orgCode }<input id="orgCode"
 					name="orgCode" value="${depart.orgCode }" type="hidden" />
 				</td>
 			</tr>

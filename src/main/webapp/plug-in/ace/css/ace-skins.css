@@ -655,75 +655,165 @@
 }
 
 .skin-1
+
+
  
+
+
 .navbar
+
+
  
+
+
 .navbar-toggle
+
+
+
+
 .display
 ,
 .skin-1
+
+
  
+
+
 .navbar
+
+
  
+
+
 .navbar-toggle
+
+
+
+
 [
 data-toggle
 =
 collapse
 ]
+
+
+
+
 :not
 
+
+
 	
+
+
 (
 .collapsed
+
+
  
+
+
 )
 {
 background-color
-:
- 
-#3384b3
-;
 
-	
-box-shadow
+
+
+
 :
+
+
  
+
+
+#3384b3
+
+
+
+
+;
+box-shadow
+
+
+
+
+:
+
+
+ 
+
+
 inset
+
+
  
+
+
 1
 px
+
+
  
+
+
 1
 px
+
+
  
+
+
 2
 px
+
+
  
+
+
 0
 rgba
+
+
+
+
 (0
 ,
 0,
 0,
 0
 .25
-);
 
-	
+
+
+
+);
 border-color
+
+
+
+
 :
+
+
  
+
+
 rgba
+
+
+
+
 (255
 ,
 255,
 255,
 0
 .35
+
+
+
+
 );
-
-
 }
 @media only screen and (min-width: 768px) {
 	.skin-1 .container.main-container:before {
@@ -1168,7 +1258,7 @@ rgba
 	.skin-2 .nav-list>li.active.highlight .badge.badge-transparent, .skin-2 .nav-list>li:hover:not
 	 (.active ) >a .label.label-transparent, .skin-2 .nav-list>li.hover-show:not
 	 (.active ) >a .label.label-transparent, .skin-2 .nav-list>li.open:not 
-	(.active
+	 (.active
 	 ) >a .label.label-transparent, .skin-2 .nav-list>li.active.highlight .label.label-transparent
 	{
 	color: rgba(255, 255, 255, 0.8) !important;
@@ -2141,7 +2231,7 @@ rgba
 }
 
 .skin-2 .sidebar.menu-min .nav-list>li.active:not (.highlight ) >a:not 
-	(.dropdown-toggle
+	 (.dropdown-toggle
 	 ) >.menu-text {
 	border-width: 1px;
 	border-top-color: #555555;
@@ -2694,75 +2784,165 @@ rgba
 }
 
 .skin-2
+
+
  
+
+
 .navbar
+
+
  
+
+
 .navbar-toggle
+
+
+
+
 .display
 ,
 .skin-2
+
+
  
+
+
 .navbar
+
+
  
+
+
 .navbar-toggle
+
+
+
+
 [
 data-toggle
 =
 collapse
 ]
+
+
+
+
 :not
 
+
+
 	
+
+
 (
 .collapsed
+
+
  
+
+
 )
 {
 background-color
-:
- 
-#d2588b
-;
 
-	
-box-shadow
+
+
+
 :
+
+
  
+
+
+#d2588b
+
+
+
+
+;
+box-shadow
+
+
+
+
+:
+
+
+ 
+
+
 inset
+
+
  
+
+
 1
 px
+
+
  
+
+
 1
 px
+
+
  
+
+
 2
 px
+
+
  
+
+
 0
 rgba
+
+
+
+
 (0
 ,
 0,
 0,
 0
 .25
-);
 
-	
+
+
+
+);
 border-color
+
+
+
+
 :
+
+
  
+
+
 rgba
+
+
+
+
 (255
 ,
 255,
 255,
 0
 .35
+
+
+
+
 );
-
-
 }
 @media only screen and (min-width: 768px) {
 	.skin-2 .container.main-container:before {
@@ -3188,31 +3368,71 @@ rgba
 }
 
 .skin-3
+
+
  
+
+
 .infobox-container
+
+
  
+
+
 .infobox
+
+
+
+
 :not
+
+
  
+
+
 (
 .infobox-dark
+
+
  
+
+
 )
 {
 border-style
+
+
+
+
 :
+
+
  
+
+
 solid
-;
 
-	
+
+
+
+;
 background-color
+
+
+
+
 :
+
+
  
+
+
 transparent
+
+
+
+
 ;
-
-
 }
 .skin-3 .nav-list>li.active:after {
 	display: none;
@@ -3534,50 +3754,110 @@ transparent
 }
 
 .skin-3
+
+
  
+
+
 .navbar
+
+
  
+
+
 .navbar-toggle
+
+
+
+
 .display
 ,
 .skin-3
+
+
  
+
+
 .navbar
+
+
  
+
+
 .navbar-toggle
+
+
+
+
 [
 data-toggle
 =
 collapse
 ]
+
+
+
+
 :not
 
+
+
 	
+
+
 (
 .collapsed
+
+
  
+
+
 )
 {
 background-color
-:
- 
-#507899
-;
 
-	
-border-color
+
+
+
 :
+
+
  
+
+
+#507899
+
+
+
+
+;
+border-color
+
+
+
+
+:
+
+
+ 
+
+
 rgba
+
+
+
+
 (255
 ,
 255,
 255,
 0
 .3
+
+
+
+
 );
-
-
 }
 .skin-3 .breadcrumbs {
 	border-width: 0;

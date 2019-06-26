@@ -11,17 +11,41 @@
 }
 
 .el-select-group__wrap
+
+
+
+
 :not
+
+
  
+
+
 (
 :last-of-type
+
+
  
+
+
 ){
 padding-bottom
+
+
+
+
 :
+
+
  
+
+
 24
 px
+
+
+
+
 
 
 }

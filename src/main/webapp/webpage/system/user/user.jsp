@@ -93,7 +93,8 @@
 				</label></td>
 				<td class="value" width="10%"><input id="realName"
 					class="inputxt" name="realName" value="${user.realName }"
-					maxlength="25" datatype="s2-25" /> <span class="Validform_checktip"><t:mutiLang
+					maxlength="25" datatype="s2-25" /> <span
+					class="Validform_checktip"><t:mutiLang
 							langKey="fill.realname" /></span></td>
 			</tr>
 			<c:if test="${user.id==null }">
@@ -142,12 +143,13 @@
 							langKey="common.role" />:
 				</label></td>
 				<td class="value" nowrap><input id="roleid" name="roleid"
-					type="hidden" value="${id}" /> <input name="roleName" id="roleName"
-					class="inputxt" value="${roleName }" readonly="readonly"
-					datatype="*" /> <t:choose hiddenName="roleid" hiddenid="id"
-						textname="roleName" url="userController.do?roles" name="roleList"
-						icon="icon-search" title="common.role.list" isclear="true"
-						isInit="true"></t:choose> <span class="Validform_checktip"><t:mutiLang
+					type="hidden" value="${id}" /> <input name="roleName"
+					id="roleName" class="inputxt" value="${roleName }"
+					readonly="readonly" datatype="*" /> <t:choose hiddenName="roleid"
+						hiddenid="id" textname="roleName" url="userController.do?roles"
+						name="roleList" icon="icon-search" title="common.role.list"
+						isclear="true" isInit="true"></t:choose> <span
+					class="Validform_checktip"><t:mutiLang
 							langKey="role.muti.select" /></span></td>
 			</tr>
 			<tr>

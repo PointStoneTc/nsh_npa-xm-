@@ -1,49 +1,91 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@include file="/context/mytags.jsp"%>
 <t:base type="jquery,easyui,tools,DatePicker,autocomplete"></t:base>
 <div class="easyui-layout" fit="true">
 	<div region="center" style="padding: 0px; border: 0px">
-		<t:datagrid name="jeecgDemoList" checkbox="true" sortName="birthday,name" pagination="true" fitColumns="false" title="jeecg_demo" superQuery="true"
-			actionUrl="jeecgListDemoController.do?datagrid" idField="id" fit="true" queryMode="group" filter="true">
-			<t:dgCol title="id" field="id" hidden="true" queryMode="group" width="120"></t:dgCol>
-			<t:dgCol title="名称" frozenColumn="true" popup="true" dictionary="user_msg,name@email,account@realname" field="name" query="true" autocomplete="true" width="120"
+		<t:datagrid name="jeecgDemoList" checkbox="true"
+			sortName="birthday,name" pagination="true" fitColumns="false"
+			title="jeecg_demo" superQuery="true"
+			actionUrl="jeecgListDemoController.do?datagrid" idField="id"
+			fit="true" queryMode="group" filter="true">
+			<t:dgCol title="id" field="id" hidden="true" queryMode="group"
+				width="120"></t:dgCol>
+			<t:dgCol title="名称" frozenColumn="true" popup="true"
+				dictionary="user_msg,name@email,account@realname" field="name"
+				query="true" autocomplete="true" width="120"
 				extend="{style:'width:120px'}"></t:dgCol>
 
 			<!-- 字段 formatterjs 例子 -->
-			<t:dgCol title="年龄" frozenColumn="true" extend="{style:'width:70px'}" formatterjs="formatAgeFun" style="background-color:#3a87ad_50,background-color:#f89406_100"
+			<t:dgCol title="年龄" frozenColumn="true" extend="{style:'width:70px'}"
+				formatterjs="formatAgeFun"
+				style="background-color:#3a87ad_50,background-color:#f89406_100"
 				editor="numberbox" field="age" query="true" width="120"></t:dgCol>
 
-			<t:dgCol title="生日" hidden="true" field="birthday" formatter="yyyy-MM-dd" queryMode="group" width="120"></t:dgCol>
-			<t:dgCol title="部门" frozenColumn="true" field="depId" query="true" queryMode="single" dictionary="t_s_depart,id,departname" width="120"></t:dgCol>
+			<t:dgCol title="生日" hidden="true" field="birthday"
+				formatter="yyyy-MM-dd" queryMode="group" width="120"></t:dgCol>
+			<t:dgCol title="部门" frozenColumn="true" field="depId" query="true"
+				queryMode="single" dictionary="t_s_depart,id,departname" width="120"></t:dgCol>
 			<t:dgCol title="部门编码(拓展字段)" frozenColumn="true" field="extField"></t:dgCol>
-			<t:dgCol title="性别" field="sex" frozenColumn="true" query="false" showMode="radio" dictionary="sex" width="120" extendParams="styler:fmtype"></t:dgCol>
+			<t:dgCol title="性别" field="sex" frozenColumn="true" query="false"
+				showMode="radio" dictionary="sex" width="120"
+				extendParams="styler:fmtype"></t:dgCol>
 			<t:dgCol title="电话" field="phone" queryMode="group" width="120"></t:dgCol>
-			<t:dgCol title="工资" field="salary" query="false" queryMode="group" width="120"></t:dgCol>
-			<t:dgCol title="创建日期" field="createDate" formatter="yyyy-MM-dd" query="true" queryMode="group" editor="datebox" width="120"></t:dgCol>
+			<t:dgCol title="工资" field="salary" query="false" queryMode="group"
+				width="120"></t:dgCol>
+			<t:dgCol title="创建日期" field="createDate" formatter="yyyy-MM-dd"
+				query="true" queryMode="group" editor="datebox" width="120"></t:dgCol>
 			<!-- 列表查询条件popup例子 -->
 			<t:dgCol title="邮箱" field="email" query="true" width="120"></t:dgCol>
-			<t:dgCol title="入职状态" field="status" query="false" extend="{style:{width:'300px';color:'red'};datatype:'*';}" defaultVal='N' dictionary="sf_yn" width="80"></t:dgCol>
-			<t:dgCol title="个人介绍" field="content" hidden="true" queryMode="group" width="500"></t:dgCol>
-			<t:dgCol title="头像" field="touxiang" queryMode="group" formatterjs="statusFmt" width="60"></t:dgCol>
-			<t:dgCol title="创建人id" field="createBy" hidden="true" queryMode="group" width="120"></t:dgCol>
-			<t:dgCol title="创建人" field="createName" hidden="true" queryMode="group" width="120"></t:dgCol>
-			<t:dgCol title="修改人id" field="updateBy" hidden="true" queryMode="group" width="120"></t:dgCol>
-			<t:dgCol title="修改时间" field="updateDate" formatter="yyyy-MM-dd" hidden="true" queryMode="group" width="120"></t:dgCol>
-			<t:dgCol title="修改人" field="updateName" hidden="true" queryMode="group" width="120"></t:dgCol>
+			<t:dgCol title="入职状态" field="status" query="false"
+				extend="{style:{width:'300px';color:'red'};datatype:'*';}"
+				defaultVal='N' dictionary="sf_yn" width="80"></t:dgCol>
+			<t:dgCol title="个人介绍" field="content" hidden="true" queryMode="group"
+				width="500"></t:dgCol>
+			<t:dgCol title="头像" field="touxiang" queryMode="group"
+				formatterjs="statusFmt" width="60"></t:dgCol>
+			<t:dgCol title="创建人id" field="createBy" hidden="true"
+				queryMode="group" width="120"></t:dgCol>
+			<t:dgCol title="创建人" field="createName" hidden="true"
+				queryMode="group" width="120"></t:dgCol>
+			<t:dgCol title="修改人id" field="updateBy" hidden="true"
+				queryMode="group" width="120"></t:dgCol>
+			<t:dgCol title="修改时间" field="updateDate" formatter="yyyy-MM-dd"
+				hidden="true" queryMode="group" width="120"></t:dgCol>
+			<t:dgCol title="修改人" field="updateName" hidden="true"
+				queryMode="group" width="120"></t:dgCol>
 			<t:dgCol title="操作" field="opt" width="150"></t:dgCol>
-			<t:dgDelOpt title="删除" url="jeecgListDemoController.do?doDel&id={id}" urlclass="ace_button" urlfont="fa-trash-o" />
-			<t:dgFunOpt exp="status#eq#N" title="审核" funname="szqm(id)" urlclass="ace_button" urlfont="fa-check" />
-			<t:dgToolBar title="录入" icon="icon-add" url="jeecgListDemoController.do?goAdd" funname="add" width="770" height="500"></t:dgToolBar>
-			<t:dgToolBar title="弹出TAB表单" inGroup="true" icon="icon-add" url="jeecgListDemoController.do?goAdd" funname="addbytab" width="770" height="500"></t:dgToolBar>
-			<t:dgToolBar title="录入-提交按钮" inGroup="true" icon="icon-add" url="jeecgListDemoController.do?addWithbtn" funname="addWithbtn" width="770"></t:dgToolBar>
-			<t:dgToolBar title="编辑" icon="icon-edit" url="jeecgListDemoController.do?goUpdate" funname="update" width="770"></t:dgToolBar>
-			<t:dgToolBar title="批量删除" icon="icon-remove" url="jeecgListDemoController.do?doBatchDel" funname="deleteALLSelect"></t:dgToolBar>
-			<t:dgToolBar title="查看" inGroup="true" icon="icon-search" url="jeecgListDemoController.do?goUpdate" funname="detail" width="770"></t:dgToolBar>
+			<t:dgDelOpt title="删除" url="jeecgListDemoController.do?doDel&id={id}"
+				urlclass="ace_button" urlfont="fa-trash-o" />
+			<t:dgFunOpt exp="status#eq#N" title="审核" funname="szqm(id)"
+				urlclass="ace_button" urlfont="fa-check" />
+			<t:dgToolBar title="录入" icon="icon-add"
+				url="jeecgListDemoController.do?goAdd" funname="add" width="770"
+				height="500"></t:dgToolBar>
+			<t:dgToolBar title="弹出TAB表单" inGroup="true" icon="icon-add"
+				url="jeecgListDemoController.do?goAdd" funname="addbytab"
+				width="770" height="500"></t:dgToolBar>
+			<t:dgToolBar title="录入-提交按钮" inGroup="true" icon="icon-add"
+				url="jeecgListDemoController.do?addWithbtn" funname="addWithbtn"
+				width="770"></t:dgToolBar>
+			<t:dgToolBar title="编辑" icon="icon-edit"
+				url="jeecgListDemoController.do?goUpdate" funname="update"
+				width="770"></t:dgToolBar>
+			<t:dgToolBar title="批量删除" icon="icon-remove"
+				url="jeecgListDemoController.do?doBatchDel"
+				funname="deleteALLSelect"></t:dgToolBar>
+			<t:dgToolBar title="查看" inGroup="true" icon="icon-search"
+				url="jeecgListDemoController.do?goUpdate" funname="detail"
+				width="770"></t:dgToolBar>
 			<t:dgToolBar title="导入" icon="icon-put" funname="ImportXls"></t:dgToolBar>
 			<t:dgToolBar title="导出" icon="icon-putout" funname="ExportXls"></t:dgToolBar>
-			<t:dgToolBar title="模板下载" inGroup="true" icon="icon-putout" funname="ExportXlsByT"></t:dgToolBar>
-			<t:dgToolBar operationCode="print" title="打印" inGroup="true" icon="icon-print" url="jeecgListDemoController.do?print" funname="detail" width="610" height="330"></t:dgToolBar>
-			<t:dgToolBar title="加载百度" inGroup="true" icon="icon-print" url="#" funname="testReloadPage"></t:dgToolBar>
+			<t:dgToolBar title="模板下载" inGroup="true" icon="icon-putout"
+				funname="ExportXlsByT"></t:dgToolBar>
+			<t:dgToolBar operationCode="print" title="打印" inGroup="true"
+				icon="icon-print" url="jeecgListDemoController.do?print"
+				funname="detail" width="610" height="330"></t:dgToolBar>
+			<t:dgToolBar title="加载百度" inGroup="true" icon="icon-print" url="#"
+				funname="testReloadPage"></t:dgToolBar>
 			<%-- <t:dgToolBar  title="加载新页面" icon="icon-print" funname="addNewPage(id)"></t:dgToolBar> --%>
 		</t:datagrid>
 	</div>

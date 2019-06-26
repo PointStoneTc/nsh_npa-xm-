@@ -60,10 +60,40 @@
 		to(rgba(0, 0, 255, 0.5)));
 }
 
-.conc-wrapper input:not ([type='radio'] ){
-	width: 157px;
-}
+.conc-wrapper
 
+ 
+
+input
+
+
+:not
+
+ 
+
+(
+[
+type
+=
+'radio'
+]
+
+ 
+
+){
+width
+
+
+:
+
+ 
+
+157
+px
+
+
+;
+}
 .conc-wrapper select {
 	width: 157px !important;
 }

@@ -95,7 +95,15 @@ keyframes loading-rotate { 100%{
 stroke-dasharray
 
 
+
+
+
+
 :
+
+
+
+
 
 
 90
@@ -104,11 +112,23 @@ stroke-dasharray
 stroke-dashoffset
 
 
+
+
+
+
 :
+
+
+
+
 
 
 -40
 px
+
+
+
+
 
 
 }
@@ -116,7 +136,15 @@ px
 stroke-dasharray
 
 
+
+
+
+
 :
+
+
+
+
 
 
 90
@@ -125,11 +153,23 @@ stroke-dasharray
 stroke-dashoffset
 
 
+
+
+
+
 :
+
+
+
+
 
 
 -120
 px
+
+
+
+
 
 
 }
@@ -143,7 +183,15 @@ keyframes loading-dash { 0%{
 stroke-dasharray
 
 
+
+
+
+
 :
+
+
+
+
 
 
 90
@@ -152,11 +200,23 @@ stroke-dasharray
 stroke-dashoffset
 
 
+
+
+
+
 :
+
+
+
+
 
 
 -40
 px
+
+
+
+
 
 
 }
@@ -164,7 +224,15 @@ px
 stroke-dasharray
 
 
+
+
+
+
 :
+
+
+
+
 
 
 90
@@ -173,11 +241,23 @@ stroke-dasharray
 stroke-dashoffset
 
 
+
+
+
+
 :
+
+
+
+
 
 
 -120
 px
+
+
+
+
 
 
 }
