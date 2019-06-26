@@ -1,8 +1,7 @@
 <%--
 update---Author:chenj  Date:20160729 for：增加图标样式预览页面
  --%>
-<%@ page language="java" contentType="text/html; charset=utf-8"
-	pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ page import="java.io.*"%>
 <%@ page import="java.util.ArrayList,java.util.List"%>
 <%@include file="/context/mytags.jsp"%>
@@ -82,14 +81,11 @@ update---Author:chenj  Date:20160729 for：增加图标样式预览页面
 <%
 	if(param!=null&&param.equals("ace")){
 %>
-<link rel="stylesheet"
-	href="<%=basePath %>/plug-in/ace/assets/css/font-awesome.min.css" />
+<link rel="stylesheet" href="<%=basePath %>/plug-in/ace/assets/css/font-awesome.min.css" />
 <%}else if(param!=null&&param.equals("hplus")){ %>
-<link rel="stylesheet"
-	href="<%=basePath %>/plug-in/hplus/css/font-awesome.min.css?v=4.4.0" />
+<link rel="stylesheet" href="<%=basePath %>/plug-in/hplus/css/font-awesome.min.css?v=4.4.0" />
 <%}else if(param!=null&&param.equals("urlfont")){ %>
-<link rel="stylesheet"
-	href="<%=basePath %>/plug-in/ace/css/font-awesome.css" />
+<link rel="stylesheet" href="<%=basePath %>/plug-in/ace/css/font-awesome.css" />
 <%} %>
 
 <title>菜单图标样式</title>

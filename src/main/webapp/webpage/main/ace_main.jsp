@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include file="/context/mytags.jsp"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -7,17 +6,14 @@
 <meta charset="utf-8" />
 <title><t:mutiLang langKey="jeect.platform" /></title>
 <meta name="keywords" content="<t:mutiLang langKey="jeect.platform"/>" />
-<meta name="description"
-	content="<t:mutiLang langKey="jeect.platform"/>" />
+<meta name="description" content="<t:mutiLang langKey="jeect.platform"/>" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="stylesheet" href="plug-in/jquery/jquery.contextmenu.css" />
 <link rel="shortcut icon" href="images/favicon.ico">
 <!-- basic styles -->
 <link href="plug-in/ace/assets/css/bootstrap.min.css" rel="stylesheet" />
-<link href="plug-in/hplus/css/font-awesome.min.css?v=4.4.0"
-	rel="stylesheet">
-<link rel="stylesheet"
-	href="plug-in/ace/assets/css/font-awesome.min.css" />
+<link href="plug-in/hplus/css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+<link rel="stylesheet" href="plug-in/ace/assets/css/font-awesome.min.css" />
 
 <!--[if IE 7]>
 		  <link rel="stylesheet" href="plug-in/ace/assets/css/font-awesome-ie7.min.css" />
@@ -70,8 +66,7 @@
 
 		<div class="navbar-container" id="navbar-container">
 			<div class="navbar-header pull-left">
-				<a href="#" class="navbar-brand"> <small> <i
-						class="icon-leaf"></i> JEECG 微云快速开发平台
+				<a href="#" class="navbar-brand"> <small> <i class="icon-leaf"></i> JEECG 微云快速开发平台
 				</small>
 				</a>
 				<!-- /.brand -->
@@ -154,90 +149,72 @@
 							</ul>
 						</li>-->
 
-					<li class="purple"><a data-toggle="dropdown"
-						class="dropdown-toggle" href="#"> <i
-							class="icon-bell-alt icon-animated-bell"></i> <span
-							class="badge badge-important" id="noticeCount">0</span>
+					<li class="purple"><a data-toggle="dropdown" class="dropdown-toggle" href="#"> <i
+							class="icon-bell-alt icon-animated-bell"></i> <span class="badge badge-important" id="noticeCount">0</span>
 					</a>
 
-						<ul
-							class="pull-right dropdown-navbar navbar-pink dropdown-menu dropdown-caret dropdown-close">
-							<li class="dropdown-header" id="noticeTip"><i
-								class="icon-warning-sign"></i> 0条公告</li>
+						<ul class="pull-right dropdown-navbar navbar-pink dropdown-menu dropdown-caret dropdown-close">
+							<li class="dropdown-header" id="noticeTip"><i class="icon-warning-sign"></i> 0条公告</li>
 							<li>
 								<ul id="noticeContent">ajax加载
 								</ul>
 							</li>
 
 							<li><a href="#" id="noticeContentLink"> </a></li>
-							<li><a href="javascript:goAllNotice();" id="noticeFooter">
-									查看全部 <i class="icon-arrow-right"></i>
+							<li><a href="javascript:goAllNotice();" id="noticeFooter"> 查看全部 <i class="icon-arrow-right"></i>
 							</a></li>
 						</ul></li>
 
-					<li class="green"><a data-toggle="dropdown"
-						class="dropdown-toggle" href="#"> <i
-							class="icon-envelope icon-animated-vertical"></i> <span
-							class="badge badge-success" id="messageCount">0</span>
+					<li class="green"><a data-toggle="dropdown" class="dropdown-toggle" href="#"> <i
+							class="icon-envelope icon-animated-vertical"></i> <span class="badge badge-success" id="messageCount">0</span>
 					</a>
 
-						<ul
-							class="pull-right dropdown-navbar dropdown-menu dropdown-caret dropdown-close">
-							<li class="dropdown-header" id="messageTip"><i
-								class="icon-envelope-alt"></i> 0条消息</li>
+						<ul class="pull-right dropdown-navbar dropdown-menu dropdown-caret dropdown-close">
+							<li class="dropdown-header" id="messageTip"><i class="icon-envelope-alt"></i> 0条消息</li>
 
 							<li><a href="#" id="messageContent"> </a></li>
 
 
 
-							<li><a href="javascript:goAllMessage();" id="messageFooter">
-									查看所有消息 <i class="icon-arrow-right"></i>
+							<li><a href="javascript:goAllMessage();" id="messageFooter"> 查看所有消息 <i class="icon-arrow-right"></i>
 							</a></li>
 						</ul></li>
 
-					<li class="light-blue"><a data-toggle="dropdown" href="#"
-						class="dropdown-toggle" onclick="bindFrameClick()"> <img
-							class="nav-user-photo" src="plug-in/ace/avatars/avatar2.png"
-							alt="Jason's Photo" /> <span class="user-info"> <small>${userName }</small>
+					<li class="light-blue"><a data-toggle="dropdown" href="#" class="dropdown-toggle" onclick="bindFrameClick()">
+							<img class="nav-user-photo" src="plug-in/ace/avatars/avatar2.png" alt="Jason's Photo" /> <span class="user-info">
+								<small>${userName }</small>
 								<span style="color: #666633">${roleName }</span>
-						</span> <i class="icon-caret-down"></i>
+							</span> <i class="icon-caret-down"></i>
 					</a>
 
-						<ul
-							class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+						<ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
 							<li><a
 								href="javascript:add('<t:mutiLang langKey="common.change.password"/>','userController.do?changepassword','',550,200)">
-									<i class="icon-cog"></i> <t:mutiLang
-										langKey="common.change.password" />
+									<i class="icon-cog"></i> <t:mutiLang langKey="common.change.password" />
 							</a></li>
 
-							<li><a
-								href="javascript:openwindow('<t:mutiLang langKey="common.profile"/>','userController.do?userinfo')">
+							<li><a href="javascript:openwindow('<t:mutiLang langKey="common.profile"/>','userController.do?userinfo')">
 									<i class="icon-user"></i> <t:mutiLang langKey="common.profile" />
 							</a></li>
 							<li><a
 								href="javascript:openwindow('<t:mutiLang langKey="common.ssms.getSysInfos"/>','tSSmsController.do?getSysInfos')">
-									<i class="icon-cog"></i> <t:mutiLang
-										langKey="common.ssms.getSysInfos" />
+									<i class="icon-cog"></i> <t:mutiLang langKey="common.ssms.getSysInfos" />
 							</a></li>
 							<li><a
 								href="javascript:add('<t:mutiLang langKey="common.change.style"/>','userController.do?changestyle','',550,250)">
 									<i class="icon-cog"></i> <t:mutiLang langKey="common.my.style" />
 							</a></li>
 
-							<li><a href="http://yun.jeecg.org" target="_blank"> <i
-									class="icon-cloud"></i> 云应用中心
+							<li><a href="http://yun.jeecg.org" target="_blank"> <i class="icon-cloud"></i> 云应用中心
 							</a></li>
 
-							<li><a href="javascript:clearLocalstorage()"> <i
-									class="icon-cog"></i> <t:mutiLang
+							<li><a href="javascript:clearLocalstorage()"> <i class="icon-cog"></i> <t:mutiLang
 										langKey="common.clear.localstorage" />
 							</a></li>
 
 							<li class="divider"></li>
 
-							<li><a href="javascript:logout()"> <i class="icon-off"></i>
-									<t:mutiLang langKey="common.logout" />
+							<li><a href="javascript:logout()"> <i class="icon-off"></i> <t:mutiLang langKey="common.logout" />
 							</a></li>
 						</ul></li>
 				</ul>
@@ -254,8 +231,7 @@
 			</script>
 
 		<div class="main-container-inner">
-			<a class="menu-toggler" id="menu-toggler" href="#"> <span
-				class="menu-text"></span>
+			<a class="menu-toggler" id="menu-toggler" href="#"> <span class="menu-text"></span>
 			</a>
 
 			<div class="sidebar" id="sidebar">
@@ -283,27 +259,26 @@
 					</div>
 
 					<div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
-						<span class="btn btn-success"></span> <span class="btn btn-info"></span>
+						<span class="btn btn-success"></span>
+						<span class="btn btn-info"></span>
 
-						<span class="btn btn-warning"></span> <span class="btn btn-danger"></span>
+						<span class="btn btn-warning"></span>
+						<span class="btn btn-danger"></span>
 					</div>
 				</div>
 				<!-- #sidebar-shortcuts -->
 
 				<ul class="nav nav-list">
 					<li class="active"><a
-						href="javascript:addTabs({id:'home',title:'首页',close: false,url: 'loginController.do?hplushome'});">
-							<i class="fa fa-tachometer"></i> <span class="menu-text">
-								首页 </span>
+						href="javascript:addTabs({id:'home',title:'首页',close: false,url: 'loginController.do?hplushome'});"> <i
+							class="fa fa-tachometer"></i> <span class="menu-text"> 首页 </span>
 					</a></li>
 					<t:menu style="ace" menuFun="${menuMap}"></t:menu>
 				</ul>
 				<!-- /.nav-list -->
 
 				<div class="sidebar-collapse" id="sidebar-collapse">
-					<i class="icon-double-angle-left"
-						data-icon1="icon-double-angle-left"
-						data-icon2="icon-double-angle-right"></i>
+					<i class="icon-double-angle-left" data-icon1="icon-double-angle-left" data-icon2="icon-double-angle-right"></i>
 				</div>
 
 				<script type="text/javascript">
@@ -314,9 +289,7 @@
 			<div class="main-content">
 				<div class="page-content">
 					<div class="row">
-						<div class="col-xs-12"
-							style="width: 99%; padding-left: 2px; padding-right: 2px;"
-							id="tabs">
+						<div class="col-xs-12" style="width: 99%; padding-left: 2px; padding-right: 2px;" id="tabs">
 							<ul class="nav nav-tabs" role="tablist">
 								<!-- <li class="active"><a href="#Index" role="tab" data-toggle="tab">首页</a></li> -->
 							</ul>
@@ -332,8 +305,7 @@
 			<!-- /.main-content -->
 
 			<div class="ace-settings-container" id="ace-settings-container">
-				<div class="btn btn-app btn-xs btn-warning ace-settings-btn"
-					id="ace-settings-btn">
+				<div class="btn btn-app btn-xs btn-warning ace-settings-btn" id="ace-settings-btn">
 					<i class="icon-cog bigger-150"></i>
 				</div>
 
@@ -351,33 +323,29 @@
 					</div>
 
 					<div>
-						<input type="checkbox" class="ace ace-checkbox-2"
-							id="ace-settings-navbar" /> <label class="lbl"
-							for="ace-settings-navbar"> 固定导航条</label>
+						<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-navbar" />
+						<label class="lbl" for="ace-settings-navbar"> 固定导航条</label>
 					</div>
 
 					<div>
-						<input type="checkbox" class="ace ace-checkbox-2"
-							id="ace-settings-sidebar" /> <label class="lbl"
-							for="ace-settings-sidebar"> 固定滑动条</label>
+						<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-sidebar" />
+						<label class="lbl" for="ace-settings-sidebar"> 固定滑动条</label>
 					</div>
 
 					<div>
-						<input type="checkbox" class="ace ace-checkbox-2"
-							id="ace-settings-breadcrumbs" /> <label class="lbl"
-							for="ace-settings-breadcrumbs">固定面包屑</label>
+						<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-breadcrumbs" />
+						<label class="lbl" for="ace-settings-breadcrumbs">固定面包屑</label>
 					</div>
 
 					<div>
-						<input type="checkbox" class="ace ace-checkbox-2"
-							id="ace-settings-rtl" /> <label class="lbl"
-							for="ace-settings-rtl">切换到左边</label>
+						<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-rtl" />
+						<label class="lbl" for="ace-settings-rtl">切换到左边</label>
 					</div>
 
 					<div>
-						<input type="checkbox" class="ace ace-checkbox-2"
-							id="ace-settings-add-container" /> <label class="lbl"
-							for="ace-settings-add-container"> 切换窄屏 <b></b>
+						<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-add-container" />
+						<label class="lbl" for="ace-settings-add-container">
+							切换窄屏 <b></b>
 						</label>
 					</div>
 				</div>
@@ -386,8 +354,7 @@
 		</div>
 		<!-- /.main-container-inner -->
 
-		<a href="#" id="btn-scroll-up"
-			class="btn-scroll-up btn btn-sm btn-inverse"> <i
+		<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse"> <i
 			class="icon-double-angle-up icon-only bigger-110"></i>
 		</a>
 	</div>
@@ -395,16 +362,13 @@
 
 
 	<div id="changestylePanel" style="display: none">
-		<form id="formobj" action="userController.do?savestyle" name="formobj"
-			method="post">
-			<table style="width: 550px" cellpadding="0" cellspacing="1"
-				class="formtable">
+		<form id="formobj" action="userController.do?savestyle" name="formobj" method="post">
+			<table style="width: 550px" cellpadding="0" cellspacing="1" class="formtable">
 				<tr>
 					<td>风格</td>
 				</tr>
 				<tr>
-					<td class="value"><input type="radio" value="default"
-						name="indexStyle" /> <span>经典风格</span></td>
+					<td class="value"><input type="radio" value="default" name="indexStyle" /> <span>经典风格</span></td>
 				</tr>
 				<!--
 			<tr>
@@ -412,16 +376,15 @@
 			</tr>
 			-->
 				<tr>
-					<td class="value"><input type="radio" value="shortcut"
-						name="indexStyle" /> <span>ShortCut风格</span></td>
+					<td class="value"><input type="radio" value="shortcut" name="indexStyle" /> <span>ShortCut风格</span></td>
 				</tr>
 				<tr>
-					<td class="value"><input type="radio" value="sliding"
-						name="indexStyle" /><span>Sliding云桌面</span></td>
+					<td class="value"><input type="radio" value="sliding" name="indexStyle" />
+					<span>Sliding云桌面</span></td>
 				</tr>
 				<tr>
-					<td class="value"><input type="radio" value="ace"
-						name="indexStyle" /><span>ACE平面风格</span></td>
+					<td class="value"><input type="radio" value="ace" name="indexStyle" />
+					<span>ACE平面风格</span></td>
 				</tr>
 			</table>
 		</form>
@@ -429,31 +392,28 @@
 	<div id="changepassword" style="display: none">
 
 		<input id="id" type="hidden" value="${user.id }">
-		<table style="width: 550px" cellpadding="0" cellspacing="1"
-			class="formtable">
+		<table style="width: 550px" cellpadding="0" cellspacing="1" class="formtable">
 			<tbody>
 				<tr>
 					<td align="right" width="20%"><span class="filedzt">原密码:</span></td>
-					<td class="value"><input id="password" type="password"
-						value="" name="password" class="inputxt" datatype="*"
-						errormsg="请输入原密码" /> <span class="Validform_checktip">
-							请输入原密码 </span></td>
+					<td class="value"><input id="password" type="password" value="" name="password" class="inputxt" datatype="*"
+						errormsg="请输入原密码" /> <span class="Validform_checktip"> 请输入原密码 </span></td>
 				</tr>
 				<tr>
 					<td align="right"><span class="filedzt">新密码:</span></td>
-					<td class="value"><input type="password" value=""
-						name="newpassword" class="inputxt" plugin="passwordStrength"
-						datatype="*6-18" errormsg="密码至少6个字符,最多18个字符！" /> <span
-						class="Validform_checktip"> 密码至少6个字符,最多18个字符！ </span> <span
-						class="passwordStrength" style="display: none;"> <b>密码强度：</b>
-							<span>弱</span><span>中</span><span class="last">强</span>
-					</span></td>
+					<td class="value"><input type="password" value="" name="newpassword" class="inputxt" plugin="passwordStrength"
+						datatype="*6-18" errormsg="密码至少6个字符,最多18个字符！" /> <span class="Validform_checktip"> 密码至少6个字符,最多18个字符！ </span> <span
+							class="passwordStrength" style="display: none;">
+							<b>密码强度：</b>
+							<span>弱</span>
+							<span>中</span>
+							<span class="last">强</span>
+						</span></td>
 				</tr>
 				<tr>
 					<td align="right"><span class="filedzt">重复密码:</span></td>
-					<td class="value"><input id="newpassword" type="password"
-						recheck="newpassword" datatype="*6-18" errormsg="两次输入的密码不一致！">
-						<span class="Validform_checktip"></span></td>
+					<td class="value"><input id="newpassword" type="password" recheck="newpassword" datatype="*6-18"
+						errormsg="两次输入的密码不一致！"> <span class="Validform_checktip"></span></td>
 				</tr>
 			</tbody>
 		</table>
@@ -485,8 +445,7 @@
 	<script src="plug-in/jquery-plugs/storage/jquery.storageapi.min.js"></script>
 	<script src="plug-in/ace/assets/js/ace-elements.min.js"></script>
 	<script src="plug-in/ace/assets/js/ace.min.js"></script>
-	<script type="text/javascript"
-		src="plug-in/ace/assets/js/bootstrap-tab.js"></script>
+	<script type="text/javascript" src="plug-in/ace/assets/js/bootstrap-tab.js"></script>
 	<script src="plug-in/jquery/jquery.contextmenu.js"></script>
 	<script src="plug-in/layer/layer.js"></script>
 	<script src="plug-in/ace/js/bootbox.js"></script>

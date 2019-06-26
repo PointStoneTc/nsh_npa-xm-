@@ -1,5 +1,4 @@
-<%@ page language="java" import="java.util.*"
-	contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" import="java.util.*" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include file="/context/mytags.jsp"%>
 
 <!DOCTYPE html>
@@ -9,10 +8,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" />
 <t:base type="jquery,tools"></t:base>
 <!-- 文件上传 -->
-<link rel="stylesheet" type="text/css"
-	href="plug-in/webuploader/custom.css"></link>
-<script type="text/javascript"
-	src="plug-in/webuploader/webuploader.min.js"></script>
+<link rel="stylesheet" type="text/css" href="plug-in/webuploader/custom.css"></link>
+<script type="text/javascript" src="plug-in/webuploader/webuploader.min.js"></script>
 <style>
 .upbtn:focus {
 	background-color: #51c3e5!imporatnt;

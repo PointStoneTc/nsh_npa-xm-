@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include file="/context/mytags.jsp"%>
 <!DOCTYPE html >
 <html>
@@ -62,25 +61,27 @@
 	} 
 </script>
 </head>
-<body style="overflow: hidden;" scroll="no"
-	data-options="fit:true,border:false" class="easyui-layout">
-	<div region="center" style="padding: 1px;"
-		data-options="fit:true,border:true">
+<body style="overflow: hidden;" scroll="no" data-options="fit:true,border:false" class="easyui-layout">
+	<div region="center" style="padding: 1px;" data-options="fit:true,border:true">
 		<table id="orgSelect" class="easyui-treegrid"
 			data-options="url:'departController.do?departgrid',idField:'id',treeField:'text',toolbar:'#tb',border:false,fitColumns:true,fit:true">
 			<thead>
 				<tr>
-					<th data-options="field:'text',width:200,formatter:formatName"><t:mutiLang
-							langKey="common.department.name" /></th>
-					<th data-options="field:'fieldMap.orgCode',width:80"><t:mutiLang
-							langKey="common.org.code" /></th>
-					<th
-						data-options="field:'fieldMap.orgType',width:80,formatter:formatType"><t:mutiLang
-							langKey="common.org.type" /></th>
-					<th data-options="field:'fieldMap.mobile',width:90"><t:mutiLang
-							langKey="common.mobile" /></th>
-					<th data-options="field:'fieldMap.address',width:200"><t:mutiLang
-							langKey="common.address" /></th>
+					<th data-options="field:'text',width:200,formatter:formatName">
+						<t:mutiLang langKey="common.department.name" />
+					</th>
+					<th data-options="field:'fieldMap.orgCode',width:80">
+						<t:mutiLang langKey="common.org.code" />
+					</th>
+					<th data-options="field:'fieldMap.orgType',width:80,formatter:formatType">
+						<t:mutiLang langKey="common.org.type" />
+					</th>
+					<th data-options="field:'fieldMap.mobile',width:90">
+						<t:mutiLang langKey="common.mobile" />
+					</th>
+					<th data-options="field:'fieldMap.address',width:200">
+						<t:mutiLang langKey="common.address" />
+					</th>
 				</tr>
 			</thead>
 		</table>

@@ -1,12 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include file="/context/mytags.jsp"%>
 <!DOCTYPE html >
 <html>
 <head>
 <title>组织机构集合</title>
-<link rel="stylesheet" type="text/css"
-	href="plug-in/ztree/css/zTreeStyle.css"></link>
+<link rel="stylesheet" type="text/css" href="plug-in/ztree/css/zTreeStyle.css"></link>
 <style>
 .inuptxt {
 	/* border: 1px solid #a5aeb6; */
@@ -25,10 +23,8 @@
 </head>
 <body>
 	<t:base type="jquery"></t:base>
-	<script type="text/javascript"
-		src="plug-in/ztree/js/jquery.ztree.core-3.5.min.js"></script>
-	<script type="text/javascript"
-		src="plug-in/ztree/js/jquery.ztree.excheck-3.5.min.js"></script>
+	<script type="text/javascript" src="plug-in/ztree/js/jquery.ztree.core-3.5.min.js"></script>
+	<script type="text/javascript" src="plug-in/ztree/js/jquery.ztree.excheck-3.5.min.js"></script>
 	<script type="text/javascript">
 	var setting = {
 	  check: {
@@ -95,8 +91,7 @@
 	});
 </script>
 	<!-- type="text" -->
-	<input id="input_txt" type="hidden" class="inuptxt"
-		value="${defaultName}" placeholder="请输入关键字搜索" />
+	<input id="input_txt" type="hidden" class="inuptxt" value="${defaultName}" placeholder="请输入关键字搜索" />
 	<input id="defaultName" type="hidden" value="${defaultName}">
 	<ul id="departSelect" class="ztree"></ul>
 </body>

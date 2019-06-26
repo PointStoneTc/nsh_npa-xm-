@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include file="/context/mytags.jsp"%>
 <!DOCTYPE html >
 <html>
@@ -52,20 +51,16 @@
 </head>
 <body style="overflow-x: hidden">
 	<table cellpadding="0" cellspacing="1" class="formtable">
-		<input id="documentTitle" type="hidden" name="documentTitle"
-			value="blank" />
+		<input id="documentTitle" type="hidden" name="documentTitle" value="blank" />
 		<input id="fileUrl" type="hidden" />
 		<input id="fileName" type="hidden" />
 		<input id="swfpath" type="hidden">
 		<tbody>
 			<tr>
 				<td align="right"><label class="Validform_label"></label></td>
-				<td class="value"><t:upload onUploadStart="myUploadStart"
-						name="instruction" dialog="false" multi="false" extend=""
-						queueID="instructionfile" view="false" auto="true"
-						uploader="cgUploadController.do?ajaxSaveFile"
-						onUploadSuccess="uploadSuccess" id="instruction"
-						formData="documentTitle"></t:upload></td>
+				<td class="value"><t:upload onUploadStart="myUploadStart" name="instruction" dialog="false" multi="false"
+						extend="" queueID="instructionfile" view="false" auto="true" uploader="cgUploadController.do?ajaxSaveFile"
+						onUploadSuccess="uploadSuccess" id="instruction" formData="documentTitle"></t:upload></td>
 			</tr>
 			<tr>
 				<td colspan="2" id="instructionfile" class="value"></td>

@@ -1,44 +1,37 @@
-<%@ page language="java" import="java.util.*"
-	contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" import="java.util.*" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include file="/context/mytags.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
 <title>我的机构管理</title>
 <t:base type="jquery,easyui,tools"></t:base>
-<link rel="stylesheet" href="plug-in/ztree/css/zTreeStyle.css"
-	type="text/css">
-<script type="text/javascript"
-	src="plug-in/ztree/js/jquery.ztree.core-3.5.min.js"></script>
+<link rel="stylesheet" href="plug-in/ztree/css/zTreeStyle.css" type="text/css">
+<script type="text/javascript" src="plug-in/ztree/js/jquery.ztree.core-3.5.min.js"></script>
 <script type="text/javascript" src="plug-in/ztree/js/ztreeCreator.js"></script>
 </head>
 <body>
 	<div class="easyui-layout" fit="true" scroll="no">
-		<div data-options="region:'west',title:'我的机构管理',split:true"
-			style="width: 200px; overflow: auto;">
+		<div data-options="region:'west',title:'我的机构管理',split:true" style="width: 200px; overflow: auto;">
 			<!-- update-begin--Author:Yandong  Date:20180402 for： TASK #2601 【严重样式问题】我的组织机构，在shortcut风格下样式有问题-->
 			<div style="width: 105px; margin-left: 8px; margin-top: 2px;">
-				<a icon="icon-add" class="easyui-linkbutton l-btn l-btn-plain"
-					onclick="addOneNode()"> <span class="bigger-110 no-text-shadow"
-					style="width: 50px;">添加公司</span>
+				<a icon="icon-add" class="easyui-linkbutton l-btn l-btn-plain" onclick="addOneNode()"> <span
+						class="bigger-110 no-text-shadow" style="width: 50px;">添加公司</span>
 				</a>
 			</div>
 			<!-- update-begin--Author:Yandong  Date:20180402 for： TASK #2601 【严重样式问题】我的组织机构，在shortcut风格下样式有问题-->
 			<div class="clear"></div>
 			<div id="orgTree" class="ztree"></div>
-			<input type="hidden" id="userName" name="userName"
-				value="${userName}" />
+			<input type="hidden" id="userName" name="userName" value="${userName}" />
 		</div>
 		<div data-options="region:'center'" title="">
 			<!-- <iframe width="100%" height="100%" id="center"  src="" style="border:1px #fff solid; background:#fff;"></iframe> -->
 			<div id="tt" tabPosition="top" border=flase
-				style="width: 100%; height: 100%; margin: 0px; padding: 0px; overflow-x: hidden; width: auto;"
-				class="easyui-tabs" fit="true"></div>
+				style="width: 100%; height: 100%; margin: 0px; padding: 0px; overflow-x: hidden; width: auto;" class="easyui-tabs"
+				fit="true"></div>
 		</div>
 
 		<div class="hidden">
-			<div id="orgMenu" class="easyui-menu"
-				data-options="onClick:menuHandler" style="width: 120px;">
+			<div id="orgMenu" class="easyui-menu" data-options="onClick:menuHandler" style="width: 120px;">
 				<!-- <div data-options="name:'addSubCompany'">添加下级公司</div> -->
 				<div data-options="name:'addSubOrg'">添加下级部门</div>
 				<div data-options="name:'addSubJob'">添加下级岗位</div>
@@ -46,24 +39,21 @@
 				<div data-options="name:'remove'">删除</div>
 				<div data-options="name:'fresh'">刷新</div>
 			</div>
-			<div id="gysMenu" class="easyui-menu"
-				data-options="onClick:menuHandler" style="width: 120px;">
+			<div id="gysMenu" class="easyui-menu" data-options="onClick:menuHandler" style="width: 120px;">
 				<div data-options="name:'addSubOrg'">添加下级部门</div>
 				<div data-options="name:'addSubJob'">添加下级岗位</div>
 				<div data-options="name:'editSupplier'">编辑</div>
 				<div data-options="name:'removeSupplier'">删除</div>
 				<div data-options="name:'fresh'">刷新</div>
 			</div>
-			<div id="gysMenuGW" class="easyui-menu"
-				data-options="onClick:menuHandler" style="width: 120px;">
+			<div id="gysMenuGW" class="easyui-menu" data-options="onClick:menuHandler" style="width: 120px;">
 				<div data-options="name:'addSubOrg'">添加下级部门</div>
 				<div data-options="name:'addSubJob'">添加下级岗位</div>
 				<div data-options="name:'editSupplier'">编辑</div>
 				<div data-options="name:'removeSupplier'">删除</div>
 				<div data-options="name:'fresh'">刷新</div>
 			</div>
-			<div id="gysRootMenu" class="easyui-menu"
-				data-options="onClick:menuHandler" style="width: 120px;">
+			<div id="gysRootMenu" class="easyui-menu" data-options="onClick:menuHandler" style="width: 120px;">
 				<div data-options="name:'fresh'">刷新</div>
 			</div>
 		</div>

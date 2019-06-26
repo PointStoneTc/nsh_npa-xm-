@@ -1,34 +1,25 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include file="/context/mytags.jsp"%>
 <t:base type="jquery,easyui,tools,DatePicker"></t:base>
 <input type="hidden" id="groupId" name="groupId" value="${groupId}">
 <t:datagrid name="userList" title="common.operation"
-	actionUrl="departAuthGroupController.do?getDepartGroupUser&groupId=${groupId}"
-	fit="true" fitColumns="true" idField="id" queryMode="group"
-	sortName="createDate,userName" sortOrder="asc,desc">
+	actionUrl="departAuthGroupController.do?getDepartGroupUser&groupId=${groupId}" fit="true" fitColumns="true"
+	idField="id" queryMode="group" sortName="createDate,userName" sortOrder="asc,desc">
 	<t:dgCol title="common.id" field="id" hidden="true"></t:dgCol>
-	<t:dgCol title="common.username" sortable="false" field="userName"
-		query="true" width="100"></t:dgCol>
-	<t:dgCol title="common.real.name" field="realName" query="true"
-		width="100"></t:dgCol>
+	<t:dgCol title="common.username" sortable="false" field="userName" query="true" width="100"></t:dgCol>
+	<t:dgCol title="common.real.name" field="realName" query="true" width="100"></t:dgCol>
 	<t:dgCol title="common.role" field="roles" width="100"></t:dgCol>
 	<t:dgCol title="common.operation" field="opt" width="100"></t:dgCol>
-	<t:dgFunOpt funname="deleteDialog(userName)" title="common.delete"
-		urlclass="ace_button" urlfont="fa-trash-o"></t:dgFunOpt>
+	<t:dgFunOpt funname="deleteDialog(userName)" title="common.delete" urlclass="ace_button" urlfont="fa-trash-o"></t:dgFunOpt>
 	<input id="roleId" name="roleId" type="hidden" value="${roleId}" />
-	<input name="roleName" id="roleName" type="hidden" value="${roleName}"
-		readonly="readonly" datatype="*" />
-	<t:dgFunOpt funname="openSelectRoles(id)" title="分配角色"
-		urlclass="ace_button" urlfont="fa fa-book"></t:dgFunOpt>
+	<input name="roleName" id="roleName" type="hidden" value="${roleName}" readonly="readonly" datatype="*" />
+	<t:dgFunOpt funname="openSelectRoles(id)" title="分配角色" urlclass="ace_button" urlfont="fa fa-book"></t:dgFunOpt>
 </t:datagrid>
-<div id="userListtb"
-	style="padding: 3px; height: 25px; border-top: 1px solid #D7D7D7">
+<div id="userListtb" style="padding: 3px; height: 25px; border-top: 1px solid #D7D7D7">
 	<div style="float: left;">
-		<a class="easyui-linkbutton l-btn l-btn-plain"
-			style="position: absolute; top: 40px" onclick="openSelectSort()">
-			<i class="fa fa-plus"></i><span class="bigger-110 no-text-shadow">
-				添加用户</span>
+		<a class="easyui-linkbutton l-btn l-btn-plain" style="position: absolute; top: 40px" onclick="openSelectSort()"> <i
+			class="fa fa-plus"></i>
+		<span class="bigger-110 no-text-shadow"> 添加用户</span>
 		</a>
 	</div>
 </div>

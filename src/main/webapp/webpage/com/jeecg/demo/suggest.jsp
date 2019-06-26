@@ -1,5 +1,4 @@
-<%@ page language="java" import="java.util.*"
-	contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" import="java.util.*" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include file="/context/mytags.jsp"%>
 <!DOCTYPE html>
 <html>
@@ -8,15 +7,13 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="这是一个基于 bootstrap 按钮式下拉菜单组件的搜索建议插件">
-<meta name="Keywords"
-	content="Bootstrap Search Suggest,bootstrap,搜索建议插件" />
+<meta name="Keywords" content="Bootstrap Search Suggest,bootstrap,搜索建议插件" />
 <t:base type="bootstrap"></t:base>
 </head>
 <body>
 	<div class="container">
 		<h2>bootstrap combox 搜索建议插件示例</h2>
-		<form action="index_submit" method="get" accept-charset="utf-8"
-			role="form">
+		<form action="index_submit" method="get" accept-charset="utf-8" role="form">
 			<h3>测试(URL 获取)</h3>
 			<p>配置了 data-id，非下拉菜单选择输入则背景色警告。</p>
 			<div class="row">
@@ -24,8 +21,7 @@
 					<div class="input-group">
 						<input type="text" class="form-control" id="test">
 						<div class="input-group-btn">
-							<button type="button" class="btn btn-default dropdown-toggle"
-								data-toggle="dropdown">
+							<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 								<span class="caret"></span>
 							</button>
 							<ul class="dropdown-menu dropdown-menu-right" role="menu">
@@ -43,8 +39,7 @@
 					<div class="input-group">
 						<input type="text" class="form-control" id="testNoBtn">
 						<div class="input-group-btn">
-							<button type="button" class="btn btn-default dropdown-toggle"
-								data-toggle="dropdown">
+							<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 								<span class="caret"></span>
 							</button>
 							<ul class="dropdown-menu dropdown-menu-right" role="menu">
@@ -62,8 +57,7 @@
 					<div class="input-group">
 						<input type="text" class="form-control" id="testDbUser">
 						<div class="input-group-btn">
-							<button type="button" class="btn btn-default dropdown-toggle"
-								data-toggle="dropdown">
+							<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 								<span class="caret"></span>
 							</button>
 							<ul class="dropdown-menu dropdown-menu-right" role="menu">
@@ -81,8 +75,7 @@
 					<div class="input-group">
 						<input type="text" class="form-control" id="test_data">
 						<div class="input-group-btn">
-							<button type="button" class="btn btn-default dropdown-toggle"
-								data-toggle="dropdown">
+							<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 								<span class="caret"></span>
 							</button>
 							<ul class="dropdown-menu dropdown-menu-right" role="menu">
@@ -100,8 +93,7 @@
 					<div class="input-group" style="width: 300px;">
 						<input type="text" class="form-control" id="baidu">
 						<div class="input-group-btn">
-							<button type="button" class="btn btn-default dropdown-toggle"
-								data-toggle="dropdown">
+							<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 								<span class="caret"></span>
 							</button>
 							<ul class="dropdown-menu dropdown-menu-right" role="menu">
@@ -119,8 +111,7 @@
 					<div class="input-group" style="width: 400px;">
 						<input type="text" class="form-control" id="taobao">
 						<div class="input-group-btn">
-							<button type="button" class="btn btn-default dropdown-toggle"
-								data-toggle="dropdown">
+							<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 								<span class="caret"></span>
 							</button>
 							<ul class="dropdown-menu dropdown-menu-right" role="menu">
@@ -278,8 +269,7 @@
 		<div>
 			<h2>------------------------------------------备注-------------------------------------------------</h2>
 		</div>
-		<p>Bootstrap Search Suggest 是一个基于 bootstrap
-			按钮式下拉菜单组件的搜索建议插件，必须使用于按钮式下拉菜单组件上。</p>
+		<p>Bootstrap Search Suggest 是一个基于 bootstrap 按钮式下拉菜单组件的搜索建议插件，必须使用于按钮式下拉菜单组件上。</p>
 		<h3>浏览器支持</h3>
 		<ul>
 			<li>支持 ie8+,chrome,firefox,safari</li>
@@ -289,8 +279,7 @@
 			<li>搜索方式：从 data.value 的有效字段数据中查询 keyword 的出现，或字段数据包含于 keyword 中</li>
 			<li>支持单关键字、多关键字的输入搜索建议，多关键字可自定义分隔符</li>
 			<li>支持按 data 数组数据搜索、按 URL 请求搜索和按首次请求URL数据并缓存搜索三种方式</li>
-			<li>单关键字会设置 data-id 和输入框内容两个值，以 indexId/idField 和
-				indexKey/idFiled 取值 data 的数据为准；多关键字只设置输入框值</li>
+			<li>单关键字会设置 data-id 和输入框内容两个值，以 indexId/idField 和 indexKey/idFiled 取值 data 的数据为准；多关键字只设置输入框值</li>
 		</ul>
 		<h3>配置参数</h3>
 		<pre>

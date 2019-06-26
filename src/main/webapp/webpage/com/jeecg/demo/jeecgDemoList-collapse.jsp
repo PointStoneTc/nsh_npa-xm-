@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include file="/context/mytags.jsp"%>
 <t:base type="jquery,easyui,tools,DatePicker"></t:base>
 <style>
@@ -124,34 +123,24 @@ div[class$='menu-active'] {
 </style>
 <div class="easyui-layout" fit="true">
 	<div region="center" style="padding: 0px; border: 0px">
-		<t:datagrid name="jeecgDemoCollapseList"
-			onLoadSuccess="optsMenuToggle" checkbox="true" pagination="true"
-			fitColumns="true" title="操作列折叠demo"
-			actionUrl="jeecgListDemoController.do?datagrid" idField="id"
-			fit="true" queryMode="group">
-			<t:dgCol title="id" field="id" hidden="true" queryMode="group"
-				width="120"></t:dgCol>
+		<t:datagrid name="jeecgDemoCollapseList" onLoadSuccess="optsMenuToggle" checkbox="true" pagination="true"
+			fitColumns="true" title="操作列折叠demo" actionUrl="jeecgListDemoController.do?datagrid" idField="id" fit="true"
+			queryMode="group">
+			<t:dgCol title="id" field="id" hidden="true" queryMode="group" width="120"></t:dgCol>
 			<t:dgCol title="名称" field="name" query="true" width="120"></t:dgCol>
 			<!--update-begin-Author:zhangweijian Date: 20180710 for：TASK #2941 【bug】常用示例，小问题,年龄区间查询-->
-			<t:dgCol title="年龄" extend="{style:'width:50px'}" field="age"
-				query="true" width="120" queryMode="group"></t:dgCol>
+			<t:dgCol title="年龄" extend="{style:'width:50px'}" field="age" query="true" width="120" queryMode="group"></t:dgCol>
 			<!--update-end-Author:zhangweijian Date: 20180710 for：TASK #2941 【bug】常用示例，小问题，年龄区间查询-->
-			<t:dgCol title="生日" hidden="true" field="birthday"
-				formatter="yyyy-MM-dd" queryMode="group" width="120"></t:dgCol>
-			<t:dgCol title="部门" field="depId" query="true" queryMode="single"
-				dictionary="t_s_depart,id,departname" width="120"></t:dgCol>
-			<t:dgCol title="性别" field="sex" query="false" showMode="radio"
-				dictionary="sex" width="120"></t:dgCol>
+			<t:dgCol title="生日" hidden="true" field="birthday" formatter="yyyy-MM-dd" queryMode="group" width="120"></t:dgCol>
+			<t:dgCol title="部门" field="depId" query="true" queryMode="single" dictionary="t_s_depart,id,departname" width="120"></t:dgCol>
+			<t:dgCol title="性别" field="sex" query="false" showMode="radio" dictionary="sex" width="120"></t:dgCol>
 			<t:dgCol title="电话" field="phone" queryMode="group" width="120"></t:dgCol>
-			<t:dgCol title="工资" field="salary" query="false" queryMode="group"
+			<t:dgCol title="工资" field="salary" query="false" queryMode="group" width="120"></t:dgCol>
+			<t:dgCol title="创建日期" field="createDate" formatter="yyyy-MM-dd" query="true" queryMode="group" editor="datebox"
 				width="120"></t:dgCol>
-			<t:dgCol title="创建日期" field="createDate" formatter="yyyy-MM-dd"
-				query="true" queryMode="group" editor="datebox" width="120"></t:dgCol>
-			<t:dgCol title="入职状态" field="status" query="false"
-				extend="{style:{width:'300px';color:'red'};datatype:'*';}"
+			<t:dgCol title="入职状态" field="status" query="false" extend="{style:{width:'300px';color:'red'};datatype:'*';}"
 				defaultVal='N' dictionary="sf_yn" width="80"></t:dgCol>
-			<t:dgCol title="操作" field="opt" width="100"
-				formatterjs="collapseOptionMenu"></t:dgCol>
+			<t:dgCol title="操作" field="opt" width="100" formatterjs="collapseOptionMenu"></t:dgCol>
 		</t:datagrid>
 	</div>
 </div>

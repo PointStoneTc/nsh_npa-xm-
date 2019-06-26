@@ -1,19 +1,23 @@
-<%@ page language="java" import="java.util.*"
-	contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" import="java.util.*" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include file="/context/mytags.jsp"%>
-<link rel="stylesheet" href="plug-in/themes/fineui/css/mainform.css"
-	type="text/css" />
+<link rel="stylesheet" href="plug-in/themes/fineui/css/mainform.css" type="text/css" />
 <style>
 .conc-wrapper
 
+
  
+
 
 input
 
 
+
+
 :not
 
+
  
+
 
 (
 [
@@ -22,15 +26,21 @@ type
 'radio'
 ]
 
+
  
+
 
 ){
 width
 
 
+
+
 :
 
+
  
+
 
 95%;
 }
@@ -47,8 +57,7 @@ width
 	<div class="conc-wrapper" style="margin-top: 10px">
 		<div class="main-tab">
 			<ul class="tab-info">
-				<li role="presentation" class="active"><a
-					href="javascript:void(0);"> &nbsp;&nbsp;信息模块1</a></li>
+				<li role="presentation" class="active"><a href="javascript:void(0);"> &nbsp;&nbsp;信息模块1</a></li>
 			</ul>
 			<!-- tab内容 -->
 			<div class="con-wrapper1">
@@ -58,43 +67,38 @@ width
 							<b>订单号：</b>
 						</div>
 						<div class="col-xs-2">
-							<input id="orderCode" name="orderCode" type="text"
-								class="form-control" ignore="ignore"
-								value='${jformOrderMain2Page.orderCode}' /> <span
-								class="Validform_checktip" style="float: left; height: 0px;"></span>
+							<input id="orderCode" name="orderCode" type="text" class="form-control" ignore="ignore"
+								value='${jformOrderMain2Page.orderCode}' />
+							<span class="Validform_checktip" style="float: left; height: 0px;"></span>
 							<label class="Validform_label" style="display: none">订单号</label>
 						</div>
 						<div class="col-xs-1 text-center">
 							<b>订单日期：</b>
 						</div>
 						<div class="col-xs-2">
-							<input id="orderDate" name="orderDate" type="text"
-								ignore="ignore"
+							<input id="orderDate" name="orderDate" type="text" ignore="ignore"
 								style="background: url('plug-in/ace/images/datetime.png') no-repeat scroll right center transparent;"
 								class="form-control" onClick="WdatePicker()"
 								value="<fmt:formatDate value='${jformOrderMain2Page.orderDate}' type='date' pattern='yyyy-MM-dd'/>" />
-							<span class="Validform_checktip"
-								style="float: left; height: 0px;"></span> <label
-								class="Validform_label" style="display: none">订单日期</label>
+							<span class="Validform_checktip" style="float: left; height: 0px;"></span>
+							<label class="Validform_label" style="display: none">订单日期</label>
 						</div>
 						<div class="col-xs-1 text-center">
 							<b>订单金额：</b>
 						</div>
 						<div class="col-xs-2">
-							<input id="orderMoney" name="orderMoney" maxlength="10"
-								type="text" class="form-control" datatype="/^(-?\d+)(\.\d+)?$/"
-								ignore="ignore" value='${jformOrderMain2Page.orderMoney}' /> <span
-								class="Validform_checktip" style="float: left; height: 0px;"></span>
+							<input id="orderMoney" name="orderMoney" maxlength="10" type="text" class="form-control"
+								datatype="/^(-?\d+)(\.\d+)?$/" ignore="ignore" value='${jformOrderMain2Page.orderMoney}' />
+							<span class="Validform_checktip" style="float: left; height: 0px;"></span>
 							<label class="Validform_label" style="display: none">订单金额</label>
 						</div>
 						<div class="col-xs-1 text-center">
 							<b>备注：</b>
 						</div>
 						<div class="col-xs-2">
-							<input id="content" name="content" maxlength="255" type="text"
-								class="form-control" ignore="ignore"
-								value='${jformOrderMain2Page.content}' /> <span
-								class="Validform_checktip" style="float: left; height: 0px;"></span>
+							<input id="content" name="content" maxlength="255" type="text" class="form-control" ignore="ignore"
+								value='${jformOrderMain2Page.content}' />
+							<span class="Validform_checktip" style="float: left; height: 0px;"></span>
 							<label class="Validform_label" style="display: none">备注</label>
 						</div>
 					</div>

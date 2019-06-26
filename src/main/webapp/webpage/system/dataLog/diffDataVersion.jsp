@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <% 
 String path = request.getContextPath();
@@ -8,8 +7,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html>
 <title></title>
 <script type="text/javascript" src="plug-in/jquery/jquery-1.8.3.min.js"></script>
-<link rel="stylesheet"
-	href="<%=basePath %>/plug-in/easyui/themes/icon.css" />
+<link rel="stylesheet" href="<%=basePath %>/plug-in/easyui/themes/icon.css" />
 <style type="text/css">
 body, table {
 	font-size: 12px;
@@ -52,8 +50,7 @@ h1, h2, h3 {
 }
 </style>
 <body style="">
-	<table width="90%" class="table"
-		style="table-layout: fixed; word-break: break-all">
+	<table width="90%" class="table" style="table-layout: fixed; word-break: break-all">
 		<tbody>
 			<tr>
 				<th style="width: 80px; white-space: nowrap">字段名</th>
@@ -67,8 +64,7 @@ h1, h2, h3 {
 					<td>${item.name }</td>
 					<td>${item.value1 }</td>
 					<td><c:if test="${item.diff=='Y'}">
-							<span class="icon-goright"
-								style="display: inline-block; height: 15px; width: 15px"></span>
+							<span class="icon-goright" style="display: inline-block; height: 15px; width: 15px"></span>
 						</c:if></td>
 					<td>${item.value2 }</td>
 				</tr>

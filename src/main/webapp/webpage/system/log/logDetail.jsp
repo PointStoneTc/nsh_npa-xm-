@@ -1,5 +1,4 @@
-<%@ page language="java" import="java.util.*"
-	contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" import="java.util.*" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include file="/context/mytags.jsp"%>
 <!DOCTYPE html>
 <html>
@@ -12,15 +11,21 @@
 		<fieldset class="step">
 
 			<div class="form">
-				<label class="form"> <%-- <t:mutiLang langKey="common.username"/> --%>操作ID:${tsLog.username }
+				<label class="form">
+					<%-- <t:mutiLang langKey="common.username"/> --%>
+					操作ID:${tsLog.username }
 				</label>
 			</div>
 			<div class="form">
-				<label class="form"> <%-- <t:mutiLang langKey="common.realname"/> --%>操作人:${tsLog.realname }
+				<label class="form">
+					<%-- <t:mutiLang langKey="common.realname"/> --%>
+					操作人:${tsLog.realname }
 				</label>
 			</div>
 			<div class="form">
-				<label class="form"> <%-- <t:mutiLang langKey="common.logtype"/> --%>日志类型:
+				<label class="form">
+					<%-- <t:mutiLang langKey="common.logtype"/> --%>
+					日志类型:
 				</label>
 				<!-- 以后再统一由数据字典维护  fangwenrong-->
 				<c:if test="${tsLog.operatetype==1}">
@@ -46,12 +51,16 @@
 				</c:if>
 			</div>
 			<div class="form">
-				<label class="form"> <t:mutiLang langKey="log.content" />:
+				<label class="form">
+					<t:mutiLang langKey="log.content" />
+					:
 				</label>
 				<textarea style="width: 100%; background-color: #f4f4f4" rows="6">${tsLog.logcontent }</textarea>
 			</div>
 			<div class="form">
-				<label class="form"> <%-- <t:mutiLang langKey="common.loglevel"/> --%>日志等级:
+				<label class="form">
+					<%-- <t:mutiLang langKey="common.loglevel"/> --%>
+					日志等级:
 				</label>
 				<!-- 以后再统一由数据字典维护  fangwenrong-->
 				<c:if test="${tsLog.loglevel==1}">INFO</c:if>
@@ -60,18 +69,25 @@
 			</div>
 
 			<div class="form">
-				<label class="form"> <t:mutiLang langKey="operate.ip" />:
-				</label> ${tsLog.note}
-			</div>
-			<div class="form">
-				<label class="form"> <t:mutiLang langKey="operate.time" />:
+				<label class="form">
+					<t:mutiLang langKey="operate.ip" />
+					:
 				</label>
-				<fmt:formatDate value="${tsLog.operatetime}"
-					pattern="yyyy-MM-dd HH:mm:ss" />
+				${tsLog.note}
 			</div>
 			<div class="form">
-				<label class="form"> <t:mutiLang langKey="common.browser" />:
-				</label> ${tsLog.broswer}
+				<label class="form">
+					<t:mutiLang langKey="operate.time" />
+					:
+				</label>
+				<fmt:formatDate value="${tsLog.operatetime}" pattern="yyyy-MM-dd HH:mm:ss" />
+			</div>
+			<div class="form">
+				<label class="form">
+					<t:mutiLang langKey="common.browser" />
+					:
+				</label>
+				${tsLog.broswer}
 			</div>
 
 

@@ -1,5 +1,4 @@
-<%@ page language="java" import="java.util.*"
-	contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" import="java.util.*" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include file="/context/mytags.jsp"%>
 <!DOCTYPE html>
 <html>
@@ -9,42 +8,30 @@
 <t:base type="jquery,easyui,tools"></t:base>
 
 <!-- ztree -->
-<link rel="stylesheet" type="text/css"
-	href="plug-in/ztree/css/zTreeStyle.css"></link>
-<script type="text/javascript"
-	src="plug-in/ztree/js/jquery.ztree.core-3.5.min.js"></script>
-<script type="text/javascript"
-	src="plug-in/ztree/js/jquery.ztree.excheck-3.5.min.js"></script>
+<link rel="stylesheet" type="text/css" href="plug-in/ztree/css/zTreeStyle.css"></link>
+<script type="text/javascript" src="plug-in/ztree/js/jquery.ztree.core-3.5.min.js"></script>
+<script type="text/javascript" src="plug-in/ztree/js/jquery.ztree.excheck-3.5.min.js"></script>
 
 <!-- 文件上传 -->
-<link rel="stylesheet" type="text/css"
-	href="plug-in/webuploader/webuploader.css"></link>
-<script type="text/javascript"
-	src="plug-in/webuploader/webuploader.min.js"></script>
+<link rel="stylesheet" type="text/css" href="plug-in/webuploader/webuploader.css"></link>
+<script type="text/javascript" src="plug-in/webuploader/webuploader.min.js"></script>
 
 <!-- 自动补全 -->
-<link rel="stylesheet"
-	href="plug-in/jquery/jquery-autocomplete/jquery.autocomplete.css"
-	type="text/css"></link>
-<script type="text/javascript"
-	src="plug-in/jquery/jquery-autocomplete/jquery.autocomplete.min.js"></script>
+<link rel="stylesheet" href="plug-in/jquery/jquery-autocomplete/jquery.autocomplete.css" type="text/css"></link>
+<script type="text/javascript" src="plug-in/jquery/jquery-autocomplete/jquery.autocomplete.min.js"></script>
 
 <!-- 联动 -->
-<script src="plug-in/jquery/jquery.regionselect.js"
-	type="text/javascript"></script>
+<script src="plug-in/jquery/jquery.regionselect.js" type="text/javascript"></script>
 
 <!-- select2 -->
 <link rel="stylesheet" href="plug-in/select2/css/select2.min.css">
-<script type="text/javascript"
-	src="plug-in/select2/js/select2.full.min.js"></script>
+<script type="text/javascript" src="plug-in/select2/js/select2.full.min.js"></script>
 <!-- 省市区provinces三级联动 -->
 <script src="plug-in/provinces/js/city-picker.data.js"></script>
 <script src="plug-in/provinces/js/city-picker.js"></script>
 <script src="plug-in/provinces/js/main.js"></script>
-<link href="plug-in/provinces/css/bootstrap.css" rel="stylesheet"
-	type="text/css" />
-<link href="plug-in/provinces/css/city-picker.css" rel="stylesheet"
-	type="text/css" />
+<link href="plug-in/provinces/css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="plug-in/provinces/css/city-picker.css" rel="stylesheet" type="text/css" />
 
 </head>
 <body>
@@ -64,10 +51,9 @@
 		<fieldset>
 			<legend>组合输入框</legend>
 			<div class="form" style="display: table;">
-				<label class="Validform_label"
-					style="width: 90px; text-align: right;"> 金额: </label> <input
-					type="text" class="groupinput" name="nodeTimeout" value="100"
-					datatype="n1-11" ignore="ignore" /> <span class="groupspan">元</span>
+				<label class="Validform_label" style="width: 90px; text-align: right;"> 金额: </label>
+				<input type="text" class="groupinput" name="nodeTimeout" value="100" datatype="n1-11" ignore="ignore" />
+				<span class="groupspan">元</span>
 			</div>
 		</fieldset>
 
@@ -76,8 +62,7 @@
 			<table>
 				<tr>
 					<td style="width: 90px; text-align: right;">省份选择:</td>
-					<td><input type="text" id="province-select"
-						name="province-select" class="ac_input"></td>
+					<td><input type="text" id="province-select" name="province-select" class="ac_input"></td>
 				</tr>
 			</table>
 		</fieldset>
@@ -87,8 +72,7 @@
 			<table>
 				<tr>
 					<td style="width: 90px; text-align: right;">用户名自动补全:</td>
-					<td><input type="text" id="userNameAuto" name="userName"
-						class="ac_input"></td>
+					<td><input type="text" id="userNameAuto" name="userName" class="ac_input"></td>
 				</tr>
 			</table>
 		</fieldset>
@@ -96,9 +80,8 @@
 		<fieldset>
 			<legend>联动下拉省市区</legend>
 			<div style="width: 80%; margin: 5px 0 0 10px;">
-				<input type="text" id="province" style="width: 32%;" value="" /> <input
-					type="text" id="city" style="width: 32%;" value="" /> <input
-					type="text" id="area" style="width: 32%;" value="" />
+				<input type="text" id="province" style="width: 32%;" value="" /> <input type="text" id="city" style="width: 32%;"
+					value="" /> <input type="text" id="area" style="width: 32%;" value="" />
 			</div>
 		</fieldset>
 
@@ -115,12 +98,9 @@
 			<table>
 				<tr>
 					<!-- <td align="right"><label class="Validform_label">demo:</label> -->
-					<td><script type="text/javascript" charset="utf-8"
-							src="plug-in/ueditor/ueditor.config.js"></script> <script
-							type="text/javascript" charset="utf-8"
-							src="plug-in/ueditor/ueditor.all.min.js"></script> <textarea
-							name="ueditorContent" id="ueditorContent" style="width: 650px;"></textarea>
-						<script type="text/javascript">
+					<td><script type="text/javascript" charset="utf-8" src="plug-in/ueditor/ueditor.config.js"></script> <script
+							type="text/javascript" charset="utf-8" src="plug-in/ueditor/ueditor.all.min.js"></script> <textarea
+							name="ueditorContent" id="ueditorContent" style="width: 650px;"></textarea> <script type="text/javascript">
 		        var editor = UE.getEditor('ueditorContent');
 		    </script> <span class="Validform_checktip"></span></td>
 				</tr>
@@ -135,13 +115,12 @@
 						<div id="distpicker">
 							<div class="form-group">
 								<div style="position: relative;">
-									<input id="city-picker3" class="form-control" readonly
-										type="text" value="江苏省/常州市/溧阳市" data-toggle="city-picker">
+									<input id="city-picker3" class="form-control" readonly type="text" value="江苏省/常州市/溧阳市"
+										data-toggle="city-picker">
 								</div>
 							</div>
 							<div>
-								<button id="reset" type="button"
-									style="hight: 50px; wight: 30px; font-size: 15px;">重置</button>
+								<button id="reset" type="button" style="hight: 50px; wight: 30px; font-size: 15px;">重置</button>
 								<button id="destroy" type="button"
 									style="hight: 50px; wight: 30px; font-size: 15px; position: relative; right: 100px; bottom: 33px;">确定</button>
 							</div>

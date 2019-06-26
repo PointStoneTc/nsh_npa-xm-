@@ -1,5 +1,4 @@
-<%@ page language="java" import="java.util.*"
-	contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" import="java.util.*" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include file="/context/mytags.jsp"%>
 <!DOCTYPE html>
 <html>
@@ -110,16 +109,12 @@ function reloadTable() {
 			<table id="aceEasyuiList"></table>
 		</div>
 		<div id="aceEasyuiListToolbar">
-			<a href="#" class="easyui-linkbutton l-btn l-btn-plain" plain="true"
-				icon="icon-add"
-				onclick="add('录入','jeecgListDemoController.do?goNatureAceTableAdd','aceEasyuiList',700,500)">
-				录入 </a> <a href="#" class="easyui-linkbutton l-btn l-btn-plain"
-				plain="true" icon="icon-edit"
-				onclick="update('编辑','jeecgListDemoController.do?goNatureAceTableUpdate','aceEasyuiList',700,500)">
-				编辑 </a> <a href="#" class="easyui-linkbutton l-btn l-btn-plain"
-				plain="true" icon="icon-remove"
-				onclick="deleteALLSelect('批量删除','jeecgListDemoController.do?doBatchDel','aceEasyuiList',null,null)">
-				批量删除 </a>
+			<a href="#" class="easyui-linkbutton l-btn l-btn-plain" plain="true" icon="icon-add"
+				onclick="add('录入','jeecgListDemoController.do?goNatureAceTableAdd','aceEasyuiList',700,500)"> 录入 </a> <a href="#"
+				class="easyui-linkbutton l-btn l-btn-plain" plain="true" icon="icon-edit"
+				onclick="update('编辑','jeecgListDemoController.do?goNatureAceTableUpdate','aceEasyuiList',700,500)"> 编辑 </a> <a
+				href="#" class="easyui-linkbutton l-btn l-btn-plain" plain="true" icon="icon-remove"
+				onclick="deleteALLSelect('批量删除','jeecgListDemoController.do?doBatchDel','aceEasyuiList',null,null)"> 批量删除 </a>
 		</div>
 	</div>
 </body>

@@ -1,5 +1,4 @@
-<%@ page language="java" import="java.util.*"
-	contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" import="java.util.*" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include file="/context/mytags.jsp"%>
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -16,19 +15,16 @@
 </head>
 
 <body>
-	<t:formvalid formid="formobj" dialog="true" usePlugin="password"
-		layout="table" action="jformOrderTicket2Controller.do?doUpdate"
-		tiptype="1">
+	<t:formvalid formid="formobj" dialog="true" usePlugin="password" layout="table"
+		action="jformOrderTicket2Controller.do?doUpdate" tiptype="1">
 		<input type="hidden" id="btn_sub" class="btn_sub" />
 		<input type="hidden" name="id" value='${jformOrderTicket2Page.id}'>
-		<input type="hidden" name="fckId"
-			value="${jformOrderTicket2Page.fckId}" />
+		<input type="hidden" name="fckId" value="${jformOrderTicket2Page.fckId}" />
 
 		<div class="tab-wrapper">
 			<!-- tab -->
 			<ul class="nav nav-tabs">
-				<li role="presentation" class="active"><a
-					href="javascript:void(0);">订单机票信息</a></li>
+				<li role="presentation" class="active"><a href="javascript:void(0);">订单机票信息</a></li>
 			</ul>
 			<!-- tab内容 -->
 			<div class="con-wrapper" id="con-wrapper1" style="display: block;">
@@ -38,10 +34,9 @@
 							<b>航班号：</b>
 						</div>
 						<div class="col-xs-3">
-							<input id="ticketCode" name="ticketCode" maxlength="100"
-								type="text" class="form-control" datatype="*" ignore="checked"
-								value='${jformOrderTicket2Page.ticketCode}' /> <span
-								class="Validform_checktip" style="float: left; height: 0px;"></span>
+							<input id="ticketCode" name="ticketCode" maxlength="100" type="text" class="form-control" datatype="*"
+								ignore="checked" value='${jformOrderTicket2Page.ticketCode}' />
+							<span class="Validform_checktip" style="float: left; height: 0px;"></span>
 							<label class="Validform_label" style="display: none">航班号</label>
 						</div>
 					</div>
@@ -54,13 +49,10 @@
 						<div class="col-xs-3">
 							<input id="tickectDate" name="tickectDate" type="text"
 								style="background: url('plug-in/ace/images/datetime.png') no-repeat scroll right center transparent;"
-								class="form-control"
-								onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})"
-								datatype="*" ignore="checked"
+								class="form-control" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" datatype="*" ignore="checked"
 								value='<fmt:formatDate value='${jformOrderTicket2Page.tickectDate}' type="date" pattern="yyyy-MM-dd hh:mm:ss"/>' />
-							<span class="Validform_checktip"
-								style="float: left; height: 0px;"></span> <label
-								class="Validform_label" style="display: none">航班时间</label>
+							<span class="Validform_checktip" style="float: left; height: 0px;"></span>
+							<label class="Validform_label" style="display: none">航班时间</label>
 						</div>
 					</div>
 
@@ -69,8 +61,7 @@
 						<div class="col-xs-12 layout-header">
 							<div class="col-xs-6"></div>
 							<div class="col-xs-6">
-								<button type="button" onclick="neibuClick();"
-									class="btn btn-default">提交</button>
+								<button type="button" onclick="neibuClick();" class="btn btn-default">提交</button>
 							</div>
 						</div>
 					</div>

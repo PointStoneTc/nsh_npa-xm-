@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include file="/context/mytags.jsp"%>
 <!DOCTYPE html>
 <html>
@@ -7,10 +6,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <!-- context path -->
 <t:base type="jquery,easyui"></t:base>
-<script type="text/javascript"
-	src="plug-in/Highcharts-2.2.5/js/highcharts.src.js"></script>
-<script type="text/javascript"
-	src="plug-in/Highcharts-2.2.5/js/modules/exporting.src.js"></script>
+<script type="text/javascript" src="plug-in/Highcharts-2.2.5/js/highcharts.src.js"></script>
+<script type="text/javascript" src="plug-in/Highcharts-2.2.5/js/modules/exporting.src.js"></script>
 <script type="text/javascript" src="plug-in/echart/echarts.min.js"></script>
 
 <c:set var="ctxPath" value="${pageContext.request.contextPath}" />
@@ -170,10 +167,8 @@
 		<div id="containerPie" style="float: left; width: 30%; height: 100%;"></div>
 	</div>
 	<div style="width: 100%; height: 333px;">
-		<t:datagrid name="broswerStatisticList"
-			title="broswer.count.statistics"
-			actionUrl="jeecgListDemoController.do?listAllStatisticByJdbc"
-			idField="id" fit="true">
+		<t:datagrid name="broswerStatisticList" title="broswer.count.statistics"
+			actionUrl="jeecgListDemoController.do?listAllStatisticByJdbc" idField="id" fit="true">
 			<t:dgCol title="common.code" field="id" hidden="true"></t:dgCol>
 			<t:dgCol title="lang.broswer" field="broswer" width="130"></t:dgCol>
 			<t:dgCol title="number.broswer" field="broswercount" width="130"></t:dgCol>

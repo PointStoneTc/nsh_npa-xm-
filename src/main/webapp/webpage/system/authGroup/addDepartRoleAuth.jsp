@@ -1,5 +1,4 @@
-<%@ page language="java" import="java.util.*"
-	contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" import="java.util.*" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include file="/context/mytags.jsp"%>
 <!DOCTYPE html>
 <html>
@@ -77,39 +76,37 @@ function saveObj() {
 <body style="overflow: hidden;" scroll="no">
 	<t:formvalid formid="formobj" layout="table" dialog="true">
 		<div class="datagrid-toolbar">
-			<a class="easyui-linkbutton l-btn l-btn-plain" onclick="saveObj()">
-				<i class="fa fa-plus"></i><span class="bigger-110 no-text-shadow">
-					保 存</span>
+			<a class="easyui-linkbutton l-btn l-btn-plain" onclick="saveObj()"> <i class="fa fa-plus"></i>
+			<span class="bigger-110 no-text-shadow"> 保 存</span>
 			</a>
 		</div>
 		<input type="hidden" id="id" name="id" value="${departAuthGroup.id}" />
-		<input type="hidden" id="level" name="level"
-			value="${departAuthGroup.level}" />
+		<input type="hidden" id="level" name="level" value="${departAuthGroup.level}" />
 		<table class="table-form" cellspacing="0">
 			<tbody>
 				<c:set var="curId" value="${departAuthGroup.id}"></c:set>
 				<tr>
-					<th><span>管理员组名称:</span></th>
-					<td class="ng-binding"><input type="text" id="groupName"
-						readonly="readonly" name="groupName"
+					<th>
+						<span>管理员组名称:</span>
+					</th>
+					<td class="ng-binding"><input type="text" id="groupName" readonly="readonly" name="groupName"
 						value="${departAuthGroup.groupName}" /></td>
 				</tr>
 				<tr>
-					<th style="width: 350px;"><span>角色名称:</span></th>
-					<td class="ng-binding"><input type="text" name="roleName"
-						id="roleName" /></td>
+					<th style="width: 350px;">
+						<span>角色名称:</span>
+					</th>
+					<td class="ng-binding"><input type="text" name="roleName" id="roleName" /></td>
 				</tr>
 				<tr>
-					<th style="width: 350px;"><span>角色编码:</span></th>
-					<td class="ng-binding"><input type="text" name="roleCode"
-						id="roleCode" /></td>
+					<th style="width: 350px;">
+						<span>角色编码:</span>
+					</th>
+					<td class="ng-binding"><input type="text" name="roleCode" id="roleCode" /></td>
 				</tr>
-				<input id="deptId" name="deptId" type="hidden"
-					value="${departAuthGroup.deptId}">
-				<input id="deptName" name="deptName" type="hidden"
-					value="${departAuthGroup.deptName}">
-				<input type="hidden" name="deptCode" id="deptCode"
-					value="${departAuthGroup.deptCode }" />
+				<input id="deptId" name="deptId" type="hidden" value="${departAuthGroup.deptId}">
+				<input id="deptName" name="deptName" type="hidden" value="${departAuthGroup.deptName}">
+				<input type="hidden" name="deptCode" id="deptCode" value="${departAuthGroup.deptCode }" />
 			</tbody>
 		</table>
 	</t:formvalid>

@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,8 +9,7 @@
 <title>Jeecg 微云快速开发平台</title>
 
 <link rel="shortcut icon" href="images/favicon.ico">
-<link href="plug-in/hplus/css/bootstrap.min.css?v=3.3.6"
-	rel="stylesheet">
+<link href="plug-in/hplus/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
 <link href="plug-in/hplus/css/font-awesome.css?v=4.4.0" rel="stylesheet">
 
 <link href="plug-in/hplus/css/animate.css" rel="stylesheet">
@@ -22,42 +20,38 @@
 	<div class="row  border-bottom white-bg dashboard-header">
 		<div class="col-sm-12">
 			<blockquote class="text-warning" style="font-size: 14px">
-				您是否需要一款企业级J2EE快速开发平台，提高开发效率，缩短项目周期… <br>您是否一直在苦苦寻找一款强大的代码生成器，节省码农的繁琐重复工作…
-				<br>您是否想拥有移动报表能力、自定义表单设计能力、插件开发能力(可插拔)、工作流配置能力… <br>…………
+				您是否需要一款企业级J2EE快速开发平台，提高开发效率，缩短项目周期… <br>您是否一直在苦苦寻找一款强大的代码生成器，节省码农的繁琐重复工作… <br>您是否想拥有移动报表能力、自定义表单设计能力、插件开发能力(可插拔)、工作流配置能力…
+				<br>…………
 				<h4 class="text-danger">那么，现在Jeecg来了</h4>
 			</blockquote>
 			<hr>
 		</div>
 		<div class="col-sm-3">
 			<h2>Hello,Guest</h2>
-			<small>移动设备访问请扫描以下二维码：</small> <br> <br> <img
-				src="plug-in/login/images/jeecg.jpg" width="100%"
+			<small>移动设备访问请扫描以下二维码：</small> <br> <br> <img src="plug-in/login/images/jeecg.jpg" width="100%"
 				style="max-width: 264px;"> <br>
 		</div>
 		<div class="col-sm-5">
 			<h2>Jeecg 微云快速开发平台</h2>
 			<p>
-				JEECG是一款基于代码生成器的J2EE快速开发平台，开源界“小普元”超越传统商业企业级开发平台。引领新的开发模式(Online
-				Coding模式(自定义表单)->代码生成器模式->手工MERGE智能开发)，
+				JEECG是一款基于代码生成器的J2EE快速开发平台，开源界“小普元”超越传统商业企业级开发平台。引领新的开发模式(Online Coding模式(自定义表单)->代码生成器模式->手工MERGE智能开发)，
 				可以帮助解决Java项目60%的重复工作，让开发更多关注业务逻辑。既能快速提高开发效率，帮助公司节省人力成本，同时又不失灵活性。她可以用于所有的Web应用程序，如:<b>MIS</b>，<b>CRM</b>，<b>OA</b>，<b>ERP</b>，<b>CMS</b>，<b>网站后台</b>，<b>微信管家</b>，等等，当然，您也可以对她进行深度定制，以做出更强系统。
 			</p>
 			<p>
 				<b>当前版本：</b>v_3.7.8
 			</p>
 			<p>
-				<span class="label label-warning">开源 &nbsp; | &nbsp; 免费 |
-					&nbsp; 更多插件</span>
+				<span class="label label-warning">开源 &nbsp; | &nbsp; 免费 | &nbsp; 更多插件</span>
 			</p>
 			<br>
 			<p>
-				<a class="btn btn-success btn-outline" href="http://yun.jeecg.org"
-					target="_blank"> <i class="fa fa-cloud"></i> JEECG插件下载
+				<a class="btn btn-success btn-outline" href="http://yun.jeecg.org" target="_blank"> <i class="fa fa-cloud"></i>
+					JEECG插件下载
 				</a> <a class="btn btn-white btn-bitbucket"
-					href="http://www.jeecg.org/forum.php?mod=viewthread&tid=1249&page=1&extra=#pid3689"
-					target="_blank"> <i class="fa fa-qq"> </i> 联系我们
-				</a> <a class="btn btn-white btn-bitbucket"
-					href="http://jeecg3.mydoc.io" target="_blank"> <i
-					class="fa fa-home"></i> 在线文档
+					href="http://www.jeecg.org/forum.php?mod=viewthread&tid=1249&page=1&extra=#pid3689" target="_blank"> <i
+					class="fa fa-qq"> </i> 联系我们
+				</a> <a class="btn btn-white btn-bitbucket" href="http://jeecg3.mydoc.io" target="_blank"> <i class="fa fa-home"></i>
+					在线文档
 				</a>
 			</p>
 		</div>
@@ -110,8 +104,7 @@
 					</div>
 					<div class="ibox-content">
 						<p>
-							<i class="fa fa-send-o"></i> 官网：<a href="http://www.jeecg.org"
-								target="_blank">http://www.jeecg.org</a>
+							<i class="fa fa-send-o"></i> 官网：<a href="http://www.jeecg.org" target="_blank">http://www.jeecg.org</a>
 						</p>
 						<p>
 							<i class="fa fa-qq"></i> QQ群：<a href="javascript:;">190866569</a>
@@ -120,8 +113,7 @@
 							<i class="fa fa-weixin"></i>微信公众号：<a href="javascript:;">jeecg</a>
 						</p>
 						<p>
-							<i class="fa fa-credit-card"></i> 邮箱：<a href="javascript:;"
-								class="邮箱">jeecg@sina.com</a>
+							<i class="fa fa-credit-card"></i> 邮箱：<a href="javascript:;" class="邮箱">jeecg@sina.com</a>
 						</p>
 					</div>
 				</div>
@@ -147,8 +139,7 @@
 											<ol>
 												<li>【新功能】一套新的代码生成器模板，Bootstrap表单+EasyUI列表（单表、一对多）;</li>
 												<li>【新功能】一套新的代码生成器模板，Bootstrap表单+EasyUI原生列表（单表、一对多）;</li>
-												<li>【新功能】一套新的代码生成器模板，
-													Boostrap表单+BootstapTable原生列表（单表、一对多）;</li>
+												<li>【新功能】一套新的代码生成器模板， Boostrap表单+BootstapTable原生列表（单表、一对多）;</li>
 												<li>【新功能】一套新的代码生成器模板，Boostrap表单+BootstapTable标签列表（单表、一对多）;</li>
 												<li>【新功能】Datagrid列表按钮折叠功能;</li>
 												<li>【新功能】webuploader上传组件支持openoffice格式转换控制;</li>
@@ -197,8 +188,7 @@
 											<ol>
 												<li>【新功能】一套新的代码生成器模板，Bootstrap表单+EasyUI列表（单表、一对多）;</li>
 												<li>【新功能】一套新的代码生成器模板，Bootstrap表单+EasyUI原生列表（单表、一对多）;</li>
-												<li>【新功能】一套新的代码生成器模板，
-													Boostrap表单+BootstapTable原生列表（单表、一对多）;</li>
+												<li>【新功能】一套新的代码生成器模板， Boostrap表单+BootstapTable原生列表（单表、一对多）;</li>
 												<li>【新功能】一套新的代码生成器模板，Boostrap表单+BootstapTable标签列表（单表、一对多）;</li>
 												<li>【新功能】Online代码生成器，支持生成word模板方式生成 ;</li>
 												<li>【新功能】代码生成器优化，Restful接口代码生成，可选择;</li>
@@ -212,8 +202,7 @@
 												<li>【bug】SystemService.addLog( )的调用，第二个参数和第三个参数搞错了;</li>
 												<li>【bug】Online word 布局模板唯一值校验问题;</li>
 												<li>【bug】 一对多全tab、一对多带子表明细模板，不支持唯一校验处理;</li>
-												<li>【bug】online 数据库表导入功能,SqlServer下
-													字段类型生成错误、精度和小数点不正确、加载的表清单有多余系统表;</li>
+												<li>【bug】online 数据库表导入功能,SqlServer下 字段类型生成错误、精度和小数点不正确、加载的表清单有多余系统表;</li>
 												<li>【bug】系统管理-二级管理员模块代码中SQL语法不兼容ORACLE;</li>
 												<li>【bug】字典组名带有空格情况下，点击查看字典值，js无效问题处理;</li>
 												<li>【bug】 basepath 问题 始终是127.0.0.1的错误bug;</li>
@@ -283,20 +272,15 @@
 												ElementUI风格、Bootstrap风格，追逐潮流技术支持移动端；</div>
 											<ol>
 												<li>【功能升级】新一代 (单表/一对多) 代码生成器模板，Vue+ElementUI风格功能优化升级;</li>
-												<li>【功能升级】新一代 (单表)
-													代码生成器模板，Bootstrap表单+EasyUI原生态列表风格功能优化升级;</li>
-												<li>【功能升级】新一代 (一对多)
-													代码生成器模板，ElementUI表单+EasyUI原生态列表风格功能优化升级;</li>
-												<li>【功能升级】新一代 (一对多)
-													代码生成器模板，EasyUI标签列表上下布局(列表数据编辑)+Table风格表单功能优化升级;</li>
-												<li>【功能升级】牛牛叉功能 ->
-													Datagrid标签升级,通过参数component可以快速实现BootstrapTable与easyUI列表风格切换功能优化升级;</li>
+												<li>【功能升级】新一代 (单表) 代码生成器模板，Bootstrap表单+EasyUI原生态列表风格功能优化升级;</li>
+												<li>【功能升级】新一代 (一对多) 代码生成器模板，ElementUI表单+EasyUI原生态列表风格功能优化升级;</li>
+												<li>【功能升级】新一代 (一对多) 代码生成器模板，EasyUI标签列表上下布局(列表数据编辑)+Table风格表单功能优化升级;</li>
+												<li>【功能升级】牛牛叉功能 -> Datagrid标签升级,通过参数component可以快速实现BootstrapTable与easyUI列表风格切换功能优化升级;</li>
 												<li>【功能升级】定时任务支持版本升级;</li>
 												<li>【功能升级】定时任务，多个tomcat部署一台服务器的解决方案升级;</li>
 												<li>【功能改造】新版代码生成器模板文件扩展名题处理,扩展名统一增加字母“i”;</li>
 												<li>【功能改造】清理hplus/js/plugins下的插件;</li>
-												<li>【功能改造】将不常改的js组件放进jar包 jeecg-plugin-in,减少eclipse
-													check js;</li>
+												<li>【功能改造】将不常改的js组件放进jar包 jeecg-plugin-in,减少eclipse check js;</li>
 												<li>【功能改造】删除无用的代码，减少项目jar依赖;</li>
 												<li>【功能改造】提示信息停留时间延长;</li>
 												<li>【功能改造】防止SQL注入处理;</li>
@@ -363,10 +347,8 @@
 												<li>【新增功能】新一代 (单表/一对多) 代码生成器模板，Vue+ElementUI风格;</li>
 												<li>【新增功能】新一代 (单表) 代码生成器模板，Bootstrap表单+EasyUI原生态列表风格;</li>
 												<li>【新增功能】新一代 (一对多) 代码生成器模板，ElementUI表单+EasyUI原生态列表风格;</li>
-												<li>【新增功能】新一代 (一对多)
-													代码生成器模板，EasyUI标签列表上下布局(列表数据编辑)+Table风格表单;</li>
-												<li>【功能升级】牛牛叉功能 ->
-													Datagrid标签升级,通过参数component可以快速实现BootstrapTable与easyUI列表风格切换;</li>
+												<li>【新增功能】新一代 (一对多) 代码生成器模板，EasyUI标签列表上下布局(列表数据编辑)+Table风格表单;</li>
+												<li>【功能升级】牛牛叉功能 -> Datagrid标签升级,通过参数component可以快速实现BootstrapTable与easyUI列表风格切换;</li>
 												<li>【新增功能】接口测试功能页面;</li>
 												<li>【新增功能】二维码生成功能;</li>
 												<li>【功能升级】多Tab风格（一对多）模板升级;</li>
@@ -551,8 +533,7 @@
 												<li>【online】Online 一对多对上传组件支持;</li>
 												<li>【代码生成器】UE编辑器控件类型问题处理;</li>
 												<li>【代码生成器】代码生成器模板，对图片类型上传组件支持;</li>
-												<li>【代码生成器】online生成代码，无用太多，简化代码(1.
-													系统标准字段，表单页面，添加和修改页面，不生成隐藏字段);</li>
+												<li>【代码生成器】online生成代码，无用太多，简化代码(1. 系统标准字段，表单页面，添加和修改页面，不生成隐藏字段);</li>
 												<li>【代码生成器】代码生成，支持行编辑模式生成;</li>
 												<li>【代码生成器】代码生成t:dictSelect异常处理;</li>
 												<li>【UI标签】列表表头支持换行;</li>
@@ -590,8 +571,7 @@
 												<li>【bug】连接池关闭异常处理;</li>
 												<li>【性能优化】online表单访问慢，优化 ;</li>
 												<li>【性能优化】优化登录逻辑 ;</li>
-												<li>【性能优化】Maven 集成yuicompressor，实现打包压缩静态资源 js
-													css，提高web效率;</li>
+												<li>【性能优化】Maven 集成yuicompressor，实现打包压缩静态资源 js css，提高web效率;</li>
 												<li>TabsTag.java等，发布模式下缓存机制有效（开发模式无缓存）;</li>
 												<li>【性能问题】表索引追加，提高系统性能;</li>
 											</ol>
@@ -882,8 +862,7 @@
 							<li>强大代码生成器和在线配置能力，提高开发效率，大大缩短项目周期；</li>
 							<li>开源免费，万人活跃社区；</li>
 							<li>封装基础用户权限，报表等功能模块，无需再次开发；</li>
-							<li>采用SpringMVC + Hibernate + Minidao+
-								Easyui+Jquery+Boostrap等基础架构</li>
+							<li>采用SpringMVC + Hibernate + Minidao+ Easyui+Jquery+Boostrap等基础架构</li>
 							<li>支持多浏览器，多数据库；</li>
 							<li>支持移动开发，可以完美兼容电脑、手机、pad等多平台；</li>
 							<li>……</li>

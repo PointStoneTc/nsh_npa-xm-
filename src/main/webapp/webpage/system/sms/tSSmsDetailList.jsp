@@ -1,5 +1,4 @@
-<%@ page language="java" import="java.util.*"
-	contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" import="java.util.*" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include file="/context/mytags.jsp"%>
 <!DOCTYPE html>
 <html>
@@ -8,15 +7,13 @@
 <!-- bootstrap & fontawesome -->
 <link rel="stylesheet" href="plug-in/ace/css/bootstrap.css" />
 <link rel="stylesheet" href="plug-in/ace/css/font-awesome.css" />
-<link rel="stylesheet" type="text/css"
-	href="plug-in/accordion/css/accordion.css">
+<link rel="stylesheet" type="text/css" href="plug-in/accordion/css/accordion.css">
 <script src="plug-in/ace/js/jquery.js"></script>
 <script src="plug-in/ace/js/bootstrap.js"></script>
 </head>
 <body style="overflow-y: hidden" scroll="no">
 	<t:formvalid formid="formobj" layout="table" dialog="true">
-		<table style="width: 600px;" cellpadding="0" cellspacing="1"
-			class="formtable table table-hover">
+		<table style="width: 600px;" cellpadding="0" cellspacing="1" class="formtable table table-hover">
 			<thead>
 				<tr>
 					<th>内容</th>

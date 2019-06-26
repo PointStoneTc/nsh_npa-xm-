@@ -1,5 +1,4 @@
-<%@ page language="java" import="java.util.*"
-	contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" import="java.util.*" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include file="/context/mytags.jsp"%>
 <!DOCTYPE html>
 <html>
@@ -8,8 +7,7 @@
 <meta name="viewport" content="width=device-width" />
 <meta name="renderer" content="webkit">
 <title>Bootstrap-Eaharts-DEMO</title>
-<link href="plug-in/bootstrap3.3.5/css/bootstrap.min.css"
-	rel="stylesheet" />
+<link href="plug-in/bootstrap3.3.5/css/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
 	<div class="container-fluid">
@@ -56,13 +54,11 @@
 				<div id="main11" style="height: 400px;"></div>
 			</div>
 		</div>
-		<button style="float: right;" type="button" class="btn btn-default"
-			onclick="clickPrint()">打印</button>
+		<button style="float: right;" type="button" class="btn btn-default" onclick="clickPrint()">打印</button>
 	</div>
 </body>
 <script type="text/javascript" src="plug-in/jquery/jquery-1.9.1.js"></script>
-<script type="text/javascript"
-	src="plug-in/bootstrap3.3.5/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="plug-in/bootstrap3.3.5/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="plug-in/printthis/printThis.js"></script>
 <script type="text/javascript" src="plug-in/echart/echarts.min.js"></script>
 <script type="text/javascript">

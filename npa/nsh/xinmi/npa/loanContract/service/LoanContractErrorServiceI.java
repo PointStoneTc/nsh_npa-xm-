@@ -1,10 +1,8 @@
 package nsh.xinmi.npa.loanContract.service;
 
 import java.util.Date;
-
 import org.jeecgframework.core.common.model.json.DataGrid;
 import org.jeecgframework.core.common.service.CommonService;
-
 import nsh.xinmi.npa.loanContract.view.LoanContractRegisterView;
 
 public interface LoanContractErrorServiceI extends CommonService {
@@ -29,6 +27,19 @@ public interface LoanContractErrorServiceI extends CommonService {
      * @throws Exception
      */
     boolean updateBorrower(String ids, String name, String sex, Date birthday, String idNumber) throws Exception;
+
+    /**
+     * @Title:更新错误借款合同担保人信息
+     * 
+     * @param ids
+     * @param name
+     * @param sex
+     * @param birthday
+     * @param idNumber
+     * @return
+     * @throws Exception
+     */
+    boolean updateGuarantee(String ids, String name, String sex, String birthday, String idNumber) throws Exception;
 
     /**
      * @Title:更新错误借款合同贷款发放日、到期日信息

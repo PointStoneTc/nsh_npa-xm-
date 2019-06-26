@@ -1,22 +1,14 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include file="/context/mytags.jsp"%>
-<t:datagrid name="noticeAuthorityRoleList" checkbox="true"
-	fitColumns="false" title="common.authority.role"
-	actionUrl="noticeAuthorityRoleController.do?datagrid&noticeId=${noticeId}"
-	idField="id" fit="true" queryMode="group">
-	<t:dgCol title="ID" field="id" hidden="true" queryMode="group"
-		width="120"></t:dgCol>
-	<t:dgCol title="通告ID" field="noticeId" hidden="true" queryMode="group"
-		width="120"></t:dgCol>
-	<t:dgCol title="common.role.name" field="role.roleName" hidden="false"
-		queryMode="group" width="180"></t:dgCol>
+<t:datagrid name="noticeAuthorityRoleList" checkbox="true" fitColumns="false" title="common.authority.role"
+	actionUrl="noticeAuthorityRoleController.do?datagrid&noticeId=${noticeId}" idField="id" fit="true" queryMode="group">
+	<t:dgCol title="ID" field="id" hidden="true" queryMode="group" width="120"></t:dgCol>
+	<t:dgCol title="通告ID" field="noticeId" hidden="true" queryMode="group" width="120"></t:dgCol>
+	<t:dgCol title="common.role.name" field="role.roleName" hidden="false" queryMode="group" width="180"></t:dgCol>
 	<t:dgCol title="common.operation" field="opt" width="100"></t:dgCol>
-	<t:dgDelOpt title="common.delete"
-		url="noticeAuthorityRoleController.do?doDel&id={id}"
-		urlclass="ace_button" urlfont="fa-trash-o" />
-	<t:dgToolBar title="common.authority.role" icon="icon-add"
-		url="noticeAuthorityRoleController.do?doSave"
+	<t:dgDelOpt title="common.delete" url="noticeAuthorityRoleController.do?doDel&id={id}" urlclass="ace_button"
+		urlfont="fa-trash-o" />
+	<t:dgToolBar title="common.authority.role" icon="icon-add" url="noticeAuthorityRoleController.do?doSave"
 		funname="addAuthorityRole"></t:dgToolBar>
 </t:datagrid>
 <input type="hidden" id="pNoticeId" value="${noticeId}" />

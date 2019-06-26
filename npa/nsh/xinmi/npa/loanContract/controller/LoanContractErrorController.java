@@ -1,10 +1,8 @@
 package nsh.xinmi.npa.loanContract.controller;
 
 import java.util.Date;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import org.jeecgframework.core.common.controller.BaseController;
 import org.jeecgframework.core.common.model.json.AjaxJson;
 import org.jeecgframework.core.common.model.json.DataGrid;
@@ -19,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
-
 import nsh.xinmi.npa.loanContract.service.LoanContractErrorServiceI;
 import nsh.xinmi.npa.loanContract.view.LoanContractRegisterView;
 
@@ -124,6 +121,53 @@ public class LoanContractErrorController extends BaseController {
             j.setSuccess(sucess);
             j.setMsg("更新异常, 请联系管理员!");
             logger.error("updateBorrower error", e.getMessage());
+        }
+        return j;
+    }
+
+    /**
+     * @Title:更新错误借款合同担保人信息跳转
+     * 
+     * @param req
+     * @return
+     */
+    @RequestMapping(params = "toUpdateGuarantee", method = RequestMethod.GET)
+    public ModelAndView toUpdateGuarantee(HttpServletRequest req) {
+        ModelAndView mv = new ModelAndView("npa/contract/error_updateGuarantee");
+        mv.addObject("ids", req.getParameter("ids"));
+        mv.addObject("names", req.getParameter("names").split(","));
+        mv.addObject("idNumbers", req.getParameter("idNumbers").split(","));
+        mv.addObject("indexs", req.getParameter("indexs"));
+        return mv;
+    }
+
+    /**
+     * @Title:更新错误借款合同担保人信息
+     * 
+     * @param ids 主键s
+     * @param name 姓名
+     * @param sex 性别
+     * @param birthday 生日
+     * @param idNumber 身份证号
+     * @param req
+     * @return
+     */
+    @RequestMapping(params = "updateGuarantee", method = RequestMethod.POST)
+    @ResponseBody
+    public AjaxJson updateGuarantee(@RequestParam(value = "ids", required = true) String ids, @RequestParam(value = "name", required = true) String name,
+            @RequestParam(value = "sex", required = true) String sex, @RequestParam(value = "birthday", required = true) String birthday,
+            @RequestParam(value = "idNumber", required = true) String idNumber, HttpServletRequest req) {
+        AjaxJson j = new AjaxJson();
+        boolean sucess = false;
+        try {
+            sucess = loanContractErrorService.updateGuarantee(ids, name, sex, birthday, idNumber);
+            j.setSuccess(sucess);
+            j.setMsg("更新成功!");
+            logger.info("updateGuarantee sucess:" + ids);
+        } catch (Exception e) {
+            j.setSuccess(sucess);
+            j.setMsg("更新异常, 请联系管理员!");
+            logger.error("updateGuarantee error", e.getMessage());
         }
         return j;
     }

@@ -1,36 +1,24 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include file="/context/mytags.jsp"%>
 <t:base type="jquery,easyui,tools,DatePicker"></t:base>
 <div class="easyui-layout" fit="true">
 	<div region="center" style="padding: 0px; border: 0px">
-		<t:datagrid name="jformOrderTicket2List" filterBtn="true"
-			onDblClick="datagridDbclick" checkbox="true" pagination="true"
-			fitColumns="true" title=""
-			actionUrl="jformOrderTicket2Controller.do?datagrid" idField="id"
+		<t:datagrid name="jformOrderTicket2List" filterBtn="true" onDblClick="datagridDbclick" checkbox="true"
+			pagination="true" fitColumns="true" title="" actionUrl="jformOrderTicket2Controller.do?datagrid" idField="id"
 			fit="true" queryMode="group">
-			<t:dgCol title="主键" field="id" extendParams="editor:'text'"
-				hidden="true" queryMode="single" width="120"></t:dgCol>
-			<t:dgCol title="航班号" field="ticketCode" extendParams="editor:'text'"
-				queryMode="single" width="120"></t:dgCol>
-			<t:dgCol title="航班时间" field="tickectDate"
-				formatter="yyyy-MM-dd hh:mm:ss" filterType="datebox"
-				extendParams="editor:{type:'datetimebox',options:{onShowPanel:initDateboxformat}}"
-				queryMode="single" width="120"></t:dgCol>
-			<t:dgCol title="外键" field="fckId" extendParams="editor:'text'"
-				hidden="true" queryMode="single" width="120"></t:dgCol>
+			<t:dgCol title="主键" field="id" extendParams="editor:'text'" hidden="true" queryMode="single" width="120"></t:dgCol>
+			<t:dgCol title="航班号" field="ticketCode" extendParams="editor:'text'" queryMode="single" width="120"></t:dgCol>
+			<t:dgCol title="航班时间" field="tickectDate" formatter="yyyy-MM-dd hh:mm:ss" filterType="datebox"
+				extendParams="editor:{type:'datetimebox',options:{onShowPanel:initDateboxformat}}" queryMode="single" width="120"></t:dgCol>
+			<t:dgCol title="外键" field="fckId" extendParams="editor:'text'" hidden="true" queryMode="single" width="120"></t:dgCol>
 			<t:dgCol title="操作" field="opt" width="100"></t:dgCol>
-			<t:dgDelOpt title="删除"
-				url="jformOrderTicket2Controller.do?doDel&id={id}"
-				urlclass="ace_button" urlfont="fa-trash-o" />
+			<t:dgDelOpt title="删除" url="jformOrderTicket2Controller.do?doDel&id={id}" urlclass="ace_button" urlfont="fa-trash-o" />
 		</t:datagrid>
 	</div>
 	<input type="hidden" id="jformOrderTicket2ListMainId" />
 </div>
-<script type="text/javascript"
-	src="plug-in/mutitables/mutitables.urd.js"></script>
-<script type="text/javascript"
-	src="plug-in/mutitables/mutitables.curdInIframe.js"></script>
+<script type="text/javascript" src="plug-in/mutitables/mutitables.urd.js"></script>
+<script type="text/javascript" src="plug-in/mutitables/mutitables.curdInIframe.js"></script>
 <script type="text/javascript">
  $(document).ready(function(){
 	  curd = $.curdInIframe({

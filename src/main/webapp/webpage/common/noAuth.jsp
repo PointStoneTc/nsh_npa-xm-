@@ -1,5 +1,4 @@
-<%@ page language="java" import="java.util.*"
-	contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" import="java.util.*" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include file="/context/mytags.jsp"%>
 <html>
 <head>
@@ -47,118 +46,176 @@ body {
 }
 .demo
 
+
  
+
 
 p
 
 
+
+
 :not
 
+
  
+
 
 (
 :first-child
 
+
  
+
 
 )
 {
 text-align
 
 
+
+
 :
+
 
  
 
+
 center
+
+
 
 
 ;
 color
 
 
+
+
 :
+
 
  
 
+
 #666
+
+
 
 
 ;
 font-family
 
 
+
+
 :
+
 
  
 
+
 cursive
+
+
 
 
 ;
 font-size
 
 
+
+
 :
+
 
  
 
+
 10
 px
+
+
 
 
 ;
 text-shadow
 
 
+
+
 :
 
+
  
+
 
 0
 1
 px
 
+
  
+
 
 0
 #fff
+
+
 
 
 ;
 letter-spacing
 
 
+
+
 :
+
 
  
 
+
 1
 px
+
+
 
 
 ;
 line-height
 
 
+
+
 :
+
 
  
 
+
 2
 em
+
+
 
 
 ;
 margin-top
 
 
+
+
 :
+
 
  
 
+
 -50
 px
+
+
 
 
 ;
@@ -168,7 +225,8 @@ px
 <body>
 	<div class="demo">
 		<p>
-			<span>No </span><span> Auth</span>
+			<span>No </span>
+			<span> Auth</span>
 		</p>
 		<p>用户权限不足，请联系管理员(´･ω･`)</p>
 	</div>

@@ -1,18 +1,13 @@
-<%@ page language="java" import="java.util.*"
-	contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" import="java.util.*" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include file="/context/mytags.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
 <title>文件上传</title>
-<link rel="stylesheet"
-	href="plug-in/plupload/jquery.plupload.queue/css/jquery.plupload.queue.css"
-	type="text/css"></link>
+<link rel="stylesheet" href="plug-in/plupload/jquery.plupload.queue/css/jquery.plupload.queue.css" type="text/css"></link>
 <script type="text/javascript" src="plug-in/jquery/jquery-1.9.1.js"></script>
-<script type="text/javascript"
-	src="plug-in/plupload/plupload.full.min.js"></script>
-<script type="text/javascript"
-	src="plug-in/plupload/jquery.plupload.queue/jquery.plupload.queue.min.js"></script>
+<script type="text/javascript" src="plug-in/plupload/plupload.full.min.js"></script>
+<script type="text/javascript" src="plug-in/plupload/jquery.plupload.queue/jquery.plupload.queue.min.js"></script>
 <script type="text/javascript" src="plug-in/plupload/i18n/zh_CN.js"></script>
 </head>
 <body style="padding: 0; margin: 0;">

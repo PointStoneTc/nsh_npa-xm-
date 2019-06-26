@@ -10,7 +10,7 @@ $(function() {
  * @returns
  */
 function reloadTable() {
-  $('#' + datagridId).datagrid('reload');
+    $('#' + datagridId).datagrid('reload');
 }
 
 /**
@@ -19,10 +19,10 @@ function reloadTable() {
  * @returns
  */
 function doQuery() {
-  $('#' + datagridId).datagrid('load', {
-    borrowerName: $('#borrowerName').val(),
-    errorType: $('#errorType').val()
-  });
+    $('#' + datagridId).datagrid('load', {
+        borrowerName: $('#borrowerName').val(),
+        errorType: $('#errorType').val()
+    });
 }
 
 /**
@@ -31,8 +31,8 @@ function doQuery() {
  * @returns
  */
 function doClear() {
-  $('#borrowerName').textbox('clear');
-  $('#errorType').val('');
+    $('#borrowerName').textbox('clear');
+    $('#errorType').val('');
 }
 
 /**
@@ -41,49 +41,50 @@ function doClear() {
  * @returns
  */
 function updateBorrower() {
-  var rows = $('#' + datagridId).datagrid('getSelections');
-  // 判断是否选择了数据
-  if (rows.length == 0) {
-    alert('请选择数据!');
-    return false;
-  }
+    var rows = $('#' + datagridId).datagrid('getSelections');
+    // 判断是否选择了数据
+    if (rows.length == 0) {
+        alert('请选择数据!');
+        return false;
+    }
 
-  // 不允许选择名字不同的用户
-  if (rows.length > 1) {
-    var borrowerName;
-    var hasRepetitive = false;
-    $.each(rows, function(i, n) {
-      if (i == 0)
-        borrowerName = n.borrowerName;
-      else {
-        if (n.borrowerName != '' && n.borrowerName != borrowerName) {
-          hasRepetitive = true;
-          return false;
+    // 不允许选择名字不同的用户
+    if (rows.length > 1) {
+        var borrowerName;
+        var hasRepetitive = false;
+        $.each(rows, function(i, n) {
+            if (i == 0)
+                borrowerName = n.borrowerName;
+            else {
+                if (n.borrowerName != '' && n.borrowerName != borrowerName) {
+                    hasRepetitive = true;
+                    return false;
+                }
+            }
+        });
+
+        if (hasRepetitive) {
+            alert('不允许选择借款人名字不同的数据!');
+            return false;
         }
-      }
+    }
+
+    var ids = '';
+    var name = '';
+    var idNumber = '';
+    var indexs = '';
+    $.each(rows, function(i, n) {
+        ids += n.id + ',';
+        name = n.borrowerName;
+        idNumber = n.idNumber;
+        indexs += $('#' + datagridId).datagrid('getRowIndex', n) + ',';
     });
 
-    if (hasRepetitive) {
-      alert('不允许选择借款人名字不同的数据!');
-      return false;
-    }
-  }
+    ids = ids.substring(0, ids.length - 1);
+    indexs = indexs.substring(0, indexs.length - 1);
 
-  var ids = '';
-  var name = '';
-  var idNumber = '';
-  var indexs = '';
-  $.each(rows, function(i, n) {
-    ids += n.id + ',';
-    name = n.borrowerName;
-    idNumber = n.idNumber;
-    indexs += $('#' + datagridId).datagrid('getRowIndex', n) + ',';
-  });
-
-  ids = ids.substring(0, ids.length - 1);
-  indexs = indexs.substring(0, indexs.length - 1);
-
-  createWindowWithCallBack('更新借款人', 'loancontract/error.do?toUpdateBorrower&ids=' + ids + '&name=' + name + '&idNumber=' + idNumber + '&indexs=' + indexs, 400, 150);
+    createWindowWithCallBack('更新借款人', 'loancontract/error.do?toUpdateBorrower&ids=' + ids + '&name=' + name
+                    + '&idNumber=' + idNumber + '&indexs=' + indexs, 400, 150);
 }
 
 /**
@@ -95,14 +96,85 @@ function updateBorrower() {
  */
 function updateBorrowerCallBack(indexs, idNumber) {
 
-  $.each(indexs.split(","), function(i, n) {
-    $('#' + datagridId).datagrid('updateRow', {
-      index: parseInt(n),
-      row: {
-        idNumber: idNumber
-      }
+    $.each(indexs.split(","), function(i, n) {
+        $('#' + datagridId).datagrid('updateRow', {
+            index: parseInt(n),
+            row: {
+                idNumber: idNumber
+            }
+        });
     });
-  });
+}
+
+/**
+ * 修改担保人
+ * 
+ * @returns
+ */
+function updateGuarantee() {
+    var rows = $('#' + datagridId).datagrid('getSelections');
+    // 判断是否选择了数据
+    if (rows.length == 0) {
+        alert('请选择数据!');
+        return false;
+    }
+
+    // 不允许选择名字不同的用户
+    if (rows.length > 1) {
+        var borrowerName;
+        var hasRepetitive = false;
+        $.each(rows, function(i, n) {
+            if (i == 0)
+                borrowerName = n.borrowerName;
+            else {
+                if (n.borrowerName != '' && n.borrowerName != borrowerName) {
+                    hasRepetitive = true;
+                    return false;
+                }
+            }
+        });
+
+        if (hasRepetitive) {
+            alert('不允许选择借款人名字不同的数据!');
+            return false;
+        }
+    }
+
+    var ids = '';
+    var names = '';
+    var idNumbers = '';
+    var indexs = '';
+    $.each(rows, function(i, n) {
+        ids += n.id + ',';
+        names += n.guaranteesName + ',';
+        idNumbers += n.guaranteesIdNumber + ',';
+        indexs += $('#' + datagridId).datagrid('getRowIndex', n) + ',';
+    });
+
+    ids = ids.substring(0, ids.length - 1);
+    indexs = indexs.substring(0, indexs.length - 1);
+
+    createWindowWithCallBack('更新担保人', 'loancontract/error.do?toUpdateGuarantee&ids=' + ids + '&names=' + names
+                    + '&idNumbers=' + idNumbers + '&indexs=' + indexs, 400, 150);
+}
+
+/**
+ * 修改借款人回调函数
+ * 
+ * @param index
+ * @param idNumbers
+ *            担保人身份证号
+ * @returns
+ */
+function updateGuaranteeCallBack(indexs, idNumbers) {
+    $.each(indexs.split(","), function(i, n) {
+        $('#' + datagridId).datagrid('updateRow', {
+            index: parseInt(n),
+            row: {
+                guaranteesIdNumber: idNumbers
+            }
+        });
+    });
 }
 
 /**
@@ -111,30 +183,31 @@ function updateBorrowerCallBack(indexs, idNumber) {
  * @returns
  */
 function updateIssueDueDate() {
-  var rows = $('#' + datagridId).datagrid('getSelections');
-  // 判断是否选择了数据
-  if (rows.length == 0) {
-    alert('请选择数据!');
-    return false;
-  }
+    var rows = $('#' + datagridId).datagrid('getSelections');
+    // 判断是否选择了数据
+    if (rows.length == 0) {
+        alert('请选择数据!');
+        return false;
+    }
 
-  // 不允许选择多条数据
-  if (rows.length > 1) {
-    alert('不允许选择多条数据!');
-    return false;
-  }
+    // 不允许选择多条数据
+    if (rows.length > 1) {
+        alert('不允许选择多条数据!');
+        return false;
+    }
 
-  var id = '';
-  var issueDate = '';
-  var dueDate = '';
-  var indexs = '';
+    var id = '';
+    var issueDate = '';
+    var dueDate = '';
+    var indexs = '';
 
-  id = rows[0].id;
-  issueDate = rows[0].issueDate;
-  dueDate = rows[0].dueDate;
-  index = $('#' + datagridId).datagrid('getRowIndex', rows[0]);
+    id = rows[0].id;
+    issueDate = rows[0].issueDate;
+    dueDate = rows[0].dueDate;
+    index = $('#' + datagridId).datagrid('getRowIndex', rows[0]);
 
-  createWindowWithCallBack('更新贷款发放日、到期日', 'loancontract/error.do?toUpdateIssueDueDate&ids=' + id + '&issueDate=' + issueDate + '&dueDate=' + dueDate + '&index=' + index, 400, 150);
+    createWindowWithCallBack('更新贷款发放日、到期日', 'loancontract/error.do?toUpdateIssueDueDate&ids=' + id + '&issueDate='
+                    + issueDate + '&dueDate=' + dueDate + '&index=' + index, 400, 150);
 }
 
 /**
@@ -146,13 +219,13 @@ function updateIssueDueDate() {
  * @returns
  */
 function updateIssueDueDateCallBack(index, issueDate, dueDate) {
-  $('#' + datagridId).datagrid('updateRow', {
-    index: parseInt(index),
-    row: {
-      issueDate: issueDate,
-      dueDate: dueDate
-    }
-  });
+    $('#' + datagridId).datagrid('updateRow', {
+        index: parseInt(index),
+        row: {
+            issueDate: issueDate,
+            dueDate: dueDate
+        }
+    });
 }
 
 /**
@@ -161,37 +234,38 @@ function updateIssueDueDateCallBack(index, issueDate, dueDate) {
  * @returns
  */
 function commit() {
-  var rows = $('#' + datagridId).datagrid('getSelections');
-  // 判断是否选择了数据
-  if (rows.length == 0) {
-    alert('请选择数据!');
-    return false;
-  }
-
-  var ids = '';
-  var indexs = '';
-  var hasError = false;
-  $.each(rows, function(i, n) {
-    if (n.idNumber == '' || n.issueDate == '' || n.dueDate == '' || getDaysByDateString(new Date(n.dueDate), new Date(n.issueDate), false) > 0) {
-      hasError = true;
-      return false;
+    var rows = $('#' + datagridId).datagrid('getSelections');
+    // 判断是否选择了数据
+    if (rows.length == 0) {
+        alert('请选择数据!');
+        return false;
     }
-    ids += n.id + ',';
-    indexs += $('#' + datagridId).datagrid('getRowIndex', n) + ',';
-  });
 
-  ids = ids.substring(0, ids.length - 1);
-  indexs = indexs.substring(0, indexs.length - 1);
+    var ids = '';
+    var indexs = '';
+    var hasError = false;
+    $.each(rows, function(i, n) {
+        if (n.idNumber == '' || n.issueDate == '' || n.dueDate == ''
+                        || getDaysByDateString(new Date(n.dueDate), new Date(n.issueDate), false) > 0) {
+            hasError = true;
+            return false;
+        }
+        ids += n.id + ',';
+        indexs += $('#' + datagridId).datagrid('getRowIndex', n) + ',';
+    });
 
-  if (hasError) {
-    alert('错误数据,不能提交(请检查身份证号,贷款发放日、到期日是否为空和逻辑性)!');
-    return false;
-  }
+    ids = ids.substring(0, ids.length - 1);
+    indexs = indexs.substring(0, indexs.length - 1);
 
-  createDialogWithCallback('确认', '确认提交', 'error.do?commit', {
-    ids: ids,
-    indexs: indexs
-  }, function() {
-    reloadTable();
-  });
+    if (hasError) {
+        alert('错误数据,不能提交(请检查身份证号,贷款发放日、到期日是否为空和逻辑性)!');
+        return false;
+    }
+
+    createDialogWithCallback('确认', '确认提交', 'error.do?commit', {
+        ids: ids,
+        indexs: indexs
+    }, function() {
+        reloadTable();
+    });
 }

@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include file="/context/mytags.jsp"%>
 <t:base type="jquery,easyui,tools,DatePicker"></t:base>
 <style>
@@ -47,8 +46,7 @@ textarea, input[type=text], input[type=password], select {
 </style>
 <div class="easyui-layout" fit="true">
 	<div region="center" style="padding: 1px;">
-		<t:datagrid name="jeecgDemoListquery" title="多条件动态查询"
-			actionUrl="jeecgListDemoController.do?datagrid" idField="id"
+		<t:datagrid name="jeecgDemoListquery" title="多条件动态查询" actionUrl="jeecgListDemoController.do?datagrid" idField="id"
 			queryMode="group" checkbox="true"
 			extendParams="headerContextMenu: [
                 { text: '保存列定义', iconCls: 'icon-save', disabled: false, handler: function () { saveHeader(); } },
@@ -58,24 +56,21 @@ textarea, input[type=text], input[type=password], select {
 			<t:dgCol title="用户名" field="name" query="false"></t:dgCol>
 			<t:dgCol title="个人介绍" field="content" query="false"></t:dgCol>
 			<t:dgCol title="办公电话" field="phone" query="false"></t:dgCol>
-			<t:dgCol title="创建日期" field="createDate" formatter="yyyy-MM-dd"
-				query="false" queryMode="group"></t:dgCol>
+			<t:dgCol title="创建日期" field="createDate" formatter="yyyy-MM-dd" query="false" queryMode="group"></t:dgCol>
 			<t:dgCol title="邮箱" field="email" query="false"></t:dgCol>
 			<t:dgCol title="年龄" sortable="true" field="age" query="false"></t:dgCol>
 			<t:dgCol title="工资" field="salary" query="false"></t:dgCol>
-			<t:dgCol title="生日" field="birthday" formatter="yyyy/MM/dd"
-				query="false"></t:dgCol>
+			<t:dgCol title="生日" field="birthday" formatter="yyyy/MM/dd" query="false"></t:dgCol>
 		</t:datagrid>
 		<div id="jeecgDemoListquerytb" style="padding: 3px; height: 25px">
 			<div style="float: left;">
 				<ul id="dsUL">
 					<li id="anyAll" class="conditionType"><span class="anyAll">
-							过滤条件匹配： <select id="anyallSelect" name="mchtyp"
-							style="width: 200px" class="select">
+							过滤条件匹配： <select id="anyallSelect" name="mchtyp" style="width: 200px" class="select">
 								<option value="and" selected="selected">And(所有条件都要求匹配)</option>
 								<option value="or">Or(条件中的任何一个匹配)</option>
-						</select>
-					</span></li>
+							</select>
+						</span></li>
 					<li id="dsLI" name="dsLI" class="conditions oop"><span>
 							<select id="field" name="cons[0].fld" id="orgCode">
 								<option value="">&nbsp;</option>
@@ -87,9 +82,9 @@ textarea, input[type=text], input[type=password], select {
 								<option value="age">年龄</option>
 								<option value="salary">工资</option>
 								<option value="birthday">生日</option>
-						</select>
-					</span> <span> <select id="condition" name="cons[0].ctyp"
-							class="compareType" style="width: 150px">
+							</select>
+						</span> <span>
+							<select id="condition" name="cons[0].ctyp" class="compareType" style="width: 150px">
 								<option>&nbsp;</option>
 								<option value="=">等于</option>
 								<option value="!=">不等于</option>
@@ -103,24 +98,20 @@ textarea, input[type=text], input[type=password], select {
 								<option value="not like">不包含</option>
 								<option value="in">在...中</option>
 								<option value="not in">不在...中</option>
-						</select>
-					</span> <span style="position: relative; z-index: 2000;"> <input
-							id="conValue" name="cons[0].val" type="text"
-							class="text conditionValue" title="">
-					</span> <span> <a id="add" href="javascript:addULChild()"
-							class="fa fa-plus-square" title="添加一个新的过滤条件"
-							style="margin-left: 3px;"></a> <a id="delete"
-							href="javascript:void(0)" onclick="deleteULChild(this)"
-							class="fa fa-minus-square" title="删除此过滤条件"
-							style="margin-left: 23px;"></a>
-					</span></li>
+							</select>
+						</span> <span style="position: relative; z-index: 2000;">
+							<input id="conValue" name="cons[0].val" type="text" class="text conditionValue" title="">
+						</span> <span>
+							<a id="add" href="javascript:addULChild()" class="fa fa-plus-square" title="添加一个新的过滤条件" style="margin-left: 3px;"></a>
+							<a id="delete" href="javascript:void(0)" onclick="deleteULChild(this)" class="fa fa-minus-square" title="删除此过滤条件"
+								style="margin-left: 23px;"></a>
+						</span></li>
 				</ul>
 			</div>
 			<div style="float: right;">
-				<input id="_sqlbuilder" name="sqlbuilder" type="hidden" /> <a
-					href="#" class="easyui-linkbutton" iconCls="icon-search"
-					onclick="mySearch()">查询</a> <a href="#" class="easyui-linkbutton"
-					iconCls="icon-reload" onclick="searchReset()">重置</a>
+				<input id="_sqlbuilder" name="sqlbuilder" type="hidden" /> <a href="#" class="easyui-linkbutton"
+					iconCls="icon-search" onclick="mySearch()">查询</a> <a href="#" class="easyui-linkbutton" iconCls="icon-reload"
+					onclick="searchReset()">重置</a>
 			</div>
 		</div>
 	</div>

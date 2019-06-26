@@ -1,24 +1,19 @@
-<%@ page language="java" import="java.util.*"
-	contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" import="java.util.*" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include file="/context/mytags.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
 <t:base type="jquery,easyui,tools"></t:base>
-<link rel="stylesheet" href="plug-in/Validform/css/style.css"
-	type="text/css" />
-<link rel="stylesheet" href="plug-in/Validform/css/tablefrom.css"
-	type="text/css" />
-<link rel="stylesheet"
-	href="plug-in/Formdesign/js/ueditor/formdesign/bootstrap/css/bootstrap.css">
+<link rel="stylesheet" href="plug-in/Validform/css/style.css" type="text/css" />
+<link rel="stylesheet" href="plug-in/Validform/css/tablefrom.css" type="text/css" />
+<link rel="stylesheet" href="plug-in/Formdesign/js/ueditor/formdesign/bootstrap/css/bootstrap.css">
 <!--[if lte IE 6]>
     <link rel="stylesheet" type="text/css" href="plug-in/Formdesign/js/ueditor/formdesign/bootstrap/css/bootstrap-ie6.css">
     <![endif]-->
 <!--[if lte IE 7]>
     <link rel="stylesheet" type="text/css" href="plug-in/Formdesign/js/ueditor/formdesign/bootstrap/css/ie.css">
     <![endif]-->
-<link rel="stylesheet"
-	href="plug-in/Formdesign/js/ueditor/formdesign/leipi.style.css">
+<link rel="stylesheet" href="plug-in/Formdesign/js/ueditor/formdesign/leipi.style.css">
 </head>
 <body>
 	<textarea id="original" style="display: none">${contents}</textarea>

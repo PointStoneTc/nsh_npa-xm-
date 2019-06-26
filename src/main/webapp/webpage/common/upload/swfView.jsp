@@ -1,13 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include file="/context/mytags.jsp"%>
 <!DOCTYPE html >
 <html>
 <head>
 <title>附件查看</title>
 <script type="text/javascript" src="plug-in/jquery/jquery-1.9.1.js"></script>
-<script type="text/javascript"
-	src="plug-in/Flexpaper/flexpaper_flash.js"></script>
+<script type="text/javascript" src="plug-in/Flexpaper/flexpaper_flash.js"></script>
 <script type="text/javascript" src="plug-in/Flexpaper/swfobject.js"></script>
 <style type="text/css" media="screen">
 html, body {
@@ -27,8 +25,7 @@ body {
 </head>
 <body>
 	<div style="position: absolute; left: 5px; top: 5px; width: 100%">
-		<a id="viewerPlaceHolder"
-			style="width: auto; height: 700px; display: block;"></a>
+		<a id="viewerPlaceHolder" style="width: auto; height: 700px; display: block;"></a>
 		<script type="text/javascript">
 <%--update-begin--Author:Yandong  Date:20180524 for:TASK #2718 【改进】在线文档预览效果--%>		var swfVersionStr = "10.0.0";
 		var xiSwfUrlStr = "playerProductInstall.swf";

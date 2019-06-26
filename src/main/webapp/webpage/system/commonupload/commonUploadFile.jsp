@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include file="/context/mytags.jsp"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -10,21 +9,17 @@
 <link rel="stylesheet" href="plug-in/bootstrap/css/bootstrap.min.css">
 </head>
 <body>
-	<t:formvalid formid="formobj" layout="div" dialog="true"
-		action="jeecgFormDemoController.do?saveUploadFile">
+	<t:formvalid formid="formobj" layout="div" dialog="true" action="jeecgFormDemoController.do?saveUploadFile">
 		<fieldset class="step">
 			<div class="form">
-				<label class="Validform_label"> 文件标题: </label> <input
-					name="documentTitle" id="documentTitle" datatype="s3-50"
-					value="${doc.documentTitle}" type="text"> <span
-					class="Validform_checktip">标题名称在3~50位字符,且不为空</span>
+				<label class="Validform_label"> 文件标题: </label>
+				<input name="documentTitle" id="documentTitle" datatype="s3-50" value="${doc.documentTitle}" type="text">
+				<span class="Validform_checktip">标题名称在3~50位字符,且不为空</span>
 			</div>
 			<div class="form">
-				<input type="hidden" id="file-name" name="filename" /> <input
-					type="hidden" id="file-name-swfpath" name="swfpath"> <a
-					target="_blank" id="file-name-href">未上传</a> <br> <input
-					class="btn btn-success btn-sm" type="button" value="上传附件"
-					onclick="commonUpload(commonUploadDefaultCallBack,'file-name')" />
+				<input type="hidden" id="file-name" name="filename" /> <input type="hidden" id="file-name-swfpath" name="swfpath">
+				<a target="_blank" id="file-name-href">未上传</a> <br> <input class="btn btn-success btn-sm" type="button"
+					value="上传附件" onclick="commonUpload(commonUploadDefaultCallBack,'file-name')" />
 			</div>
 		</fieldset>
 	</t:formvalid>

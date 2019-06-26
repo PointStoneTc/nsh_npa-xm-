@@ -1,37 +1,26 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include file="/context/mytags.jsp"%>
 <t:base type="jquery,easyui,tools,DatePicker"></t:base>
 <div class="easyui-layout" fit="true">
 	<div region="center" style="padding: 0px; border: 0px">
-		<t:datagrid name="jformOrderCustomerList" checkbox="true"
-			fitColumns="true" title=""
-			actionUrl="jformOrderMainController.do?customerDatagrid" idField="id"
-			fit="true" queryMode="group" collapsible="true">
-			<t:dgCol title="主键" field="id" hidden="true" queryMode="single"
-				width="0"></t:dgCol>
-			<t:dgCol title="外键" field="fkId" hidden="true" queryMode="single"
-				width="0"></t:dgCol>
-			<t:dgCol title="名称" field="name" extendParams="editor:'text'"
-				queryMode="single" width="100"></t:dgCol>
-			<t:dgCol title="单价" field="money" extendParams="editor:'numberbox'"
-				queryMode="single" width="50"></t:dgCol>
-			<t:dgCol title="性别" field="sex" extendParams="editor:'combobox'"
-				queryMode="single" dictionary="sex" width="80"></t:dgCol>
-			<t:dgCol title="电话" field="telphone"
-				extendParams="editor:{type:'validatebox',options:{validType:'phoneRex'}}"
+		<t:datagrid name="jformOrderCustomerList" checkbox="true" fitColumns="true" title=""
+			actionUrl="jformOrderMainController.do?customerDatagrid" idField="id" fit="true" queryMode="group" collapsible="true">
+			<t:dgCol title="主键" field="id" hidden="true" queryMode="single" width="0"></t:dgCol>
+			<t:dgCol title="外键" field="fkId" hidden="true" queryMode="single" width="0"></t:dgCol>
+			<t:dgCol title="名称" field="name" extendParams="editor:'text'" queryMode="single" width="100"></t:dgCol>
+			<t:dgCol title="单价" field="money" extendParams="editor:'numberbox'" queryMode="single" width="50"></t:dgCol>
+			<t:dgCol title="性别" field="sex" extendParams="editor:'combobox'" queryMode="single" dictionary="sex" width="80"></t:dgCol>
+			<t:dgCol title="电话" field="telphone" extendParams="editor:{type:'validatebox',options:{validType:'phoneRex'}}"
 				queryMode="single" width="120"></t:dgCol>
 			<t:dgCol title="身份证扫描件" field="sfPic" queryMode="single" width="120"></t:dgCol>
 
 			<t:dgToolBar title="编辑" icon="icon-edit" funname="editRow"></t:dgToolBar>
-			<t:dgToolBar title="保存" icon="icon-save"
-				url="jformOrderMainController.do?saveRows" funname="saveData"></t:dgToolBar>
+			<t:dgToolBar title="保存" icon="icon-save" url="jformOrderMainController.do?saveRows" funname="saveData"></t:dgToolBar>
 			<t:dgToolBar title="取消编辑" icon="icon-undo" funname="reject"></t:dgToolBar>
 		</t:datagrid>
 	</div>
 </div>
-<script type="text/javascript"
-	src="webpage/com/jeecg/demo/orderOne2Many/rowedit.js"></script>
+<script type="text/javascript" src="webpage/com/jeecg/demo/orderOne2Many/rowedit.js"></script>
 <script type="text/javascript">
 
  var selectIframe;//iframe对象

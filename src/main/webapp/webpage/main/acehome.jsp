@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 
@@ -14,8 +13,7 @@
 <title>Jeecg 微云快速开发平台</title>
 
 <link rel="shortcut icon" href="images/favicon.ico">
-<link href="plug-in/hplus/css/bootstrap.min.css?v=3.3.6"
-	rel="stylesheet">
+<link href="plug-in/hplus/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
 <link href="plug-in/hplus/css/font-awesome.css?v=4.4.0" rel="stylesheet">
 
 <link href="plug-in/hplus/css/animate.css" rel="stylesheet">
@@ -28,23 +26,21 @@
 	<div class="row  border-bottom white-bg dashboard-header">
 		<div class="col-sm-12">
 			<blockquote class="text-warning" style="font-size: 14px">
-				您是否需要一款企业级J2EE快速开发平台，提高开发效率，缩短项目周期… <br>您是否一直在苦苦寻找一款强大的代码生成器，节省码农的繁琐重复工作…
-				<br>您是否想拥有移动报表能力、自定义表单设计能力、插件开发能力(可插拔)、工作流配置能力… <br>…………
+				您是否需要一款企业级J2EE快速开发平台，提高开发效率，缩短项目周期… <br>您是否一直在苦苦寻找一款强大的代码生成器，节省码农的繁琐重复工作… <br>您是否想拥有移动报表能力、自定义表单设计能力、插件开发能力(可插拔)、工作流配置能力…
+				<br>…………
 				<h4 class="text-danger">那么，现在Jeecg来了</h4>
 			</blockquote>
 			<hr>
 		</div>
 		<div class="col-sm-3">
 			<h2>Hello,Guest</h2>
-			<small>移动设备访问请扫描以下二维码：</small> <br> <br> <img
-				src="plug-in/login/images/jeecg.jpg" width="100%"
+			<small>移动设备访问请扫描以下二维码：</small> <br> <br> <img src="plug-in/login/images/jeecg.jpg" width="100%"
 				style="max-width: 264px;"> <br>
 		</div>
 		<div class="col-sm-5">
 			<h2>Jeecg 微云快速开发平台</h2>
 			<p>
-				JEECG是一款基于代码生成器的J2EE快速开发平台，开源界“小普元”超越传统商业企业级开发平台。引领新的开发模式(Online
-				Coding模式(自定义表单)->代码生成器模式->手工MERGE智能开发)，
+				JEECG是一款基于代码生成器的J2EE快速开发平台，开源界“小普元”超越传统商业企业级开发平台。引领新的开发模式(Online Coding模式(自定义表单)->代码生成器模式->手工MERGE智能开发)，
 				可以帮助解决Java项目60%的重复工作，让开发更多关注业务逻辑。既能快速提高开发效率，帮助公司节省人力成本，同时又不失灵活性。她可以用于所有的Web应用程序，如:<b>MIS</b>，<b>CRM</b>，<b>OA</b>，<b>ERP</b>，<b>CMS</b>，<b>网站后台</b>，<b>微信管家</b>，等等，当然，您也可以对她进行深度定制，以做出更强系统。
 			</p>
 			<p>
@@ -55,10 +51,9 @@
 			</p>
 			<br>
 			<p>
-				<a class="btn btn-success btn-outline" href="http://www.jeecg.org/"
-					target="_blank"> <i class="fa fa-qq"> </i> 联系我们
-				</a> <a class="btn btn-white btn-bitbucket"
-					href="http://blog.csdn.net/zhangdaiscott" target="_blank"> <i
+				<a class="btn btn-success btn-outline" href="http://www.jeecg.org/" target="_blank"> <i class="fa fa-qq"> </i>
+					联系我们
+				</a> <a class="btn btn-white btn-bitbucket" href="http://blog.csdn.net/zhangdaiscott" target="_blank"> <i
 					class="fa fa-home"></i> 访问博客
 				</a>
 			</p>
@@ -112,8 +107,7 @@
 					</div>
 					<div class="ibox-content">
 						<p>
-							<i class="fa fa-send-o"></i> 官网：<a href="http://www.jeecg.org"
-								target="_blank">http://www.jeecg.org</a>
+							<i class="fa fa-send-o"></i> 官网：<a href="http://www.jeecg.org" target="_blank">http://www.jeecg.org</a>
 						</p>
 						<p>
 							<i class="fa fa-qq"></i> QQ群：<a href="javascript:;">190866569</a>
@@ -122,8 +116,7 @@
 							<i class="fa fa-weixin"></i>微信公众号：<a href="javascript:;">jeecg</a>
 						</p>
 						<p>
-							<i class="fa fa-credit-card"></i> 邮箱：<a href="javascript:;"
-								class="邮箱">jeecg@sina.com</a>
+							<i class="fa fa-credit-card"></i> 邮箱：<a href="javascript:;" class="邮箱">jeecg@sina.com</a>
 						</p>
 					</div>
 				</div>
@@ -270,8 +263,7 @@
 							<li>强大代码生成器和在线配置能力，提高开发效率，大大缩短项目周期；</li>
 							<li>开源免费，万人活跃社区；</li>
 							<li>封装基础用户权限，报表等功能模块，无需再次开发；</li>
-							<li>采用SpringMVC + Hibernate + Minidao+
-								Easyui+Jquery+Boostrap等基础架构</li>
+							<li>采用SpringMVC + Hibernate + Minidao+ Easyui+Jquery+Boostrap等基础架构</li>
 							<li>支持多浏览器，多数据库；</li>
 							<li>支持移动开发，可以完美兼容电脑、手机、pad等多平台；</li>
 							<li>……</li>

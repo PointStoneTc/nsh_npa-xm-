@@ -1,5 +1,4 @@
-<%@ page language="java" import="java.util.*"
-	contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" import="java.util.*" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include file="/context/mytags.jsp"%>
 <!DOCTYPE html>
 <html>
@@ -11,8 +10,7 @@
 <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 <meta http-equiv="description" content="This is my page">
 <t:base type="jquery,easyui,tools"></t:base>
-<script type="text/javascript"
-	src="plug-in/hplus/js/plugins/layer/layer.min.js"></script>
+<script type="text/javascript" src="plug-in/hplus/js/plugins/layer/layer.min.js"></script>
 <style>
 .layui-layer-iframe .layui-layer-btn, .layui-layer-page .layui-layer-btn
 	{
@@ -55,13 +53,11 @@ $(function(){
 
 </script>
 </head>
-<body
-	style="width: 100%; height: 100%; overflow: hidden; margin: 0; padding: 0;">
+<body style="width: 100%; height: 100%; overflow: hidden; margin: 0; padding: 0;">
 	<h2 style="padding-left: 10px">Pluplaod插件的上传演示</h2>
 	<hr />
 	&nbsp;&nbsp;&nbsp;
-	<button class="ace_button"
-		style="width: 10%; height: 30px; font-size: 12px" id="layerUploader">文件上传</button>
+	<button class="ace_button" style="width: 10%; height: 30px; font-size: 12px" id="layerUploader">文件上传</button>
 	<hr />
 	<div style="padding-left: 10px">
 		<div id="info"></div>

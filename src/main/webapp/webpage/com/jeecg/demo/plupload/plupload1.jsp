@@ -1,5 +1,4 @@
-<%@ page language="java" import="java.util.*"
-	contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" import="java.util.*" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include file="/context/mytags.jsp"%>
 <!DOCTYPE html>
 <html>
@@ -250,23 +249,24 @@ ul, li {
 		</div>
 	</div>
 
-	<div class="photo_upload_box_outside blur_area"
-		id="photo_upload_box_outside" tabindex="2000">
+	<div class="photo_upload_box_outside blur_area" id="photo_upload_box_outside" tabindex="2000">
 		<div class="photo_upload_box">
-			<a class="photo_upload_close" href="javascript:void(0);"
-				onclick="photo_upload_close()"></a>
+			<a class="photo_upload_close" href="javascript:void(0);" onclick="photo_upload_close()"></a>
 			<h1>本地上传</h1>
 			<p class="upload_num">
-				共<span id="uploaded_length">0</span>张，还能上传<span id="upload_other">9</span>张
+				共
+				<span id="uploaded_length">0</span>
+				张，还能上传
+				<span id="upload_other">9</span>
+				张
 			</p>
 			<ul id="ul_pics" class="ul_pics clearfix">
-				<li id="local_upload"><img
-					src="plug-in/plupload/jquery.ui.plupload/img/local_upload.png"
-					id="btn2" /></li>
+				<li id="local_upload"><img src="plug-in/plupload/jquery.ui.plupload/img/local_upload.png" id="btn2" /></li>
 			</ul>
 			<div class="arrow_layer">
-				<span class="arrow_top_area"><i class="arrow_top_bg"></i><em
-					class="arrow_top"></em></span>
+				<span class="arrow_top_area">
+					<i class="arrow_top_bg"></i><em class="arrow_top"></em>
+				</span>
 			</div>
 		</div>
 	</div>
@@ -381,9 +381,7 @@ $(function() {
 	<h3>第二种：直接选取</h3>
 	<div style="cursor: pointer">
 		<ul id="picsUl" class="ul_pics clearfix">
-			<li id="local_upload1"><img
-				src="plug-in/plupload/jquery.ui.plupload/img/local_upload.png"
-				id="picsPicker" /></li>
+			<li id="local_upload1"><img src="plug-in/plupload/jquery.ui.plupload/img/local_upload.png" id="picsPicker" /></li>
 		</ul>
 	</div>
 

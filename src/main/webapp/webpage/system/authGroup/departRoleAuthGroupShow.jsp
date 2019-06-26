@@ -1,5 +1,4 @@
-<%@ page language="java" import="java.util.*"
-	contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" import="java.util.*" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include file="/context/mytags.jsp"%>
 <!DOCTYPE html>
 <html>
@@ -24,16 +23,12 @@ $(function(){
 </head>
 <body style="overflow: hidden; margin: -8px -1px;" scroll="no">
 	<input id="id" name="id" type="hidden" value="${role.id}">
-	<input id="roleName" name="roleName" type="hidden"
-		value="${role.roleName}">
-	<input id="departAgId" name="departAgId" type="hidden"
-		value="${role.departAgId}">
-	<div id="dd" class="easyui-tabs" data-options="tools:'#tab-tools'"
-		style="width: auto;">
+	<input id="roleName" name="roleName" type="hidden" value="${role.roleName}">
+	<input id="departAgId" name="departAgId" type="hidden" value="${role.departAgId}">
+	<div id="dd" class="easyui-tabs" data-options="tools:'#tab-tools'" style="width: auto;">
 		<div title="角色授权">
-			<div tools="#tt" class="easyui-panel"
-				title='<t:mutiLang langKey="permission.set"/>'
-				style="padding: 10px;" fit="true" border="false" id="function-panel"></div>
+			<div tools="#tt" class="easyui-panel" title='<t:mutiLang langKey="permission.set"/>' style="padding: 10px;"
+				fit="true" border="false" id="function-panel"></div>
 			<div id="tt"></div>
 		</div>
 	</div>

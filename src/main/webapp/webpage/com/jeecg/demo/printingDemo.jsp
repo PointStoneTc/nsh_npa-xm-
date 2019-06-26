@@ -1,5 +1,4 @@
-<%@ page language="java" import="java.util.*"
-	contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" import="java.util.*" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,8 +6,7 @@
 <meta name="keywords" content="">
 <meta name="description" content="">
 <link rel="shortcut icon" href="favicon.ico">
-<link href="plug-in/bootstrap3.3.5/css/bootstrap.min.css?v=3.3.6"
-	rel="stylesheet">
+<link href="plug-in/bootstrap3.3.5/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
 <link href="plug-in/hplus/css/font-awesome.css?v=4.4.0" rel="stylesheet">
 <link href="plug-in/hplus/css/animate.css" rel="stylesheet">
 <link href="plug-in/hplus/css/style.css?v=4.1.0" rel="stylesheet">
@@ -19,8 +17,7 @@
 			<div class="row">
 				<div class="col-sm-6">
 					<address>
-						<strong>北京百度在线网络技术有限公司</strong><br> 北京市海淀区上地十街10号<br> <abbr
-							title="Phone">总机：</abbr> (+86 10) 5992 8888
+						<strong>北京百度在线网络技术有限公司</strong><br> 北京市海淀区上地十街10号<br> <abbr title="Phone">总机：</abbr> (+86 10) 5992 8888
 					</address>
 				</div>
 
@@ -28,11 +25,13 @@
 					<h4>单据编号：</h4>
 					<h4 class="text-navy">H+-000567F7-00</h4>
 					<address>
-						<strong>阿里巴巴集团</strong><br> 中国杭州市华星路99号东部软件园创业大厦6层(310099)<br>
-						<abbr title="Phone">总机：</abbr> (86) 571-8502-2088
+						<strong>阿里巴巴集团</strong><br> 中国杭州市华星路99号东部软件园创业大厦6层(310099)<br> <abbr title="Phone">总机：</abbr> (86)
+						571-8502-2088
 					</address>
 					<p>
-						<span><strong>日期：</strong> 2014-11-11</span>
+						<span>
+							<strong>日期：</strong> 2014-11-11
+						</span>
 					</p>
 				</div>
 			</div>
@@ -125,8 +124,7 @@
         window.print();
     </script>
 
-	<script type="text/javascript"
-		src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
+	<script type="text/javascript" src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
 	<!--统计代码，可删除-->
 
 </body>

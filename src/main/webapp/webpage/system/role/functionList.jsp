@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include file="/context/mytags.jsp"%>
 <!DOCTYPE html >
 <html>
@@ -36,21 +35,17 @@
 </script>
 </head>
 <body>
-	<t:datagrid name="functionList" title="permission.manage"
-		actionUrl="roleController.do?setOperate&roleId=${roleId}"
+	<t:datagrid name="functionList" title="permission.manage" actionUrl="roleController.do?setOperate&roleId=${roleId}"
 		idField="functionid" treegrid="true" pagination="false">
 		<t:dgCol title="common.id" field="id" treefield="id" hidden="true"></t:dgCol>
-		<t:dgCol title="permission.name" field="functionName" width="100"
-			treefield="text"></t:dgCol>
-		<t:dgCol title="common.operation" field="TOperations" width="300"
-			treefield="operations"></t:dgCol>
+		<t:dgCol title="permission.name" field="functionName" width="100" treefield="text"></t:dgCol>
+		<t:dgCol title="common.operation" field="TOperations" width="300" treefield="operations"></t:dgCol>
 	</t:datagrid>
 	<div id="functionListtb" style="padding: 5px; height: 30px">
 		<div style="float: left;">
-			<input type="hidden" name="roleId" id="roleId" value="${roleId }">
-			<a href="#" class="easyui-linkbutton" plain="true" icon="icon-add"
-				onclick="op();">保存</a> <a href="#" class="easyui-linkbutton"
-				plain="true" icon="icon-back" onClick="history.go(-1)">返回</a>
+			<input type="hidden" name="roleId" id="roleId" value="${roleId }"> <a href="#" class="easyui-linkbutton"
+				plain="true" icon="icon-add" onclick="op();">保存</a> <a href="#" class="easyui-linkbutton" plain="true"
+				icon="icon-back" onClick="history.go(-1)">返回</a>
 		</div>
 	</div>
 </body>

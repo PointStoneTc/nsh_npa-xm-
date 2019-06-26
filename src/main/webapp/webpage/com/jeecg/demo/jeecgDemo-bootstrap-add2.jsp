@@ -1,5 +1,4 @@
-<%@ page language="java" import="java.util.*"
-	contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" import="java.util.*" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include file="/context/mytags.jsp"%>
 <!DOCTYPE html>
 <html>
@@ -10,16 +9,15 @@
 <t:base type="validform,bootstrap,layer,bootstrap-form,jquery"></t:base>
 </head>
 <body style="margin: 40px">
-	<form id="formobj" action="jeecgListDemoController.do?doAdd"
-		class="form-horizontal validform" role="form" method="post">
+	<form id="formobj" action="jeecgListDemoController.do?doAdd" class="form-horizontal validform" role="form"
+		method="post">
 		<input type="hidden" id="btn_sub" class="btn_sub" />
 		<div class="form-group">
 			<label for="name" class="col-sm-3 control-label">名称：</label>
 			<div class="col-sm-7">
 				<div class="input-group" style="width: 100%">
-					<input type="text" class="form-control input-sm required" id="name"
-						name="name" data-msg-required="" datatype="*" placeholder="请输入名字"
-						aria-required="true" />
+					<input type="text" class="form-control input-sm required" id="name" name="name" data-msg-required="" datatype="*"
+						placeholder="请输入名字" aria-required="true" />
 				</div>
 			</div>
 		</div>
@@ -28,10 +26,8 @@
 			<label class="col-sm-3 control-label">工资：</label>
 			<div class="col-sm-7">
 				<div class="input-group" style="width: 100%">
-					<input id="salary" name="salary" type="text"
-						class="form-control input-sm required" placeholder="请输入工资"
-						data-msg-required="" datatype="/^(-?\d+)(\.\d+)?$/"
-						aria-required="true" />
+					<input id="salary" name="salary" type="text" class="form-control input-sm required" placeholder="请输入工资"
+						data-msg-required="" datatype="/^(-?\d+)(\.\d+)?$/" aria-required="true" />
 				</div>
 			</div>
 		</div>
@@ -40,10 +36,10 @@
 			<label class="col-sm-3 control-label">生日：</label>
 			<div class="col-sm-7">
 				<div class="input-group" style="width: 100%">
-					<input type="text" name="birthday" id="birthday"
-						class="form-control input-sm" value="" datatype="*"
-						placeholder="请输入生日" /> <span class="input-group-addon"> <span
-						class="glyphicon glyphicon-calendar"></span>
+					<input type="text" name="birthday" id="birthday" class="form-control input-sm" value="" datatype="*"
+						placeholder="请输入生日" />
+					<span class="input-group-addon">
+						<span class="glyphicon glyphicon-calendar"></span>
 					</span>
 				</div>
 			</div>
@@ -53,8 +49,8 @@
 			<label class="col-sm-3 control-label">性别：</label>
 			<div class="col-sm-7">
 				<div class="input-group" style="width: 100%">
-					<input type="radio" class="i-checks" name="sex" value="0" />男&nbsp;&nbsp;
-					<input type="radio" class="i-checks" name="sex" value="1" />女
+					<input type="radio" class="i-checks" name="sex" value="0" />男&nbsp;&nbsp; <input type="radio" class="i-checks"
+						name="sex" value="1" />女
 				</div>
 			</div>
 		</div>
@@ -65,7 +61,8 @@
 				<div class="input-group" style="width: 100%">
 					<span class="input-group-btn">
 						<button class="btn btn-default input-sm" type="button">Go!</button>
-					</span> <select name="depId" class="form-control input-sm" datatype="*">
+					</span>
+					<select name="depId" class="form-control input-sm" datatype="*">
 						<option value=""></option>
 						<option value="402880e447e99cf10147e9a03b320003">北京国炬软件</option>
 						<option value="402880e447e9a9570147e9b677320003">软件信息部</option>
@@ -87,10 +84,8 @@
 			<label class="col-sm-3 control-label">头像：</label>
 			<div class="col-sm-7">
 				<div class="input-group" style="width: 100%">
-					<input type="checkbox" class="i-checks" name="touxiang" value="1" />
-					头像1 <input type="checkbox" class="i-checks" name="touxiang"
-						value="2" /> 头像2 <input type="checkbox" class="i-checks"
-						name="touxiang" value="3" /> 头像3
+					<input type="checkbox" class="i-checks" name="touxiang" value="1" /> 头像1 <input type="checkbox" class="i-checks"
+						name="touxiang" value="2" /> 头像2 <input type="checkbox" class="i-checks" name="touxiang" value="3" /> 头像3
 				</div>
 			</div>
 		</div>
@@ -99,8 +94,7 @@
 			<label class="col-sm-3 control-label">个人介绍：</label>
 			<div class="col-sm-7">
 				<div class="input-group" style="width: 100%">
-					<textarea id="content" name="content" class="form-control input-sm"
-						placeholder="请输入个人介绍" rows="4"></textarea>
+					<textarea id="content" name="content" class="form-control input-sm" placeholder="请输入个人介绍" rows="4"></textarea>
 				</div>
 			</div>
 		</div>
@@ -109,8 +103,7 @@
 			<label class="col-sm-3 control-label">年龄：</label>
 			<div class="col-sm-7">
 				<div class="input-group" style="width: 100%">
-					<input name="age" id="age" type="text"
-						class="form-control input-sm" placeholder="请输入年龄" />
+					<input name="age" id="age" type="text" class="form-control input-sm" placeholder="请输入年龄" />
 				</div>
 			</div>
 		</div>

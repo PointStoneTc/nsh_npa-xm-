@@ -2,9 +2,9 @@ package nsh.xinmi.npa.loanContract.service.impl;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 import org.jeecgframework.core.common.model.json.DataGrid;
 import org.jeecgframework.core.common.service.impl.CommonServiceImpl;
 import org.jeecgframework.core.util.DateUtils;
@@ -15,12 +15,12 @@ import org.jeecgframework.web.system.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import jodd.bean.BeanUtil;
 import nsh.xinmi.npa.corporateOrg.entity.CorporateOrgUser;
 import nsh.xinmi.npa.corporateOrg.service.CorporateOrgUserServiceI;
 import nsh.xinmi.npa.loanContract.service.LoanContractErrorServiceI;
 import nsh.xinmi.npa.loanContract.view.LoanContractRegisterView;
+import nsh.xinmi.npa.loanContractGuarantee.entity.LoanContractGuarantee;
 import nsh.xinmi.npa.naturalPerson.entity.NaturalPerson;
 import nsh.xinmi.npa.naturalPerson.service.NaturalPersonServiceI;
 
@@ -86,6 +86,8 @@ public class LoanContractErrorServiceImpl extends CommonServiceImpl implements L
         sql.append(" order by c.borrower_name, c.issue_date");
         List<Map<String, Object>> rs = findForJdbc(sql.toString(), dataGrid.getPage(), dataGrid.getRows());
         List<LoanContractRegisterView> list = new ArrayList<LoanContractRegisterView>();
+        Map<Long, LoanContractRegisterView> tempMap = new HashMap<Long, LoanContractRegisterView>();
+
         for (Map<String, Object> rsMap : rs) {
             LoanContractRegisterView lcv = new LoanContractRegisterView();
             BeanUtil.setProperty(lcv, "id", rsMap.get("id"));
@@ -108,6 +110,38 @@ public class LoanContractErrorServiceImpl extends CommonServiceImpl implements L
             BeanUtil.setProperty(lcv, "recoveryInterest", rsMap.get("recovery_interest"));
             BeanUtil.setProperty(lcv, "hangInteres", rsMap.get("hang_interes"));
             list.add(lcv);
+            tempMap.put(lcv.getId(), lcv);
+        }
+
+        if (list.size() > 0) {
+            sql.setLength(0);
+            sql = new StringBuffer(
+                    "select g.id, g.guarantee_id, g.loan_contrac_id, g.guarantee_name, p.id_number from npa_loan_contract_guarantee g left join npa_natural_person p on g.guarantee_id = p.id where g.loan_contrac_id in(");
+            for (LoanContractRegisterView item : list)
+                sql.append(item.getId()).append(",");
+            sql.deleteCharAt(sql.length() - 1);
+            sql.append(")");
+
+            List<Map<String, Object>> rsgt = findForJdbc(sql.toString());
+            List<LoanContractGuarantee> listgt = new ArrayList<LoanContractGuarantee>();
+
+            for (Map<String, Object> rsMap : rsgt) {
+                LoanContractGuarantee lcg = new LoanContractGuarantee();
+                BeanUtil.setProperty(lcg, "id", rsMap.get("id"));
+                BeanUtil.setProperty(lcg, "guaranteeId", rsMap.get("guarantee_id"));
+                BeanUtil.setProperty(lcg, "loanContracId", rsMap.get("loan_contrac_id"));
+                BeanUtil.setProperty(lcg, "guaranteeName", rsMap.get("guarantee_name"));
+                NaturalPerson guarantee = new NaturalPerson();
+                BeanUtil.setProperty(guarantee, "idNumber", rsMap.get("id_number"));
+                lcg.setGuarantee(guarantee);
+                listgt.add(lcg);
+            }
+
+            for (LoanContractGuarantee guarantee : listgt) {
+                LoanContractRegisterView view = tempMap.get(guarantee.getLoanContracId());
+                if (view != null) // 防止脏数据
+                    view.getLoanContractGuarantees().add(guarantee);
+            }
         }
 
         dataGrid.setTotal(count.intValue());
@@ -131,6 +165,33 @@ public class LoanContractErrorServiceImpl extends CommonServiceImpl implements L
         StringBuffer sql = new StringBuffer("update npa_loan_contract c set c.borrower_id = ? ").append("where c.id in(").append(ids).append(")");
         Integer i = executeSql(sql.toString(), borrower_id);
         return i.intValue() > 0 ? true : false;
+    }
+
+    @Override
+    public boolean updateGuarantee(String ids, String name, String sex, String birthday, String idNumber) throws Exception {
+        Integer count = new Integer(0);
+
+        String[] names = name.split(",");
+        String[] sexs = sex.split(",");
+        String[] birthdays = birthday.split(",");
+        String[] idNumbers = idNumber.split(",");
+        for (int i = 0; i < names.length; i++) {
+            // 判断身份证号是否存在,如果存在使用存在的身份号,否则新建
+            NaturalPerson person = naturalPersonService.isExist(idNumbers[i]);
+            Long guarantee_id;
+            if (person == null) {
+                NaturalPerson temp = new NaturalPerson(names[i], sexs[i], DateUtils.str2Date(birthdays[i], DateUtils.date_sdf), idNumbers[i], "0", "1");
+                temp.setIsDelete("0");
+                naturalPersonService.save(temp);
+                guarantee_id = temp.getId();
+            } else {
+                guarantee_id = person.getId();
+            }
+
+            StringBuffer sql = new StringBuffer("update npa_loan_contract_guarantee g set g.guarantee_id = ? ").append("where g.loan_contrac_id in(").append(ids).append(")");
+            count += executeSql(sql.toString(), guarantee_id);
+        }
+        return count.intValue() > 0 ? true : false;
     }
 
     @Override

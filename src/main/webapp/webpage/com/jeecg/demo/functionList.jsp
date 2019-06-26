@@ -1,26 +1,18 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include file="/context/mytags.jsp"%>
 <t:base type="jquery,easyui,tools,DatePicker"></t:base>
 <div id="system_function_functionList" class="easyui-layout" fit="true">
 	<div region="center" style="padding: 0px; border: 0px">
-		<t:datagrid name="functionDemoList" title="menu.manage"
-			actionUrl="jeecgFormDemoController.do?functionGrid" idField="id"
-			treegrid="true" pagination="true" pageSize="5">
+		<t:datagrid name="functionDemoList" title="menu.manage" actionUrl="jeecgFormDemoController.do?functionGrid"
+			idField="id" treegrid="true" pagination="true" pageSize="5">
 			<t:dgCol title="common.id" field="id" treefield="id" hidden="true"></t:dgCol>
-			<t:dgCol title="menu.name" field="functionName" treefield="text"
+			<t:dgCol title="menu.name" field="functionName" treefield="text" width="20"></t:dgCol>
+			<t:dgCol title="common.icon" field="TSIcon_iconPath" treefield="code" image="true" width="20"></t:dgCol>
+			<t:dgCol title="funcType" field="functionType" treefield="functionType" replace="funcType.page_0,funcType.from_1"
 				width="20"></t:dgCol>
-			<t:dgCol title="common.icon" field="TSIcon_iconPath" treefield="code"
-				image="true" width="20"></t:dgCol>
-			<t:dgCol title="funcType" field="functionType"
-				treefield="functionType" replace="funcType.page_0,funcType.from_1"
-				width="20"></t:dgCol>
-			<t:dgCol title="menu.url" field="functionUrl" treefield="src"
-				width="50"></t:dgCol>
-			<t:dgCol title="menu.order" field="functionOrder" treefield="order"
-				width="20"></t:dgCol>
-			<t:dgCol title="menu.funiconstyle" field="functionIconStyle"
-				treefield="iconStyle" width="20"></t:dgCol>
+			<t:dgCol title="menu.url" field="functionUrl" treefield="src" width="50"></t:dgCol>
+			<t:dgCol title="menu.order" field="functionOrder" treefield="order" width="20"></t:dgCol>
+			<t:dgCol title="menu.funiconstyle" field="functionIconStyle" treefield="iconStyle" width="20"></t:dgCol>
 		</t:datagrid>
 	</div>
 </div>
@@ -37,8 +29,7 @@
 	    li_east = 0;
 	}"
 	style="width: 400px; overflow: hidden;">
-	<div class="easyui-panel" style="padding: 0px; border: 0px" fit="true"
-		border="false" id="operationDetailpanel"></div>
+	<div class="easyui-panel" style="padding: 0px; border: 0px" fit="true" border="false" id="operationDetailpanel"></div>
 </div>
 </div>
 

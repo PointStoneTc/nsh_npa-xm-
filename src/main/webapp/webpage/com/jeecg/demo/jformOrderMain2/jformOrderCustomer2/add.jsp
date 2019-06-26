@@ -1,5 +1,4 @@
-<%@ page language="java" import="java.util.*"
-	contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" import="java.util.*" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include file="/context/mytags.jsp"%>
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -17,17 +16,15 @@
 </head>
 
 <body>
-	<t:formvalid formid="formobj" dialog="true" usePlugin="password"
-		layout="table" action="jformOrderCustomer2Controller.do?doAdd"
-		tiptype="1">
+	<t:formvalid formid="formobj" dialog="true" usePlugin="password" layout="table"
+		action="jformOrderCustomer2Controller.do?doAdd" tiptype="1">
 		<input type="hidden" id="btn_sub" class="btn_sub" />
 		<input type="hidden" id="id" name="id" />
 		<input type="hidden" name="fkId" value="${mainId}" />
 		<div class="tab-wrapper">
 			<!-- tab -->
 			<ul class="nav nav-tabs">
-				<li role="presentation" class="active"><a
-					href="javascript:void(0);">订单客户信息</a></li>
+				<li role="presentation" class="active"><a href="javascript:void(0);">订单客户信息</a></li>
 			</ul>
 			<!-- tab内容 -->
 			<div class="con-wrapper" id="con-wrapper1" style="display: block;">
@@ -37,9 +34,8 @@
 							<b>客户名：</b>
 						</div>
 						<div class="col-xs-3">
-							<input id="name" name="name" maxlength="32" type="text"
-								class="form-control" ignore="ignore" /> <span
-								class="Validform_checktip" style="float: left; height: 0px;"></span>
+							<input id="name" name="name" maxlength="32" type="text" class="form-control" ignore="ignore" />
+							<span class="Validform_checktip" style="float: left; height: 0px;"></span>
 							<label class="Validform_label" style="display: none">客户名</label>
 						</div>
 					</div>
@@ -50,11 +46,10 @@
 							<b>单价：</b>
 						</div>
 						<div class="col-xs-3">
-							<input id="money" name="money" maxlength="10" type="text"
-								class="form-control" datatype="/^(-?\d+)(\.\d+)?$/"
-								ignore="ignore" /> <span class="Validform_checktip"
-								style="float: left; height: 0px;"></span> <label
-								class="Validform_label" style="display: none">单价</label>
+							<input id="money" name="money" maxlength="10" type="text" class="form-control" datatype="/^(-?\d+)(\.\d+)?$/"
+								ignore="ignore" />
+							<span class="Validform_checktip" style="float: left; height: 0px;"></span>
+							<label class="Validform_label" style="display: none">单价</label>
 						</div>
 					</div>
 
@@ -64,12 +59,10 @@
 							<b>性别：</b>
 						</div>
 						<div class="col-xs-3">
-							<t:dictSelect field="sex" type="list"
-								extendJson="{class:'form-control',style:'width:164px'}"
-								typeGroupCode="sex" hasLabel="false" title="性别"></t:dictSelect>
-							<span class="Validform_checktip"
-								style="float: left; height: 0px;"></span> <label
-								class="Validform_label" style="display: none">性别</label>
+							<t:dictSelect field="sex" type="list" extendJson="{class:'form-control',style:'width:164px'}" typeGroupCode="sex"
+								hasLabel="false" title="性别"></t:dictSelect>
+							<span class="Validform_checktip" style="float: left; height: 0px;"></span>
+							<label class="Validform_label" style="display: none">性别</label>
 						</div>
 					</div>
 
@@ -79,9 +72,8 @@
 							<b>电话：</b>
 						</div>
 						<div class="col-xs-3">
-							<input id="telphone" name="telphone" maxlength="32" type="text"
-								class="form-control" ignore="ignore" /> <span
-								class="Validform_checktip" style="float: left; height: 0px;"></span>
+							<input id="telphone" name="telphone" maxlength="32" type="text" class="form-control" ignore="ignore" />
+							<span class="Validform_checktip" style="float: left; height: 0px;"></span>
 							<label class="Validform_label" style="display: none">电话</label>
 						</div>
 					</div>
@@ -93,8 +85,7 @@
 						<div class="col-xs-12 layout-header">
 							<div class="col-xs-6"></div>
 							<div class="col-xs-6">
-								<button type="button" onclick="neibuClick();"
-									class="btn btn-default">提交</button>
+								<button type="button" onclick="neibuClick();" class="btn btn-default">提交</button>
 							</div>
 						</div>
 					</div>

@@ -23,8 +23,7 @@
 }
 </style>
 <div style="height: 100%; margin: 14px 20px 0 20px; overflow-y: auto">
-	<div
-		style="background: pink; margin-right: 50px; padding: 10px; text-align: center;">
+	<div style="background: pink; margin-right: 50px; padding: 10px; text-align: center;">
 		<div>404 error!请求地址有误！</div>
 		<div>请参照下面的步骤检查你的项目。</div>
 	</div>
@@ -59,35 +58,39 @@
 		<ul>
 			<li>加载Controller(spring-mvc.xml) <pre class="code">
 
-  &lt;<span class="propNS">context</span><span class="propTag">:component-scan</span> <span
-						class="propName">base-package=</span><span class="propValue">"com.buss.*"</span>&gt;
-      &lt;<span class="propNS">context</span><span class="propTag">:exclude-filter</span> <span
-						class="propName">type=</span><span class="propValue">"annotation" expression="org.springframework.stereotype.Service"</span> /&gt;
-  &lt;/<span class="propNS">context</span><span class="propTag">:component-scan</span>&gt;
+  &lt;<span class="propNS">context</span>
+					<span class="propTag">:component-scan</span> <span class="propName">base-package=</span>
+					<span class="propValue">"com.buss.*"</span>&gt;
+      &lt;<span class="propNS">context</span>
+					<span class="propTag">:exclude-filter</span> <span class="propName">type=</span>
+					<span class="propValue">"annotation" expression="org.springframework.stereotype.Service"</span> /&gt;
+  &lt;/<span class="propNS">context</span>
+					<span class="propTag">:component-scan</span>&gt;
                 </pre>
 			</li>
 			<li>加载service(spring-mvc-hibernate.xml) <pre class="code">
 
-  &lt;<span class="propNS">context</span><span class="propTag">:component-scan</span> <span
-						class="propName">base-package=</span><span class="propValue">"com.buss.*"</span>&gt;
-      &lt;<span class="propNS">context</span><span class="propTag">:exclude-filter</span> <span
-						class="propName">type=</span><span class="propValue">"annotation" expression="org.springframework.stereotype.Controller"</span> /&gt;
-  &lt;/<span class="propNS">context</span><span class="propTag">:component-scan</span>&gt;
+  &lt;<span class="propNS">context</span>
+					<span class="propTag">:component-scan</span> <span class="propName">base-package=</span>
+					<span class="propValue">"com.buss.*"</span>&gt;
+      &lt;<span class="propNS">context</span>
+					<span class="propTag">:exclude-filter</span> <span class="propName">type=</span>
+					<span class="propValue">"annotation" expression="org.springframework.stereotype.Controller"</span> /&gt;
+  &lt;/<span class="propNS">context</span>
+					<span class="propTag">:component-scan</span>&gt;
                         </pre>
 			</li>
 			<li>扫描hibernate实体(spring-mvc-hibernate.xml) <pre class="code">
 
   如果生成代码时，代码分层风格选择了“代码分层”，则配置文件如下：
-  &lt;<span class="propTag">property</span> <span class="propName">name=</span><span
-						class="propValue">"packagesToScan"</span>&gt;
+  &lt;<span class="propTag">property</span> <span class="propName">name=</span>
+					<span class="propValue">"packagesToScan"</span>&gt;
       &lt;<span class="propTag">list</span>&gt;
           ....
           &lt;!-- 扫描 代码分层 实体 --&gt;
-          &lt;<span class="propTag">value</span>&gt;com.buss.entity.*&lt;/<span
-						class="propTag">value</span>&gt;
+          &lt;<span class="propTag">value</span>&gt;com.buss.entity.*&lt;/<span class="propTag">value</span>&gt;
           &lt;!-- 扫描 业务分层 实体 --&gt;
-          &lt;<span class="propTag">value</span>&gt;com.buss.*.entity&lt;/<span
-						class="propTag">value</span>&gt;
+          &lt;<span class="propTag">value</span>&gt;com.buss.*.entity&lt;/<span class="propTag">value</span>&gt;
       &lt;/<span class="propTag">list</span>&gt;
   &lt;/<span class="propTag">property</span>>
                 </pre>

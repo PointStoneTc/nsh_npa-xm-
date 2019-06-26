@@ -1,5 +1,4 @@
-<%@ page language="java" import="java.util.*"
-	contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" import="java.util.*" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include file="/context/mytags.jsp"%>
 <!DOCTYPE html>
 <html>
@@ -13,10 +12,8 @@
 <meta content="telephone=no" name="format-detection">
 <meta content="email=no" name="format-detection">
 <title>Bootstrap树形列表</title>
-<link href="plug-in/bootstrap3.3.5/css/bootstrap.min.css"
-	rel="stylesheet">
-<link href="plug-in/bootstrap-table/bootstrap-table.css"
-	rel="stylesheet">
+<link href="plug-in/bootstrap3.3.5/css/bootstrap.min.css" rel="stylesheet">
+<link href="plug-in/bootstrap-table/bootstrap-table.css" rel="stylesheet">
 <link href="plug-in/jquery/jquery.treegrid.min.css" rel="stylesheet">
 </head>
 <!--update-begin-Author:liushaoqian Date: 20180718 for：TASK #2968 【demo --周俊峰】做一个bootstrap-table 树形列表demo-->
@@ -41,13 +38,10 @@
 	</div>
 </body>
 <script src="plug-in/jquery/jquery-1.9.1.js"></script>
-<script type="text/javascript"
-	src="plug-in/bootstrap3.3.5/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="plug-in/bootstrap3.3.5/js/bootstrap.min.js"></script>
 <script src="plug-in/bootstrap-table/bootstrap-table-tree.js"></script>
-<script type="text/javascript"
-	src="plug-in/bootstrap-table/bootstrap-table-treegrid.js"></script>
-<script type="text/javascript"
-	src="plug-in/jquery/jquery.treegrid.min.js"></script>
+<script type="text/javascript" src="plug-in/bootstrap-table/bootstrap-table-treegrid.js"></script>
+<script type="text/javascript" src="plug-in/jquery/jquery.treegrid.min.js"></script>
 <script type="text/javascript">
   var $table = $('#table');
   $(function() {

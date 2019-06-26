@@ -1,5 +1,4 @@
-<%@ page language="java" import="java.util.*"
-	contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" import="java.util.*" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include file="/context/mytags.jsp"%>
 <!DOCTYPE html>
 <html>
@@ -51,19 +50,22 @@ td input {
 		<table class="table-form" cellspacing="0">
 			<tbody>
 				<tr>
-					<th><span>管理员组名称:</span></th>
-					<td class="ng-binding"><lable name="deptName">${departAuthGroup.deptName}</lable>
-					</td>
+					<th>
+						<span>管理员组名称:</span>
+					</th>
+					<td class="ng-binding"><lable name="deptName">${departAuthGroup.deptName}</lable></td>
 				</tr>
 				<tr>
-					<th><span>部门名称:</span></th>
-					<td class="ng-binding"><lable name="deptName">${departAuthGroup.groupName}</lable>
-					</td>
+					<th>
+						<span>部门名称:</span>
+					</th>
+					<td class="ng-binding"><lable name="deptName">${departAuthGroup.groupName}</lable></td>
 				</tr>
 				<tr>
-					<th><span>部门编码:</span></th>
-					<td class="ng-binding"><lable name="deptCode">${departAuthGroup.deptCode}</lable>
-					</td>
+					<th>
+						<span>部门编码:</span>
+					</th>
+					<td class="ng-binding"><lable name="deptCode">${departAuthGroup.deptCode}</lable></td>
 				</tr>
 			</tbody>
 		</table>

@@ -1,15 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include file="/context/mytags.jsp"%>
 <c:forEach items="${dataRuleList}" var="dataRule">
 	<span class="icon group_add">&nbsp;</span>
 	<c:if test="${fn:contains(dataRulecodes, dataRule.id)}">
-		<input style="width: 20px;" type="checkbox" name="operationCheckbox1"
-			value="${dataRule.id}" checked="checked" />${dataRule.ruleName}
+		<input style="width: 20px;" type="checkbox" name="operationCheckbox1" value="${dataRule.id}" checked="checked" />${dataRule.ruleName}
 	 </c:if>
 	<c:if test="${!fn:contains(dataRulecodes, dataRule.id)}">
-		<input style="width: 20px;" type="checkbox" name="operationCheckbox1"
-			value="${dataRule.id}" />${dataRule.ruleName}
+		<input style="width: 20px;" type="checkbox" name="operationCheckbox1" value="${dataRule.id}" />${dataRule.ruleName}
 	 </c:if>
 	<br>
 </c:forEach>

@@ -1,42 +1,29 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include file="/context/mytags.jsp"%>
 <t:base type="jquery,easyui,tools,DatePicker"></t:base>
 <div id="system_function_functionList" class="easyui-layout" fit="true">
 	<%--   update-end--Author:duanql  Date:20130619 for：操作按钮窗口显示控制--%>
 	<div region="center" style="padding: 0px; border: 0px">
-		<t:datagrid name="functionList" title="menu.manage"
-			actionUrl="functionController.do?functionGrid" idField="id"
-			fit="true" fitColumns="true" treegrid="true" pagination="false"
-			btnCls="bootstrap btn btn-normal btn-xs">
+		<t:datagrid name="functionList" title="menu.manage" actionUrl="functionController.do?functionGrid" idField="id"
+			fit="true" fitColumns="true" treegrid="true" pagination="false" btnCls="bootstrap btn btn-normal btn-xs">
 			<t:dgCol title="common.id" field="id" treefield="id" hidden="true"></t:dgCol>
-			<t:dgCol title="menu.name" field="functionName" treefield="text"
-				width="40"></t:dgCol>
-			<t:dgCol title="common.icon" field="TSIcon_iconPath" treefield="code"
-				image="true"></t:dgCol>
-			<t:dgCol title="funcType" field="functionType"
-				treefield="functionType" replace="funcType.page_0,funcType.from_1"
+			<t:dgCol title="menu.name" field="functionName" treefield="text" width="40"></t:dgCol>
+			<t:dgCol title="common.icon" field="TSIcon_iconPath" treefield="code" image="true"></t:dgCol>
+			<t:dgCol title="funcType" field="functionType" treefield="functionType" replace="funcType.page_0,funcType.from_1"
 				width="20"></t:dgCol>
-			<t:dgCol title="menu.url" field="functionUrl" treefield="src"
-				width="80"></t:dgCol>
+			<t:dgCol title="menu.url" field="functionUrl" treefield="src" width="80"></t:dgCol>
 			<t:dgCol title="menu.order" field="functionOrder" treefield="order"></t:dgCol>
-			<t:dgCol title="menu.funiconstyle" field="functionIconStyle"
-				treefield="iconStyle" width="25"></t:dgCol>
+			<t:dgCol title="menu.funiconstyle" field="functionIconStyle" treefield="iconStyle" width="25"></t:dgCol>
 			<t:dgCol title="common.operation" field="opt" width="100"></t:dgCol>
-			<t:dgDelOpt url="functionController.do?del&id={id}"
-				title="common.delete" urlclass="ace_button"
+			<t:dgDelOpt url="functionController.do?del&id={id}" title="common.delete" urlclass="ace_button"
 				urlStyle="background-color:#ec4758;" urlfont="fa-trash-o"></t:dgDelOpt>
-			<t:dgFunOpt funname="operationDetail(id)" title="button.setting"
-				urlclass="ace_button" urlfont="fa-cog"></t:dgFunOpt>
-			<t:dgFunOpt funname="operationData(id,src)" title="数据规则"
-				urlclass="ace_button" urlStyle="background-color:#1a7bb9;"
+			<t:dgFunOpt funname="operationDetail(id)" title="button.setting" urlclass="ace_button" urlfont="fa-cog"></t:dgFunOpt>
+			<t:dgFunOpt funname="operationData(id,src)" title="数据规则" urlclass="ace_button" urlStyle="background-color:#1a7bb9;"
 				urlfont="fa-database"></t:dgFunOpt>
-			<t:dgToolBar title="common.add.param" langArg="common.menu"
-				icon="fa fa-plus" url="functionController.do?addorupdate"
+			<t:dgToolBar title="common.add.param" langArg="common.menu" icon="fa fa-plus" url="functionController.do?addorupdate"
 				height="400" funname="addFun"></t:dgToolBar>
-			<t:dgToolBar title="common.edit.param" langArg="common.menu"
-				icon="fa fa-edit" url="functionController.do?addorupdate"
-				height="490" funname="update"></t:dgToolBar>
+			<t:dgToolBar title="common.edit.param" langArg="common.menu" icon="fa fa-edit"
+				url="functionController.do?addorupdate" height="490" funname="update"></t:dgToolBar>
 		</t:datagrid>
 	</div>
 </div>
@@ -53,8 +40,7 @@
 	    li_east = 0;
 	}"
 	style="width: 400px; overflow: hidden;">
-	<div class="easyui-panel" style="padding: 0px; border: 0px" fit="true"
-		border="false" id="operationDetailpanel"></div>
+	<div class="easyui-panel" style="padding: 0px; border: 0px" fit="true" border="false" id="operationDetailpanel"></div>
 </div>
 </div>
 

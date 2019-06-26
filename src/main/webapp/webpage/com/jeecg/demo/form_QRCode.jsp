@@ -1,15 +1,12 @@
-<%@ page language="java" import="java.util.*"
-	contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" import="java.util.*" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include file="/context/mytags.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
 <title>二维码生成页面</title>
 <t:base type="jquery,easyui"></t:base>
-<script type="text/javascript" charset="utf-8"
-	src="plug-in/qrcode/jquery.min.js"></script>
-<script type="text/javascript" charset="utf-8"
-	src="plug-in/qrcode/qrcode.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="plug-in/qrcode/jquery.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="plug-in/qrcode/qrcode.min.js"></script>
 <SCRIPT type="text/javascript">
         function make2DCode() {
             $("#qrcode").html("");//清空二维码
@@ -164,21 +161,17 @@ a, a:focus, a:hover {
 		<div id="qrfun-left">
 
 			<div>
-				<label class="Validform_label" style="font-size: 1.1rem;">
-					二维码内容： </label> <input type="text" name="content"
-					class="form-control form-control-lg"
-					style="width: 80%; font-size: 1.1rem;" id="content"
-					value="http://www.jeecg.org" /> <a id="downloadLink"></a>
+				<label class="Validform_label" style="font-size: 1.1rem;"> 二维码内容： </label>
+				<input type="text" name="content" class="form-control form-control-lg" style="width: 80%; font-size: 1.1rem;"
+					id="content" value="http://www.jeecg.org" /> <a id="downloadLink"></a>
 			</div>
 			<div>
 
-				<label class="m-b" style="font-size: 1.1rem;"> 二维码大小： </label> <input
-					type="text" class="form-control form-control-lg"
-					style="font-size: 1.1rem;" name="codesize" id="codesize"
-					value="220" onkeyup="value=value.replace(/[^\d]/g,'')"> <span
-					style="font-size: 1.1rem;">px</span> <a class="btn green"
-					href="javascript:make2DCode();"
-					style="position: absolute; left: 26%; top: 173px;"> 生成二维码 </a>
+				<label class="m-b" style="font-size: 1.1rem;"> 二维码大小： </label>
+				<input type="text" class="form-control form-control-lg" style="font-size: 1.1rem;" name="codesize" id="codesize"
+					value="220" onkeyup="value=value.replace(/[^\d]/g,'')">
+				<span style="font-size: 1.1rem;">px</span>
+				<a class="btn green" href="javascript:make2DCode();" style="position: absolute; left: 26%; top: 173px;"> 生成二维码 </a>
 
 
 
@@ -198,8 +191,7 @@ a, a:focus, a:hover {
 					</tbody>
 				</table>
 				<div id="text-he" class="text-center" style="padding-top: 10px;">
-					<a class="btn green btn-block" href="javascript:downloadqrcode();"
-						style="width: 220px;"> 下载二维码 </a>
+					<a class="btn green btn-block" href="javascript:downloadqrcode();" style="width: 220px;"> 下载二维码 </a>
 				</div>
 			</div>
 

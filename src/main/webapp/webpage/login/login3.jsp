@@ -1,7 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@page
-	import="org.jeecgframework.core.util.SysThemesUtil,org.jeecgframework.core.enums.SysThemesEnum"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@page import="org.jeecgframework.core.util.SysThemesUtil,org.jeecgframework.core.enums.SysThemesEnum"%>
 <%@include file="/context/mytags.jsp"%>
 <!DOCTYPE html>
 <%
@@ -25,13 +23,10 @@ String lhgdialogTheme = SysThemesUtil.getLhgdialogTheme(sysTheme);
 	EvPNG.fix('div, ul, img, li, input'); //EvPNG.fix('包含透明PNG图片的标签'); 多个标签之间用英文逗号隔开。
 </script>
   <![endif]-->
-<link href="plug-in/login/css/zice.style.css" rel="stylesheet"
-	type="text/css" />
-<link href="plug-in/login/css/buttons.css" rel="stylesheet"
-	type="text/css" />
+<link href="plug-in/login/css/zice.style.css" rel="stylesheet" type="text/css" />
+<link href="plug-in/login/css/buttons.css" rel="stylesheet" type="text/css" />
 <link href="plug-in/login/css/icon.css" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" type="text/css"
-	href="plug-in/login/css/tipsy.css" media="all" />
+<link rel="stylesheet" type="text/css" href="plug-in/login/css/tipsy.css" media="all" />
 <style type="text/css">
 html {
 	background-image: none;
@@ -82,69 +77,60 @@ label.iPhoneCheckLabelOn span {
 	<div id="successLogin"></div>
 	<div class="text_success">
 		<img src="plug-in/login/images/loader_green.gif" alt="Please wait" />
-		<span><t:mutiLang langKey="common.login.success.wait" /></span>
+		<span>
+			<t:mutiLang langKey="common.login.success.wait" />
+		</span>
 	</div>
 	<div id="login">
-		<div class="ribbon"
-			style="background-image: url(plug-in/login/images/typelogin.png);"></div>
+		<div class="ribbon" style="background-image: url(plug-in/login/images/typelogin.png);"></div>
 		<div class="inner">
 			<div class="logo">
-				<img src="plug-in/login/images/head.png" /><img
-					src="plug-in/login/images/foot.png" />
+				<img src="plug-in/login/images/head.png" /><img src="plug-in/login/images/foot.png" />
 			</div>
 			<div class="formLogin">
-				<form name="formLogin" id="formLogin"
-					action="loginController.do?login"
-					check="loginController.do?checkuser" method="post">
-					<input name="userKey" type="hidden" id="userKey"
-						value="D1B5CC2FE46C4CC983C073BCA897935608D926CD32992B5900" />
+				<form name="formLogin" id="formLogin" action="loginController.do?login" check="loginController.do?checkuser"
+					method="post">
+					<input name="userKey" type="hidden" id="userKey" value="D1B5CC2FE46C4CC983C073BCA897935608D926CD32992B5900" />
 					<div class="tip">
-						<input class="userName" name="userName" type="text" id="userName"
-							title="" iscookie="true" value="admin" nullmsg="" />
+						<input class="userName" name="userName" type="text" id="userName" title="" iscookie="true" value="admin"
+							nullmsg="" />
 					</div>
 					<div class="tip">
-						<input class="password" name="password" type="password"
-							id="password" title="" value="123456" nullmsg="" />
+						<input class="password" name="password" type="password" id="password" title="" value="123456" nullmsg="" />
 					</div>
 					<div>
-						<div
-							style="float: right; margin-left: -150px; margin-right: 20px;">
+						<div style="float: right; margin-left: -150px; margin-right: 20px;">
 							<img id="randCodeImage" src="randCodeImage" />
 						</div>
-						<input class="randCode" name="randCode" type="text" id="randCode"
-							title="" value="" nullmsg="" />
+						<input class="randCode" name="randCode" type="text" id="randCode" title="" value="" nullmsg="" />
 					</div>
 
 					<div class="loginButton">
 						<div style="float: left; margin-left: -9px;">
-							<input type="checkbox" id="on_off" name="remember" checked="ture"
-								class="on_off_checkbox" value="0" /> <span class="f_help"><t:mutiLang
-									langKey="common.remember.user" /></span>
+							<input type="checkbox" id="on_off" name="remember" checked="ture" class="on_off_checkbox" value="0" />
+							<span class="f_help">
+								<t:mutiLang langKey="common.remember.user" />
+							</span>
 						</div>
 						<div style="float: right; padding: 3px 0; margin-right: -12px;">
 							<div>
 								<ul class="uibutton-group">
-									<li><a class="uibutton normal" href="#" id="but_login"><t:mutiLang
-												langKey="common.login" /></a></li>
-									<li><a class="uibutton normal" href="#" id="forgetpass"><t:mutiLang
-												langKey="common.reset" /></a></li>
+									<li><a class="uibutton normal" href="#" id="but_login"><t:mutiLang langKey="common.login" /></a></li>
+									<li><a class="uibutton normal" href="#" id="forgetpass"><t:mutiLang langKey="common.reset" /></a></li>
 								</ul>
 							</div>
 							<%-- 
                             <div style="float: left; margin-left: 30px;"><a href="init.jsp"><span class="f_help"><t:mutiLang langKey="common.init.data"/></span></a></div>
                             --%>
 							<br>
-							<t:dictSelect id="langCode" field="langCode" typeGroupCode="lang"
-								hasLabel="false" defaultVal="zh-cn"></t:dictSelect>
+							<t:dictSelect id="langCode" field="langCode" typeGroupCode="lang" hasLabel="false" defaultVal="zh-cn"></t:dictSelect>
 						</div>
 						<div class="clear"></div>
 					</div>
 					<div>
 						<div style="float: right; margin-left: -30px; margin-right: 40px;">
-							技术支持： <font color="red">JEECG开源社区</font> &nbsp;&nbsp;&nbsp; QQ群:
-							<font color="red">106838471</font> &nbsp;&nbsp;&nbsp; 官网: <font
-								color="red"><a href="http://www.jeecg.org"
-								target="_blank">www.jeecg.org</a></font>
+							技术支持： <font color="red">JEECG开源社区</font> &nbsp;&nbsp;&nbsp; QQ群: <font color="red">106838471</font>
+							&nbsp;&nbsp;&nbsp; 官网: <font color="red"><a href="http://www.jeecg.org" target="_blank">www.jeecg.org</a></font>
 						</div>
 					</div>
 				</form>
@@ -158,11 +144,11 @@ label.iPhoneCheckLabelOn span {
 		<div class="copyright">
 			&copy;
 			<t:mutiLang langKey="common.copyright" />
-			<span class="tip"><a href="http://www.jeecg.org"
-				target="_blank" title=<t:mutiLang langKey="common.platform"/>>jeecg</a>
-				<t:mutiLang langKey="common.browser.recommend" /><a
-				href="http://www.jeecg.org" target="_blank"
-				title=<t:mutiLang langKey="common.platform"/>> Jeecg社区</a></span>
+			<span class="tip">
+				<a href="http://www.jeecg.org" target="_blank" title=<t:mutiLang langKey="common.platform"/>>jeecg</a>
+				<t:mutiLang langKey="common.browser.recommend" />
+				<a href="http://www.jeecg.org" target="_blank" title=<t:mutiLang langKey="common.platform"/>> Jeecg社区</a>
+			</span>
 		</div>
 	</div>
 	<!-- Link JScript-->

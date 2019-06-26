@@ -1,5 +1,4 @@
-<%@ page language="java" import="java.util.*"
-	contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" import="java.util.*" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include file="/context/mytags.jsp"%>
 <!DOCTYPE html>
 <html>
@@ -13,49 +12,36 @@
   </SCRIPT>
 </head>
 <body>
-	<t:formvalid formid="formobj" beforeSubmit="setFtlContent()"
-		dialog="true" usePlugin="password" layout="table"
+	<t:formvalid formid="formobj" beforeSubmit="setFtlContent()" dialog="true" usePlugin="password" layout="table"
 		action="cgformFtlController.do?saveEditor">
 		<input id="id" name="id" type="hidden" value="${cgformFtlPage.id}">
-		<input id="cgformId" name="cgformId" type="hidden"
-			value="${cgformFtlPage.cgformId}">
-		<input id="ftlVersion" name="ftlVersion" type="hidden"
-			value="${cgformFtlPage.ftlVersion}">
-		<input id="ftlWordUrl" name="ftlWordUrl" type="hidden"
-			value="${cgformFtlPage.ftlWordUrl}">
-		<input id="createBy" name="createBy" type="hidden"
-			value="${cgformFtlPage.createBy}">
-		<input id="createName" name="createName" type="hidden"
-			value="${cgformFtlPage.createName}">
-		<input id="createDate" name="createDate" type="hidden"
-			value="${cgformFtlPage.createDate}">
+		<input id="cgformId" name="cgformId" type="hidden" value="${cgformFtlPage.cgformId}">
+		<input id="ftlVersion" name="ftlVersion" type="hidden" value="${cgformFtlPage.ftlVersion}">
+		<input id="ftlWordUrl" name="ftlWordUrl" type="hidden" value="${cgformFtlPage.ftlWordUrl}">
+		<input id="createBy" name="createBy" type="hidden" value="${cgformFtlPage.createBy}">
+		<input id="createName" name="createName" type="hidden" value="${cgformFtlPage.createName}">
+		<input id="createDate" name="createDate" type="hidden" value="${cgformFtlPage.createDate}">
 		<input id="editorType" name="editorType" type="hidden" value="02">
 		<table cellpadding="0" cellspacing="1" class="formtable">
 			<tr>
 				<td align="right"><label class="Validform_label">模板名称:</label></td>
-				<td class="value"><input class="inputxt" id="cgformName"
-					name="cgformName" value="${cgformFtlPage.cgformName}" datatype="*">
-					<span class="Validform_checktip"></span></td>
+				<td class="value"><input class="inputxt" id="cgformName" name="cgformName" value="${cgformFtlPage.cgformName}"
+					datatype="*"> <span class="Validform_checktip"></span></td>
 			</tr>
 			<tr>
-				<td class="value" colspan=2><input type="hidden" id="ftl"
-					name="ftlContent"> <script id="ftlContent"
+				<td class="value" colspan=2><input type="hidden" id="ftl" name="ftlContent"> <script id="ftlContent"
 						type="text/plain" style="width: 100%;">${cgformFtlPage.ftlContent == NULL || cgformFtlPage.ftlContent == '' ? '' : cgformFtlPage.ftlContent}</script>
 				</td>
 			</tr>
 		</table>
 	</t:formvalid>
 	<script>UEDITOR_HOME_URL='<%=path%>/plug-in/Formdesign/js/ueditor/';</script>
-	<script type="text/javascript" charset="utf-8"
-		src="plug-in/Formdesign/js/ueditor/ueditor.config.js?2023"></script>
-	<script type="text/javascript" charset="utf-8"
-		src="plug-in/Formdesign/js/ueditor/ueditor.all.js?2023"> </script>
-	<script type="text/javascript" charset="utf-8"
-		src="plug-in/Formdesign/js/ueditor/lang/zh-cn/zh-cn.js?2023"></script>
+	<script type="text/javascript" charset="utf-8" src="plug-in/Formdesign/js/ueditor/ueditor.config.js?2023"></script>
+	<script type="text/javascript" charset="utf-8" src="plug-in/Formdesign/js/ueditor/ueditor.all.js?2023"> </script>
+	<script type="text/javascript" charset="utf-8" src="plug-in/Formdesign/js/ueditor/lang/zh-cn/zh-cn.js?2023"></script>
 	<script type="text/javascript" charset="utf-8"
 		src="plug-in/Formdesign/js/ueditor/formdesign/leipi.formdesign.v4.js?2023"></script>
-	<script type="text/javascript" charset="utf-8"
-		src="plug-in/Formdesign/js/ueditor/formdesign/weixinplugs.js"></script>
+	<script type="text/javascript" charset="utf-8" src="plug-in/Formdesign/js/ueditor/formdesign/weixinplugs.js"></script>
 	<script type="text/javascript">
 
 var leipiEditor = UE.getEditor('ftlContent',{

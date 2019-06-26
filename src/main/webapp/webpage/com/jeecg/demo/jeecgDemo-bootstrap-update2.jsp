@@ -1,5 +1,4 @@
-<%@ page language="java" import="java.util.*"
-	contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" import="java.util.*" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include file="/context/mytags.jsp"%>
 <!DOCTYPE html>
 <html>
@@ -10,17 +9,16 @@
 <t:base type="validform,bootstrap,layer,bootstrap-form,jquery"></t:base>
 </head>
 <body style="margin: 20px">
-	<form id="formobj" action="jeecgListDemoController.do?doUpdate"
-		class="form-horizontal validform" role="form" method="post">
-		<input type="hidden" id="btn_sub" class="btn_sub" /> <input id="id"
-			name="id" type="hidden" value="${jeecgDemoPage.id }">
+	<form id="formobj" action="jeecgListDemoController.do?doUpdate" class="form-horizontal validform" role="form"
+		method="post">
+		<input type="hidden" id="btn_sub" class="btn_sub" /> <input id="id" name="id" type="hidden"
+			value="${jeecgDemoPage.id }">
 		<div class="form-group">
 			<label for="name" class="col-sm-3 control-label">名称：</label>
 			<div class="col-sm-7">
 				<div class="input-group" style="width: 100%">
-					<input type="text" class="form-control input-sm required" id="name"
-						name="name" value="${jeecgDemoPage.name }" data-msg-required=""
-						datatype="*" placeholder="请输入名字" aria-required="true" />
+					<input type="text" class="form-control input-sm required" id="name" name="name" value="${jeecgDemoPage.name }"
+						data-msg-required="" datatype="*" placeholder="请输入名字" aria-required="true" />
 				</div>
 			</div>
 		</div>
@@ -29,10 +27,8 @@
 			<label class="col-sm-3 control-label">工资：</label>
 			<div class="col-sm-7">
 				<div class="input-group" style="width: 100%">
-					<input id="salary" name="salary" type="text"
-						class="form-control input-sm required"
-						value="${jeecgDemoPage.salary }" placeholder="请输入工资"
-						data-msg-required="" datatype="/^(-?\d+)(\.\d+)?$/"
+					<input id="salary" name="salary" type="text" class="form-control input-sm required"
+						value="${jeecgDemoPage.salary }" placeholder="请输入工资" data-msg-required="" datatype="/^(-?\d+)(\.\d+)?$/"
 						aria-required="true" />
 				</div>
 			</div>
@@ -42,12 +38,11 @@
 			<label class="col-sm-3 control-label">生日：</label>
 			<div class="col-sm-7">
 				<div class="input-group" style="width: 100%">
-					<input type="text" name="birthday" id="birthday"
-						class="form-control input-sm"
+					<input type="text" name="birthday" id="birthday" class="form-control input-sm"
 						value="<fmt:formatDate pattern="yyyy-MM-dd HH:mm:ss" type="date" value="${jeecgDemoPage.birthday }"/>"
-						datatype="*" placeholder="请输入生日" /> <span
-						class="input-group-addon"> <span
-						class="glyphicon glyphicon-calendar"></span>
+						datatype="*" placeholder="请输入生日" />
+					<span class="input-group-addon">
+						<span class="glyphicon glyphicon-calendar"></span>
 					</span>
 				</div>
 			</div>
@@ -58,9 +53,8 @@
 			<div class="col-sm-7">
 				<div class="input-group" style="width: 100%">
 					<input type="radio" class="i-checks" name="sex" value="0"
-						<c:if test="${jeecgDemoPage.sex=='0'}"> checked="checked"</c:if> />男&nbsp;&nbsp;
-					<input type="radio" class="i-checks" name="sex" value="1"
-						<c:if test="${jeecgDemoPage.sex=='1'}"> checked="checked"</c:if> />女
+						<c:if test="${jeecgDemoPage.sex=='0'}"> checked="checked"</c:if> />男&nbsp;&nbsp; <input type="radio"
+						class="i-checks" name="sex" value="1" <c:if test="${jeecgDemoPage.sex=='1'}"> checked="checked"</c:if> />女
 				</div>
 			</div>
 		</div>
@@ -71,7 +65,8 @@
 				<div class="input-group" style="width: 100%">
 					<span class="input-group-btn">
 						<button class="btn btn-default input-sm" type="button">Go!</button>
-					</span> <select name="depId" class="form-control input-sm" datatype="*">
+					</span>
+					<select name="depId" class="form-control input-sm" datatype="*">
 						<option value=""></option>
 						<option value="402880e447e99cf10147e9a03b320003"
 							<c:if test="${jeecgDemoPage.depId=='402880e447e99cf10147e9a03b320003'}"> selected </c:if>>北京国炬软件</option>
@@ -105,14 +100,11 @@
 			<div class="col-sm-7">
 				<div class="input-group" style="width: 100%">
 					<input type="checkbox" class="i-checks" name="touxiang" value="1"
-						<c:if test="${fn:contains(jeecgDemoPage.touxiang,'1')}">checked="checked"</c:if> />
-					头像1 <input type="checkbox" class="i-checks" name="touxiang"
-						value="2"
-						<c:if test="${fn:contains(jeecgDemoPage.touxiang,'2')}">checked="checked"</c:if> />
-					头像2 <input type="checkbox" class="i-checks" name="touxiang"
-						value="3"
-						<c:if test="${fn:contains(jeecgDemoPage.touxiang,'3')}">checked="checked"</c:if> />
-					头像3
+						<c:if test="${fn:contains(jeecgDemoPage.touxiang,'1')}">checked="checked"</c:if> /> 头像1 <input type="checkbox"
+						class="i-checks" name="touxiang" value="2"
+						<c:if test="${fn:contains(jeecgDemoPage.touxiang,'2')}">checked="checked"</c:if> /> 头像2 <input type="checkbox"
+						class="i-checks" name="touxiang" value="3"
+						<c:if test="${fn:contains(jeecgDemoPage.touxiang,'3')}">checked="checked"</c:if> /> 头像3
 				</div>
 			</div>
 		</div>
@@ -121,8 +113,7 @@
 			<label class="col-sm-3 control-label">个人介绍：</label>
 			<div class="col-sm-7">
 				<div class="input-group" style="width: 100%">
-					<textarea id="content" name="content" class="form-control input-sm"
-						placeholder="请输入个人介绍" rows="4">${jeecgDemoPage.content}</textarea>
+					<textarea id="content" name="content" class="form-control input-sm" placeholder="请输入个人介绍" rows="4">${jeecgDemoPage.content}</textarea>
 				</div>
 			</div>
 		</div>
@@ -131,8 +122,7 @@
 			<label class="col-sm-3 control-label">年龄：</label>
 			<div class="col-sm-7">
 				<div class="input-group" style="width: 100%">
-					<input name="age" id="age" type="text"
-						class="form-control input-sm" value="${jeecgDemoPage.age}"
+					<input name="age" id="age" type="text" class="form-control input-sm" value="${jeecgDemoPage.age}"
 						placeholder="请输入年龄" />
 				</div>
 			</div>
