@@ -11,13 +11,28 @@
 <link rel="stylesheet" href="${webRoot}/static/style/css/commcon.css">
 </head>
 <body style="width: 98%;">
-	<form name="formobj" id="formobj" method="post" action="error.do?updateBorrower">
-		<input type="hidden" name="ids" value="${ids }" /> <input type="hidden" name="indexs" id="indexs" value="${indexs }" />
+	<form name="formobj" id="formobj" method="post" action="error.do?updateGuarantee">
+		<input type="hidden" name="id" value="${id }" /> <input type="hidden" name="index" id="index" value="${index }" />
 		<table style="width: 100%;" cellpadding="0" cellspacing="1" class="viewtable" id="ctable">
 			<tbody>
+				<c:forEach items="${guaranteesNames }" var="item" varStatus="status">
+					<tr>
+						<th>
+							<label class="required_sign">${status.index + 1}) 姓名</label>
+						</th>
+						<td><input type="text" name="guaranteesNames" id="guaranteesNames" value="${item }" readonly="readonly" /></td>
+						<th>
+							<label class="required_sign">身份证号</label>
+						</th>
+						<td><input type="text" name="guaranteesIdNumbers" id="guaranteesIdNumbers"
+							value="${guaranteesIdNumbers[status.index] }" maxlength="18" datatype="idNumber" sucmsg="身份证号验证通过!"
+							nullmsg="请输入身份证号!" /></td>
+					</tr>
+				</c:forEach>
 			</tbody>
 		</table>
-		<input type="hidden" id="btn_sub" class="btn_sub" />
+		<a href="#" id="addPerson" class="ace_button" alt="新增" onclick="addPerson()" style="background-color: #9e123e;"><i
+			class="fa fa-gavel"></i>新增担保人</a> <input type="hidden" id="btn_sub" class="btn_sub" />
 	</form>
 </body>
 </html>

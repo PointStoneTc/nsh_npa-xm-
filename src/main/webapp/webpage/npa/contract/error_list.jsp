@@ -73,6 +73,8 @@
 					style="background-color: #9e123e;"><i class="fa fa-gavel"></i>修改担保人</a></td>
 				<td class="borderLeft"><a href="#" class="ace_button" alt="修改贷款发放日" onclick="updateIssueDueDate()"
 					style="background-color: #9e123e;"><i class="fa fa-gavel"></i>修改贷款发放日</a></td>
+				<td class="borderLeft"><a href="#" class="ace_button" alt="修改其它信息" onclick="updateOther()"
+					style="background-color: #9e123e;"><i class="fa fa-gavel"></i>修改其它信息</a></td>
 				<td class="borderLeft"><a href="#" class="ace_button" alt="提交" onclick="commit()"
 					style="background-color: #9e123e;"><i class="fa fa-gavel"></i>提交</a></td>
 			</tr>

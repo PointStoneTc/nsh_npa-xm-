@@ -134,36 +134,35 @@ public class LoanContractErrorController extends BaseController {
     @RequestMapping(params = "toUpdateGuarantee", method = RequestMethod.GET)
     public ModelAndView toUpdateGuarantee(HttpServletRequest req) {
         ModelAndView mv = new ModelAndView("npa/contract/error_updateGuarantee");
-        mv.addObject("ids", req.getParameter("ids"));
-        mv.addObject("names", req.getParameter("names").split(","));
-        mv.addObject("idNumbers", req.getParameter("idNumbers").split(","));
-        mv.addObject("indexs", req.getParameter("indexs"));
+        mv.addObject("id", req.getParameter("id"));
+        String guaranteesNames = (String) req.getParameter("guaranteesNames");
+        String guaranteesIdNumbers = (String) req.getParameter("guaranteesIdNumbers");
+        mv.addObject("guaranteesNames", "".equals(guaranteesNames) ? new String[] {} : guaranteesNames.split(","));
+        mv.addObject("guaranteesIdNumbers", "".equals(guaranteesIdNumbers) ? new String[] {} : guaranteesIdNumbers.split(","));
+        mv.addObject("index", req.getParameter("index"));
         return mv;
     }
 
     /**
      * @Title:更新错误借款合同担保人信息
      * 
-     * @param ids 主键s
-     * @param name 姓名
-     * @param sex 性别
-     * @param birthday 生日
-     * @param idNumber 身份证号
+     * @param id 主键
+     * @param guaranteesNames 担保人姓名s
+     * @param guaranteesIdNumbers 担保人身份证号s
      * @param req
      * @return
      */
     @RequestMapping(params = "updateGuarantee", method = RequestMethod.POST)
     @ResponseBody
-    public AjaxJson updateGuarantee(@RequestParam(value = "ids", required = true) String ids, @RequestParam(value = "name", required = true) String name,
-            @RequestParam(value = "sex", required = true) String sex, @RequestParam(value = "birthday", required = true) String birthday,
-            @RequestParam(value = "idNumber", required = true) String idNumber, HttpServletRequest req) {
+    public AjaxJson updateGuarantee(@RequestParam(value = "id", required = true) String id, @RequestParam(value = "guaranteesNames", required = true) String guaranteesNames,
+            @RequestParam(value = "guaranteesIdNumbers", required = true) String guaranteesIdNumbers, HttpServletRequest req) {
         AjaxJson j = new AjaxJson();
         boolean sucess = false;
         try {
-            sucess = loanContractErrorService.updateGuarantee(ids, name, sex, birthday, idNumber);
+            sucess = loanContractErrorService.updateGuarantee(id, guaranteesNames, guaranteesIdNumbers);
             j.setSuccess(sucess);
             j.setMsg("更新成功!");
-            logger.info("updateGuarantee sucess:" + ids);
+            logger.info("updateGuarantee sucess:" + id);
         } catch (Exception e) {
             j.setSuccess(sucess);
             j.setMsg("更新异常, 请联系管理员!");
@@ -217,6 +216,57 @@ public class LoanContractErrorController extends BaseController {
     }
 
     /**
+     * @Title:更新错误借款合同贷款其它信息跳转
+     * 
+     * @param req
+     * @return
+     */
+    @RequestMapping(params = "toUpdateOther", method = RequestMethod.GET)
+    public ModelAndView toUpOther(HttpServletRequest req) {
+        ModelAndView mv = new ModelAndView("npa/contract/error_updateOther");
+        mv.addObject("id", req.getParameter("id"));
+        mv.addObject("interestRate", req.getParameter("interestRate"));
+        mv.addObject("officer", req.getParameter("officer"));
+        mv.addObject("guaranteeMode", req.getParameter("guaranteeMode"));
+        mv.addObject("disposeMode", req.getParameter("disposeMode"));
+        mv.addObject("litigationStat", req.getParameter("litigationStat"));
+        mv.addObject("index", req.getParameter("index"));
+        return mv;
+    }
+
+    /**
+     * @Title: 更新错误借款合同贷款其它信息信息
+     * @param id 主键
+     * @param interestRate 利率
+     * @param officer 信贷员
+     * @param guaranteeMode 担保方式
+     * @param disposeMode 处理方式
+     * @param litigationStat 诉讼状态
+     * @param req
+     * @return
+     */
+    @RequestMapping(params = "updateOther", method = RequestMethod.POST)
+    @ResponseBody
+    public AjaxJson updateOther(@RequestParam(value = "id", required = true) Long id, @RequestParam(value = "interestRate", required = true) Double interestRate,
+            @RequestParam(value = "officer", required = true) String officer, @RequestParam(value = "guaranteeMode", required = true) String guaranteeMode,
+            @RequestParam(value = "disposeMode", required = true) String disposeMode, @RequestParam(value = "litigationStat", required = true) String litigationStat,
+            HttpServletRequest req) {
+        AjaxJson j = new AjaxJson();
+        boolean sucess = false;
+        try {
+            sucess = loanContractErrorService.updateOther(id, interestRate, officer, guaranteeMode, disposeMode, litigationStat);
+            j.setSuccess(sucess);
+            j.setMsg("更新成功!");
+            logger.info("updateOther sucess:" + id);
+        } catch (Exception e) {
+            j.setSuccess(sucess);
+            j.setMsg("更新异常, 请联系管理员!");
+            logger.error("updateOther error", e.getMessage());
+        }
+        return j;
+    }
+
+    /**
      * @Title:提交错误借款合同信息
      * 
      * @param ids 主键s
@@ -232,7 +282,7 @@ public class LoanContractErrorController extends BaseController {
             sucess = loanContractErrorService.commit(ids);
             j.setSuccess(sucess);
             j.setMsg("提交成功!");
-            logger.info("update sucess:" + ids);
+            logger.info("commit sucess:" + ids);
         } catch (Exception e) {
             j.setSuccess(sucess);
             j.setMsg("提交异常, 请联系管理员!");

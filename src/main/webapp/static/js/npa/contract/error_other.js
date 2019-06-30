@@ -1,24 +1,12 @@
 $(function() {
+    // 初始化诉讼状态选择框
+    $(':input[name="litigationStat"] option[value=' + litigationStat + ']').attr('selected', 'selected');
+    // 初始化担保方式选择框
+    $(':input[name="guaranteeMode"] option[value=' + guaranteeMode + ']').attr('selected', 'selected');
+    // 初始化处理方式选择框
+    $(':input[name="disposeMode"] option[value=' + disposeMode + ']').attr('selected', 'selected');
     initValidform();
-
-    if ($('input[name="guaranteesIdNumbers"]').size() > 0) $('#addPerson').hide();
 });
-
-/**
- * 新增担保人
- * 
- * @returns
- */
-function addPerson() {
-    var html = '<tr>'
-        + '<th><label class="required_sign">姓名</label></th>'
-        + '<td><input type="text" name="guaranteesNames" id="guaranteesNames" value="" maxlength="10" /></td>'
-        + '<th><label class="required_sign">身份证号</label></th>'
-        + '<td><input type="text" name="guaranteesIdNumbers" id="guaranteesIdNumbers" value="" maxlength="18" datatype="idNumber" sucmsg="身份证号验证通过!" nullmsg="请输入身份证号!" /></td>'
-        + '</tr>';
-
-    $('#ctable tbody').append(html);
-}
 
 /**
  * 表单验证加载
@@ -29,33 +17,6 @@ function initValidform() {
     $("#formobj")
         .Validform(
             {
-                datatype: {
-                    idNumber: function(gets, obj, curform, regxp) {
-                        var idNumber = gets;
-                        if (idNumber == '' || !validateIdNumber(idNumber))
-                            return false;
-                        else {
-                            var birthday, age, sex;
-                            if (idNumber.length == 18) {
-                                birthday = idNumber.substr(6, 4) + '-' + idNumber.substr(10, 2) + '-'
-                                    + idNumber.substr(12, 2);
-                                sex = idNumber.substr(14, 3);
-                            } else {
-                                birthday = '19' + idNumber.substr(6, 2) + '-' + idNumber.substr(8, 2) + '-'
-                                    + idNumber.substr(10, 2);
-                                sex = idNumber.substr(14, 1);
-                            }
-                            if (sex % 2 == 0)
-                                sex = 'f'
-                            else
-                                sex = 'm';
-                            age = getDateYearSub(birthday);
-
-                            $('#birthday').val(birthday);
-                            $('#sex').val(sex);
-                        }
-                    }
-                },
                 tiptype: function(msg, o, cssctl) {
                     if (o.type == 3) {
                         ValidationMessage(o.obj, msg);
@@ -66,11 +27,6 @@ function initValidform() {
                 btnSubmit: "#btn_sub",
                 ajaxPost: true,
                 beforeSubmit: function(curform) {
-                    if (!isIdNumbersRepeat()) {
-                        alert('不允许输入相同的身份证号码!');
-                        return false;
-                    }
-
                     var tag = false;
                     subDlgIndex = $.dialog({
                         content: '正在加载中',
@@ -98,7 +54,14 @@ function initValidform() {
                     if (data.success == true) {
                         frameElement.api.close();
                         win.tip(data.msg);
-                        win.updateGuaranteeCallBack();
+                        var interestRate = $('#interestRate').val();
+                        var officer = $('#officer').val();
+                        var litigationStat = $('#litigationStat').val();
+                        var guaranteeMode = $('#guaranteeMode').val();
+                        var disposeMode = $('#disposeMode').val();
+                        var index = $('#index').val();
+                        win.updateOtherCallBack(index, interestRate, officer, litigationStat, guaranteeMode,
+                            disposeMode);
                     } else {
                         if (data.responseText == '' || data.responseText == undefined) {
                             $.messager.alert('错误', data.msg);
@@ -118,24 +81,4 @@ function initValidform() {
                     }
                 }
             });
-}
-
-/**
- * 判断身份号码是否重复
- * 
- * @returns
- */
-function isIdNumbersRepeat() {
-    var items = $('input[name="guaranteesIdNumbers"]');
-    var array_temp = new Array();
-    $.each(items, function(i, n) {
-        array_temp.push($(this).val());
-    });
-    array_temp.sort();
-
-    for (var i = 0; i < array_temp.length - 1; i++) {
-        if (array_temp[i] == array_temp[i + 1]) return false;
-    }
-
-    return true;
 }

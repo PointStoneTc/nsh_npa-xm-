@@ -21,6 +21,7 @@ import nsh.xinmi.npa.corporateOrg.service.CorporateOrgUserServiceI;
 import nsh.xinmi.npa.loanContract.service.LoanContractErrorServiceI;
 import nsh.xinmi.npa.loanContract.view.LoanContractRegisterView;
 import nsh.xinmi.npa.loanContractGuarantee.entity.LoanContractGuarantee;
+import nsh.xinmi.npa.loanContractGuarantee.service.LoanContractGuaranteeServiceI;
 import nsh.xinmi.npa.naturalPerson.entity.NaturalPerson;
 import nsh.xinmi.npa.naturalPerson.service.NaturalPersonServiceI;
 
@@ -35,6 +36,9 @@ public class LoanContractErrorServiceImpl extends CommonServiceImpl implements L
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private LoanContractGuaranteeServiceI loanContractGuaranteeService;
 
     @Override
     public void getLoanContractRegisterList(LoanContractRegisterView loanContractRegisterView, String errorType, DataGrid dataGrid) {
@@ -168,36 +172,52 @@ public class LoanContractErrorServiceImpl extends CommonServiceImpl implements L
     }
 
     @Override
-    public boolean updateGuarantee(String ids, String name, String sex, String birthday, String idNumber) throws Exception {
-        Integer count = new Integer(0);
+    public boolean updateGuarantee(String id, String guaranteesNames, String guaranteesIdNumbers) throws Exception {
+        // 1.先删除原来的数据
+        String sql = "delete from npa_loan_contract_guarantee where loan_contrac_id = ?";
+        executeSql(sql, id);
 
-        String[] names = name.split(",");
-        String[] sexs = sex.split(",");
-        String[] birthdays = birthday.split(",");
-        String[] idNumbers = idNumber.split(",");
-        for (int i = 0; i < names.length; i++) {
-            // 判断身份证号是否存在,如果存在使用存在的身份号,否则新建
-            NaturalPerson person = naturalPersonService.isExist(idNumbers[i]);
+        // 2.添加担保人
+        String[] names = guaranteesNames.split(",");
+        String[] idNumbers = guaranteesIdNumbers.split(",");
+
+        for (int x = 0; x < names.length; x++) {
+            NaturalPerson person = naturalPersonService.isExist(idNumbers[x]);
             Long guarantee_id;
+            String name;
             if (person == null) {
-                NaturalPerson temp = new NaturalPerson(names[i], sexs[i], DateUtils.str2Date(birthdays[i], DateUtils.date_sdf), idNumbers[i], "0", "1");
+                NaturalPerson temp = new NaturalPerson(names[x], null, null, idNumbers[x], "0", "1");
                 temp.setIsDelete("0");
                 naturalPersonService.save(temp);
                 guarantee_id = temp.getId();
+                name = names[x];
             } else {
                 guarantee_id = person.getId();
+                name = person.getName();
             }
 
-            StringBuffer sql = new StringBuffer("update npa_loan_contract_guarantee g set g.guarantee_id = ? ").append("where g.loan_contrac_id in(").append(ids).append(")");
-            count += executeSql(sql.toString(), guarantee_id);
+            LoanContractGuarantee g = new LoanContractGuarantee();
+            g.setLoanContracId(Long.valueOf(id));
+            g.setGuaranteeId(guarantee_id);
+            g.setGuaranteeName(name);
+            g.setIsImpersonate("0");
+            loanContractGuaranteeService.save(g);
         }
-        return count.intValue() > 0 ? true : false;
+
+        return true;
     }
 
     @Override
     public boolean updateIssueDueDate(Long id, Date issueDate, Date dueDate) throws Exception {
         String sql = "update npa_loan_contract set issue_date = ?, due_date = ? where id = ?";
         Integer i = executeSql(sql, DateUtils.date2Str(issueDate, DateUtils.date_sdf), DateUtils.date2Str(dueDate, DateUtils.date_sdf), id);
+        return i.intValue() > 0 ? true : false;
+    }
+
+    @Override
+    public boolean updateOther(Long id, Double interestRate, String officer, String guaranteeMode, String disposeMode, String litigationStat) throws Exception {
+        String sql = "update npa_loan_contract set interest_rate = ?, officer = ?, guarantee_mode = ?, dispose_mode = ?, litigation_stat = ? where id = ?";
+        Integer i = executeSql(sql, interestRate, officer, guaranteeMode, disposeMode, litigationStat, id);
         return i.intValue() > 0 ? true : false;
     }
 
@@ -213,4 +233,5 @@ public class LoanContractErrorServiceImpl extends CommonServiceImpl implements L
         Integer i = executeSql(sql.toString());
         return i.intValue() > 0 ? true : false;
     }
+
 }

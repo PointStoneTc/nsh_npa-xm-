@@ -84,7 +84,7 @@ function updateBorrower() {
     indexs = indexs.substring(0, indexs.length - 1);
 
     createWindowWithCallBack('更新借款人', 'loancontract/error.do?toUpdateBorrower&ids=' + ids + '&name=' + name
-                    + '&idNumber=' + idNumber + '&indexs=' + indexs, 400, 150);
+        + '&idNumber=' + idNumber + '&indexs=' + indexs, 400, 150);
 }
 
 /**
@@ -119,62 +119,33 @@ function updateGuarantee() {
         return false;
     }
 
-    // 不允许选择名字不同的用户
+    // 不允许选择多条数据
     if (rows.length > 1) {
-        var borrowerName;
-        var hasRepetitive = false;
-        $.each(rows, function(i, n) {
-            if (i == 0)
-                borrowerName = n.borrowerName;
-            else {
-                if (n.borrowerName != '' && n.borrowerName != borrowerName) {
-                    hasRepetitive = true;
-                    return false;
-                }
-            }
-        });
-
-        if (hasRepetitive) {
-            alert('不允许选择借款人名字不同的数据!');
-            return false;
-        }
+        alert('不允许选择多条数据!');
+        return false;
     }
 
-    var ids = '';
-    var names = '';
-    var idNumbers = '';
-    var indexs = '';
-    $.each(rows, function(i, n) {
-        ids += n.id + ',';
-        names += n.guaranteesName + ',';
-        idNumbers += n.guaranteesIdNumber + ',';
-        indexs += $('#' + datagridId).datagrid('getRowIndex', n) + ',';
-    });
+    var id = '';
+    var guaranteesNames = '';
+    var guaranteesIdNumbers = '';
+    var index = '';
 
-    ids = ids.substring(0, ids.length - 1);
-    indexs = indexs.substring(0, indexs.length - 1);
+    id = rows[0].id;
+    guaranteesNames = rows[0].guaranteesName;
+    guaranteesIdNumbers = rows[0].guaranteesIdNumber;
+    index = $('#' + datagridId).datagrid('getRowIndex', rows[0]);
 
-    createWindowWithCallBack('更新担保人', 'loancontract/error.do?toUpdateGuarantee&ids=' + ids + '&names=' + names
-                    + '&idNumbers=' + idNumbers + '&indexs=' + indexs, 400, 150);
+    createWindowWithCallBack('更新担保人', 'loancontract/error.do?toUpdateGuarantee&id=' + id + '&guaranteesNames='
+        + guaranteesNames + '&guaranteesIdNumbers=' + guaranteesIdNumbers + '&index=' + index, 600, 250);
 }
 
 /**
- * 修改借款人回调函数
+ * 修改担保人回调函数
  * 
- * @param index
- * @param idNumbers
- *            担保人身份证号
  * @returns
  */
-function updateGuaranteeCallBack(indexs, idNumbers) {
-    $.each(indexs.split(","), function(i, n) {
-        $('#' + datagridId).datagrid('updateRow', {
-            index: parseInt(n),
-            row: {
-                guaranteesIdNumber: idNumbers
-            }
-        });
-    });
+function updateGuaranteeCallBack() {
+    reloadTable();
 }
 
 /**
@@ -199,7 +170,7 @@ function updateIssueDueDate() {
     var id = '';
     var issueDate = '';
     var dueDate = '';
-    var indexs = '';
+    var index = '';
 
     id = rows[0].id;
     issueDate = rows[0].issueDate;
@@ -207,11 +178,11 @@ function updateIssueDueDate() {
     index = $('#' + datagridId).datagrid('getRowIndex', rows[0]);
 
     createWindowWithCallBack('更新贷款发放日、到期日', 'loancontract/error.do?toUpdateIssueDueDate&ids=' + id + '&issueDate='
-                    + issueDate + '&dueDate=' + dueDate + '&index=' + index, 400, 150);
+        + issueDate + '&dueDate=' + dueDate + '&index=' + index, 400, 150);
 }
 
 /**
- * 修改修改发放日、到期日回调函数
+ * 修改发放日、到期日回调函数
  * 
  * @param index
  * @param issueDate
@@ -224,6 +195,71 @@ function updateIssueDueDateCallBack(index, issueDate, dueDate) {
         row: {
             issueDate: issueDate,
             dueDate: dueDate
+        }
+    });
+}
+
+/**
+ * 修改其它
+ * 
+ * @returns
+ */
+function updateOther() {
+    var rows = $('#' + datagridId).datagrid('getSelections');
+    // 判断是否选择了数据
+    if (rows.length == 0) {
+        alert('请选择数据!');
+        return false;
+    }
+
+    // 不允许选择多条数据
+    if (rows.length > 1) {
+        alert('不允许选择多条数据!');
+        return false;
+    }
+
+    var id = '';
+    var interestRate = 0;
+    var officer = '';
+    var litigationStat = '';
+    var guaranteeMode = '';
+    var disposeMode = '';
+    var indexs = '';
+
+    id = rows[0].id;
+    interestRate = rows[0].interestRate;
+    officer = rows[0].officer;
+    litigationStat = rows[0].litigationStat;
+    guaranteeMode = rows[0].guaranteeMode;
+    disposeMode = rows[0].disposeMode;
+    console.info(rows[0]);
+    index = $('#' + datagridId).datagrid('getRowIndex', rows[0]);
+
+    createWindowWithCallBack('更新其它', 'loancontract/error.do?toUpdateOther&id=' + id + '&interestRate=' + interestRate
+        + '&officer=' + officer + '&litigationStat=' + litigationStat + '&guaranteeMode=' + guaranteeMode
+        + '&disposeMode=' + disposeMode + '&index=' + index, 400, 200);
+}
+
+/**
+ * 修改其它回调函数
+ * 
+ * @param index
+ * @param interestRate
+ * @param officer
+ * @param litigationStat
+ * @param guaranteeMode
+ * @param disposeMode
+ * @returns
+ */
+function updateOtherCallBack(index, interestRate, officer, litigationStat, guaranteeMode, disposeMode) {
+    $('#' + datagridId).datagrid('updateRow', {
+        index: parseInt(index),
+        row: {
+            interestRate: interestRate,
+            officer: officer,
+            litigationStat: litigationStat,
+            guaranteeMode: guaranteeMode,
+            disposeMode: disposeMode
         }
     });
 }
@@ -246,7 +282,8 @@ function commit() {
     var hasError = false;
     $.each(rows, function(i, n) {
         if (n.idNumber == '' || n.issueDate == '' || n.dueDate == ''
-                        || getDaysByDateString(new Date(n.dueDate), new Date(n.issueDate), false) > 0) {
+            || getDaysByDateString(new Date(n.dueDate), new Date(n.issueDate), false) > 0
+            || n.guaranteesIdNumber.indexOf('null') > -1 || (n.guaranteesName != '' && n.guaranteesIdNumber == '')) {
             hasError = true;
             return false;
         }
