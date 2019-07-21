@@ -208,7 +208,7 @@ function formatUnhealthyDate(val, row) {
 
   var d1 = new Date(row.dueDate)
   var d2 = new Date(row.dueDate);
-  d2.setDate(d1.getDate() + 30);
+  d2.setDate(d1.getDate() + 90);
   return '<span>' + d2.format1('yyyy-MM-dd') + '</span>';
 }
 
@@ -282,8 +282,7 @@ function formatCtstat(val, row) {
   if (val == 'n')
     res = '正常';
   else if (val == 'e')
-    res = '结束';
-  else if (val == 't') res = '终止';
+    res = '结清';
 
   return '<span>' + res + '</span>';
 }

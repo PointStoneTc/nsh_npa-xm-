@@ -18,20 +18,25 @@
 				<c:forEach items="${guaranteesNames }" var="item" varStatus="status">
 					<tr>
 						<th>
-							<label class="required_sign">${status.index + 1}) 姓名</label>
+							<label class="required_sign">姓名</label>
 						</th>
-						<td><input type="text" name="guaranteesNames" id="guaranteesNames" value="${item }" readonly="readonly" /></td>
+						<td><input type="text" name="guaranteesNames" id="guaranteesNames" value="${item }" maxlength="50"
+							datatype="*" sucmsg="姓名验证通过!" nullmsg="请输入姓名!" /></td>
 						<th>
 							<label class="required_sign">身份证号</label>
 						</th>
 						<td><input type="text" name="guaranteesIdNumbers" id="guaranteesIdNumbers"
 							value="${guaranteesIdNumbers[status.index] }" maxlength="18" datatype="idNumber" sucmsg="身份证号验证通过!"
 							nullmsg="请输入身份证号!" /></td>
+						<th>
+							<a href="#" id="delPerson" class="ace_button" alt="删除" onclick="delPerson(this)" style="background-color: #9e123e;"><i
+								class="fa fa-trash-o"></i>删除担保人</a>
+						</th>
 					</tr>
 				</c:forEach>
 			</tbody>
 		</table>
-		<a href="#" id="addPerson" class="ace_button" alt="新增" onclick="addPerson()" style="background-color: #9e123e;"><i
+		<a href="#" id="addPerson" class="ace_button" alt="新增" onclick="addPerson()" style="background-color: #129e1e;"><i
 			class="fa fa-gavel"></i>新增担保人</a> <input type="hidden" id="btn_sub" class="btn_sub" />
 	</form>
 </body>

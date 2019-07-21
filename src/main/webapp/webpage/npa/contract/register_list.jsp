@@ -73,8 +73,7 @@
 				<td><select name="stat" id="stat">
 						<option value="" selected="selected">---请选择---</option>
 						<option value="n">正常</option>
-						<option value="e">结束</option>
-						<option value="p">终止</option>
+						<option value="e">结清</option>
 				</select></td>
 				<td><a id="search" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-search'" onclick="doQuery()">查询</a></td>
 				<td><a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-le-back'" onclick="doClear()">清空</a></td>

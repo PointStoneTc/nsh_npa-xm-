@@ -5,7 +5,6 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 import org.jeecgframework.core.common.model.json.DataGrid;
 import org.jeecgframework.core.common.service.impl.CommonServiceImpl;
 import org.jeecgframework.core.util.DateUtils;
@@ -17,7 +16,6 @@ import org.jeecgframework.web.system.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import jodd.bean.BeanUtil;
 import nsh.xinmi.npa.corporateOrg.entity.CorporateOrgUser;
 import nsh.xinmi.npa.corporateOrg.service.CorporateOrgUserServiceI;
@@ -386,6 +384,8 @@ public class LoanContractServiceImpl extends CommonServiceImpl implements LoanCo
         if (!isInitStat) {
             list = combinationViContractQyView(sql);
         }
+
+        dataGrid.setTotal(list.size());
         dataGrid.setResults(list);
     }
 

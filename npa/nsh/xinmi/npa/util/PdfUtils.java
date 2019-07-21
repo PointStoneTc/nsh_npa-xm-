@@ -5,9 +5,7 @@ import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
 import org.jeecgframework.core.util.DateUtils;
-
 import com.itextpdf.text.BaseColor;
 import com.itextpdf.text.Chunk;
 import com.itextpdf.text.Document;
@@ -18,12 +16,13 @@ import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
-
 import nsh.xinmi.npa.loanContract.view.ViContractQyView;
 import nsh.xinmi.npa.loanContractGuarantee.entity.LoanContractGuarantee;
 import nsh.xinmi.npa.naturalPerson.entity.NaturalPerson;
 
 public class PdfUtils {
+    public static String waterMarkText = "河南省农村信用社";
+
     public static void main(String[] args) throws Exception {
         PdfConfig pdfConfig = PdfConfig.getInstance("c:\\1\\", "", "证明", "", "", "", "");
         List<ViContractQyView> lctList = new ArrayList<ViContractQyView>();
@@ -130,8 +129,9 @@ public class PdfUtils {
 
             // 建立一个书写器
             realPath = pdfConfig.getDocment_basePath() + fileName + ".pdf";
-            PdfWriter.getInstance(document, new FileOutputStream(realPath));
+            PdfWriter pdfWriter = PdfWriter.getInstance(document, new FileOutputStream(realPath));
             // 打开文件
+            pdfWriter.setPageEvent(new CustomerWaterMark(waterMarkText, pdfConfig.getBfChinese()));
             document.open();
 
             // 添加主题

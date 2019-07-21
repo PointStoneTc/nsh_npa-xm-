@@ -138,7 +138,7 @@
 								</th>
 								<td><span class="rmb" id="y3"></span></td>
 								<th>
-									<label>计息本金</label>
+									<label>本息合计</label>
 								</th>
 								<td colspan="5"><span class="rmb" id="y4"></span></td>
 							</tr>

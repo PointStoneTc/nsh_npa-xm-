@@ -22,7 +22,7 @@
 				<tbody>
 					<tr>
 						<th>
-							<label class="required_sign">合同编号</label>
+							<label class="required_sign">档案编号</label>
 						</th>
 						<td><input type="text" name="loanContract.numCode" value="${view.loanContract.numCode }" maxlength="14"
 							tip="14位数字编号" altercss="gray" datatype="numCode" sucmsg="档案编号验证通过!" nullmsg="请输入档案编号!" errormsg="格式不对或者编号已存在!" /></td>
@@ -36,7 +36,7 @@
 							<label class="required_sign">贷款发放日</label>
 						</th>
 						<td><input type="text" class="Wdate"
-							onClick="WdatePicker({isShowClear:false,readOnly:true,minDate:'#F{$dp.$D(\'dueDate\')}'})"
+							onClick="WdatePicker({isShowClear:false,readOnly:true,maxDate:'#F{$dp.$D(\'dueDate\')}'})"
 							name="loanContract.issueDate" id="issueDate" value="${view.loanContract.issueDate }" datatype="*"
 							sucmsg="贷款发放日验证通过!" nullmsg="请输入贷款发放日!" /></td>
 						<th>

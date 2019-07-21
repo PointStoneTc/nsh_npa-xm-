@@ -2,7 +2,7 @@ var lt_datagrid = 'ltList';
 var litigationStat_s = 'n_未诉讼,l_立案,f_一审,s_二审,g_再审,t_调解,e_诉讼终结,i_申请执行,a_执行,b_中止执行,c_终止本次执行,d_执行终结';
 var guaranteeMode_s = 'x_信用,b_保证,d_抵押,f_复合';
 var disposeMode_s = 'h_核销贷款,t_土地置换,y_央票置换';
-var stat_s = 'n_正常,e_结束,p_终止';
+var stat_s = 'n_正常,e_结清';
 var corporateOrgId = 'corporateOrgId';
 
 $(function() {
