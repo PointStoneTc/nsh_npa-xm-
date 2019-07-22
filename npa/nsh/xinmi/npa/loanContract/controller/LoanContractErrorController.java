@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.jeecgframework.core.common.controller.BaseController;
 import org.jeecgframework.core.common.model.json.AjaxJson;
 import org.jeecgframework.core.common.model.json.DataGrid;
+import org.jeecgframework.core.util.oConvertUtils;
 import org.jeecgframework.tag.core.easyui.TagUtil;
 import org.jeecgframework.web.system.service.SystemService;
 import org.slf4j.Logger;
@@ -19,6 +20,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import nsh.xinmi.npa.loanContract.service.LoanContractErrorServiceI;
 import nsh.xinmi.npa.loanContract.view.LoanContractRegisterView;
+import nsh.xinmi.npa.naturalPerson.entity.NaturalPerson;
+import nsh.xinmi.npa.naturalPerson.service.NaturalPersonServiceI;
 
 /**
  * @Title: Controller
@@ -43,6 +46,9 @@ public class LoanContractErrorController extends BaseController {
     ============================================*/
     @Autowired
     private LoanContractErrorServiceI loanContractErrorService;
+
+    @Autowired
+    private NaturalPersonServiceI naturalPersonService;
 
     @Autowired
     private SystemService systemService;
@@ -236,6 +242,7 @@ public class LoanContractErrorController extends BaseController {
 
     /**
      * @Title: 更新错误借款合同贷款其它信息信息
+     * 
      * @param id 主键
      * @param interestRate 利率
      * @param officer 信贷员
@@ -258,6 +265,33 @@ public class LoanContractErrorController extends BaseController {
             j.setSuccess(sucess);
             j.setMsg("更新成功!");
             logger.info("updateOther sucess:" + id);
+        } catch (Exception e) {
+            j.setSuccess(sucess);
+            j.setMsg("更新异常, 请联系管理员!");
+            logger.error("updateOther error", e.getMessage());
+        }
+        return j;
+    }
+
+    /**
+     * @Title: 更新错误借款合同贷款地址信息
+     * 
+     * @param idNumber 身份证号码
+     * @param address 地址
+     * @param req
+     * @return
+     */
+    @RequestMapping(params = "updateAddress", method = RequestMethod.POST)
+    @ResponseBody
+    public AjaxJson updateAddress(@RequestParam(value = "idNumber", required = true) String idNumber, @RequestParam(value = "address", required = true) String address,
+            HttpServletRequest req) {
+        AjaxJson j = new AjaxJson();
+        boolean sucess = false;
+        try {
+            sucess = loanContractErrorService.updateAddress(idNumber, address);
+            j.setSuccess(sucess);
+            j.setMsg("更新成功!");
+            logger.info("updateAddress sucess:" + idNumber);
         } catch (Exception e) {
             j.setSuccess(sucess);
             j.setMsg("更新异常, 请联系管理员!");

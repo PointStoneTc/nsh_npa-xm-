@@ -222,6 +222,13 @@ public class LoanContractErrorServiceImpl extends CommonServiceImpl implements L
     }
 
     @Override
+    public boolean updateAddress(String idNumber, String address) {
+        String sql = "update npa_natural_person set address = ? where id_number = ?";
+        Integer i = executeSql(sql, address, idNumber);
+        return i.intValue() > 0 ? true : false;
+    }
+
+    @Override
     public boolean commit(String ids) {
         TSUser loginUser = ResourceUtil.getSessionUser();
         StringBuffer sql =

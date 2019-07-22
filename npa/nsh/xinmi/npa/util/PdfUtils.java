@@ -21,7 +21,7 @@ import nsh.xinmi.npa.loanContractGuarantee.entity.LoanContractGuarantee;
 import nsh.xinmi.npa.naturalPerson.entity.NaturalPerson;
 
 public class PdfUtils {
-    public static String waterMarkText = "河南省农村信用社";
+    public static String waterMarkText = "新密农商银行";
 
     public static void main(String[] args) throws Exception {
         PdfConfig pdfConfig = PdfConfig.getInstance("c:\\1\\", "", "证明", "", "", "", "");

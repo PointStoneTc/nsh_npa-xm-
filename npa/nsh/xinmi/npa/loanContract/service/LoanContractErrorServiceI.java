@@ -52,6 +52,7 @@ public interface LoanContractErrorServiceI extends CommonService {
 
     /**
      * @Title: 更新错误借款合同贷款其它信息信息
+     * 
      * @param id 主键
      * @param interestRate 利率
      * @param officer 信贷员
@@ -63,6 +64,14 @@ public interface LoanContractErrorServiceI extends CommonService {
      */
     boolean updateOther(Long id, Double interestRate, String officer, String guaranteeMode, String disposeMode, String litigationStat) throws Exception;
 
+    /**
+     * @Title: 更新错误借款合同贷款地址信息
+     * 
+     * @param idNumber 身份证号
+     * @param address 地址
+     * @return
+     */
+    boolean updateAddress(String idNumber, String address);
     /**
      * @Title: 错误借款合同登记提交
      * 

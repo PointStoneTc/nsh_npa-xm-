@@ -41,7 +41,7 @@ public class CustomerWaterMark extends PdfPageEventHelper {
             // 设置透明度
             waterMar.setGState(gs);
             // 设置水印对齐方式 水印内容 X坐标 Y坐标 旋转角度
-            waterMar.showTextAligned(Element.ALIGN_RIGHT, text, 500, 430, 45);
+            waterMar.showTextAligned(Element.ALIGN_TOP, text, 200, 400, 45);
             // 设置水印颜色
             waterMar.setColorFill(BaseColor.GRAY);
             // 结束设置
