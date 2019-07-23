@@ -29,12 +29,6 @@
 					<td><input type="text" name="idNumber" id="idNumber" value="${idNumber }" maxlength="18" datatype="idNumber"
 						sucmsg="身份证号验证通过!" nullmsg="请输入身份证号!" /></td>
 				</tr>
-				<tr>
-					<th>
-						<label class="required_sign">身份证号</label>
-					</th>
-					<td><input type="text" name="borrower.address" value="${address }" maxlength="50" /></td>
-				</tr>
 			</tbody>
 		</table>
 		<input type="hidden" id="btn_sub" class="btn_sub" />
