@@ -135,6 +135,30 @@ public class CorporateOrgController extends BaseController {
         }
         return j;
     }
+    
+    /**
+     * @Title:获取法人组织机构操作员调动
+     * @param id
+     * @param orgid
+     * @param req
+     * @return
+     */
+    @RequestMapping(value = "/operator", params = "dep", method = RequestMethod.POST)
+    @ResponseBody
+    public AjaxJson registerDep(@RequestParam(value = "id", required = true) Long id, @RequestParam(value = "orgId", required = true) Long orgId, HttpServletRequest req) {
+        AjaxJson j = new AjaxJson();
+        try {
+            corporateOrgService.optOperator(id, orgId);
+            j.setSuccess(true);
+            j.setMsg("调动成功!");
+            logger.info("dep sucess: " + id);
+        } catch (Exception e) {
+            j.setSuccess(false);
+            j.setMsg("调动异常, 请联系管理员!");
+            logger.error("dep error", e.getMessage());
+        }
+        return j;
+    }
 
     /**
      * @Title:选择一个用户

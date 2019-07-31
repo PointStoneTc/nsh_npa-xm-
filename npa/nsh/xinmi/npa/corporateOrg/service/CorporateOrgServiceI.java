@@ -33,4 +33,12 @@ public interface CorporateOrgServiceI extends CommonService {
      * @return
      */
     List<CorporateOrg> getAllList();
+    
+    /**
+     * @Title: 调动操作员
+     * @param id 主键
+     * @param orgId 新机构id
+     * @return
+     */
+    boolean optOperator(Long id, Long orgId);
 }

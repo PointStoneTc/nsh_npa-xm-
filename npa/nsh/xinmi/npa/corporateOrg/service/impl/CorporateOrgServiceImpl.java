@@ -3,7 +3,6 @@ package nsh.xinmi.npa.corporateOrg.service.impl;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-
 import org.jeecgframework.core.common.hibernate.qbc.CriteriaQuery;
 import org.jeecgframework.core.common.model.json.DataGrid;
 import org.jeecgframework.core.common.service.impl.CommonServiceImpl;
@@ -11,9 +10,9 @@ import org.jeecgframework.core.util.ResourceUtil;
 import org.jeecgframework.web.system.pojo.base.TSBaseUser;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import jodd.bean.BeanUtil;
 import nsh.xinmi.npa.corporateOrg.entity.CorporateOrg;
+import nsh.xinmi.npa.corporateOrg.entity.CorporateOrgUser;
 import nsh.xinmi.npa.corporateOrg.service.CorporateOrgServiceI;
 import nsh.xinmi.npa.corporateOrg.view.CorporateOrgUserListView;
 
@@ -82,6 +81,14 @@ public class CorporateOrgServiceImpl extends CommonServiceImpl implements Corpor
         String hql = "from CorporateOrg where isEffect = '1'";
         List<CorporateOrg> list = this.findHql(hql);
         return list;
+    }
+
+    @Override
+    public boolean optOperator(Long id, Long orgId) {
+        CorporateOrgUser corporateOrgUser = this.get(CorporateOrgUser.class, id);
+        corporateOrgUser.setCorporateOrgId(orgId);
+        this.updateEntitie(corporateOrgUser);
+        return false;
     }
 
 }

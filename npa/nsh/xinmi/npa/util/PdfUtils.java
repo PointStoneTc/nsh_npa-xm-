@@ -5,6 +5,7 @@ import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Random;
 import org.jeecgframework.core.util.DateUtils;
 import com.itextpdf.text.BaseColor;
 import com.itextpdf.text.Chunk;
@@ -22,6 +23,7 @@ import nsh.xinmi.npa.naturalPerson.entity.NaturalPerson;
 
 public class PdfUtils {
     public static String waterMarkText = "新密农商银行";
+    public static String footerTxt_qz = "http://www.xinmi.nongshanghang.com/jessionid=";
 
     public static void main(String[] args) throws Exception {
         PdfConfig pdfConfig = PdfConfig.getInstance("c:\\1\\", "", "证明", "", "", "", "");
@@ -130,8 +132,11 @@ public class PdfUtils {
             // 建立一个书写器
             realPath = pdfConfig.getDocment_basePath() + fileName + ".pdf";
             PdfWriter pdfWriter = PdfWriter.getInstance(document, new FileOutputStream(realPath));
+            
+            String footerTxt = footerTxt_qz + new Date().getTime() + ";" +getRandomString(32) + "          " + DateUtils.date2Str(DateUtils.time_sdf); 
             // 打开文件
-            pdfWriter.setPageEvent(new CustomerWaterMark(waterMarkText, pdfConfig.getBfChinese()));
+            pdfWriter.setPageEvent(new CustomerWaterMark(waterMarkText, pdfConfig.getBfChinese(), pdfConfig.getFont(), footerTxt));
+            
             document.open();
 
             // 添加主题
@@ -290,6 +295,17 @@ public class PdfUtils {
         Paragraph manufacturer = getParagraph2("Manufacturer");
         manufacturer.setSpacingBefore(25); // 设置行距
         return manufacturer;
+    }
+    
+    public static String getRandomString(int length){
+        String str="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        Random random=new Random();
+        StringBuffer sb=new StringBuffer();
+        for(int i=0;i<length;i++){
+          int number=random.nextInt(62);
+          sb.append(str.charAt(number));
+        }
+        return sb.toString();
     }
 
 }

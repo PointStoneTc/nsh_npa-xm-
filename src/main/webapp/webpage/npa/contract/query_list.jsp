@@ -15,8 +15,7 @@
 <body>
 	<div class="easyui-layout" fit="true">
 		<div data-options="region:'center'" style="padding: 0px; border: 0px;">
-			<table id="queryList" name="queryList" class="easyui-datagrid" title="借款合同综合查询"
-				data-options="rownumbers:true,fit:true,striped:true,checkOnSelect:true,url:'query.do?datagrid&field=id,numCode,customerNo,louNo,borrowerName,idNumber,guaranteesName,guaranteesIdNumber,amount,amountSurplus,oInterestRate,issueDate,dueDate,interestDate,adjustInterestRate,officer,corporateOrgName,hangInteres,litigationStat,guaranteeMode,disposeMode,stat',method:'post',toolbar:'#tb'">
+			<table id="queryList" title="借款合同综合查询">
 				<thead>
 					<tr>
 						<th data-options="field:'ck',checkbox:true" rowspan="2"></th>
