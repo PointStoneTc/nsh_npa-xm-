@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-modules id="moduleCoreId"
+	project-version="1.5.0">
+	<wb-module deploy-name="npa">
+		<wb-resource deploy-path="/"
+			source-path="/target/m2e-wtp/web-resources" />
+		<wb-resource deploy-path="/"
+			source-path="/src/main/webapp" tag="defaultRootSource" />
+		<wb-resource deploy-path="/WEB-INF/classes"
+			source-path="/src/main/java" />
+		<wb-resource deploy-path="/WEB-INF/classes"
+			source-path="/src/main/resources" />
+		<wb-resource deploy-path="/WEB-INF/classes"
+			source-path="/Jeecg" />
+		<wb-resource deploy-path="/WEB-INF/classes"
+			source-path="/npa" />
+		<property name="java-output-path"
+			value="/npa_xm/target/classes" />
+		<property name="context-root" value="npa" />
+	</wb-module>
+</project-modules>

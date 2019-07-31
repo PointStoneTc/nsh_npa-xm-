@@ -2,9 +2,9 @@
 /target/
 */target/*
 
-.classpath
-.project
-.settings     
+##.classpath
+##.project
+##.settings     
  ##filter databfile、sln file##
 *.mdb  
 *.ldb  
@@ -21,7 +21,7 @@
 *.dmg  
 *.gz  
 *.iso  
-*.jar  
+##*.jar  
 *.rar  
 *.tar  
 *.zip  
