@@ -1,8 +1,8 @@
 package nsh.xinmi.npa.corporateOrg.controller;
 
+import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import org.jeecgframework.core.common.controller.BaseController;
 import org.jeecgframework.core.common.model.json.AjaxJson;
 import org.jeecgframework.core.common.model.json.DataGrid;
@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
-
 import nsh.xinmi.npa.corporateOrg.entity.CorporateOrg;
 import nsh.xinmi.npa.corporateOrg.entity.CorporateOrgUser;
 import nsh.xinmi.npa.corporateOrg.service.CorporateOrgServiceI;
@@ -59,6 +58,14 @@ public class CorporateOrgController extends BaseController {
      */
     @RequestMapping(params = "list", method = RequestMethod.GET)
     public String list(HttpServletRequest request) {
+        List<CorporateOrg> list = corporateOrgService.getAllList();
+        StringBuffer sb = new StringBuffer();
+        for (CorporateOrg org : list) {
+            sb.append(org.getId()).append(":").append(org.getNameShorter()).append(";");
+        }
+        if (sb.length() > 0)
+            sb.deleteCharAt(sb.length() - 1);
+        request.setAttribute("orgList", sb.toString());
         return "npa/corporateOrg/corporateOrg_list";
     }
 
@@ -135,7 +142,7 @@ public class CorporateOrgController extends BaseController {
         }
         return j;
     }
-    
+
     /**
      * @Title:获取法人组织机构操作员调动
      * @param id
@@ -147,10 +154,14 @@ public class CorporateOrgController extends BaseController {
     @ResponseBody
     public AjaxJson registerDep(@RequestParam(value = "id", required = true) Long id, @RequestParam(value = "orgId", required = true) Long orgId, HttpServletRequest req) {
         AjaxJson j = new AjaxJson();
+        boolean success = false;
         try {
-            corporateOrgService.optOperator(id, orgId);
+            success = corporateOrgService.optOperator(id, orgId);
+            if (success)
+                j.setMsg("调动成功!");
+            else
+                j.setMsg("调动失败,此人已经在调动部门,重新选择!");
             j.setSuccess(true);
-            j.setMsg("调动成功!");
             logger.info("dep sucess: " + id);
         } catch (Exception e) {
             j.setSuccess(false);

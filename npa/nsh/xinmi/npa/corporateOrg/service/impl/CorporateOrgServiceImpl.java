@@ -37,13 +37,14 @@ public class CorporateOrgServiceImpl extends CommonServiceImpl implements Corpor
 
         if (id != null) {
             String sql =
-                    "select o.id, u.id userid, u.realname from npa_corporate_org_user o, t_s_base_user u where o.userid = u.id and u.delete_flag = 0 and u.status = 1 and o.corporate_org_id = "
+                    "select o.id, u.id userid, u.realname, o.corporate_org_id from npa_corporate_org_user o, t_s_base_user u where o.userid = u.id and u.delete_flag = 0 and u.status = 1 and o.corporate_org_id = "
                             + id;
             count = this.getCountForJdbc("select count(1) from (" + sql.toString() + ") t");
             List<Map<String, Object>> rs = this.findForJdbc(sql.toString());
             for (Map<String, Object> rsMap : rs) {
                 CorporateOrgUserListView userView = new CorporateOrgUserListView();
                 BeanUtil.setProperty(userView, "id", rsMap.get("id"));
+                BeanUtil.setProperty(userView, "corporateOrgId", rsMap.get("corporate_org_id"));
                 BeanUtil.setProperty(userView, "userid", rsMap.get("userid"));
                 BeanUtil.setProperty(userView, "userName", rsMap.get("realname"));
                 list.add(userView);
@@ -86,9 +87,16 @@ public class CorporateOrgServiceImpl extends CommonServiceImpl implements Corpor
     @Override
     public boolean optOperator(Long id, Long orgId) {
         CorporateOrgUser corporateOrgUser = this.get(CorporateOrgUser.class, id);
+        
+        //判断调动的支行是否已经存在该人
+        String sql = "select count(1) from npa_corporate_org_user where corporate_org_id = ? and userid = ?";
+        Long ct = getCountForJdbcParam(sql, orgId, corporateOrgUser.getUserid());
+        if(ct > 0) {
+            return false;
+        }
         corporateOrgUser.setCorporateOrgId(orgId);
         this.updateEntitie(corporateOrgUser);
-        return false;
+        return true;
     }
 
 }

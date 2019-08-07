@@ -28,12 +28,13 @@
 			</thead>
 		</table>
 	</div>
-	<div style="width: 300px;" data-options="region:'east',split:true">
+	<div style="width: 350px;" data-options="region:'east',split:true">
 		<table id="corporateOrgOperatorList" class="easyui-datagrid" title="操作员列表"
-			data-options="rownumbers:true,singleSelect:true,fit:true,striped:true,url:'corporateOrg/operator.do?datagrid&field=id,userid,userName',method:'post'">
+			data-options="rownumbers:true,singleSelect:true,fit:true,striped:true,url:'corporateOrg/operator.do?datagrid&field=id,corporateOrgId,userid,userName',method:'post'">
 			<thead>
 				<tr>
 					<th data-options="field:'id',hidden:true">id</th>
+					<th data-options="field:'corporateOrgId',hidden:true">corporateOrgId</th>
 					<th data-options="field:'userid',hidden:true">userid</th>
 					<th data-options="field:'userName',align:'center'">姓名</th>
 					<th data-options="field:'opt',formatter:operate_opt_formatter">操作</th>
@@ -47,3 +48,7 @@
 	</form>
 </body>
 </html>
+<script type="text/javascript">
+    var orgArray = new Array();
+    orgArray = '${orgList}'.split(';');
+</script>

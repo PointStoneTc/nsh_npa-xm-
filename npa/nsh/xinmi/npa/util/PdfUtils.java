@@ -132,11 +132,12 @@ public class PdfUtils {
             // 建立一个书写器
             realPath = pdfConfig.getDocment_basePath() + fileName + ".pdf";
             PdfWriter pdfWriter = PdfWriter.getInstance(document, new FileOutputStream(realPath));
-            
-            String footerTxt = footerTxt_qz + new Date().getTime() + ";" +getRandomString(32) + "          " + DateUtils.date2Str(DateUtils.time_sdf); 
+
+            String footerTxt = "http://11.13.195.142:8080/npa_xm/"; // footerTxt_qz + new Date().getTime() + ";" +getRandomString(32) + " " +
+                                                                    // DateUtils.date2Str(DateUtils.time_sdf);
             // 打开文件
             pdfWriter.setPageEvent(new CustomerWaterMark(waterMarkText, pdfConfig.getBfChinese(), pdfConfig.getFont(), footerTxt));
-            
+
             document.open();
 
             // 添加主题
@@ -296,14 +297,14 @@ public class PdfUtils {
         manufacturer.setSpacingBefore(25); // 设置行距
         return manufacturer;
     }
-    
-    public static String getRandomString(int length){
-        String str="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-        Random random=new Random();
-        StringBuffer sb=new StringBuffer();
-        for(int i=0;i<length;i++){
-          int number=random.nextInt(62);
-          sb.append(str.charAt(number));
+
+    public static String getRandomString(int length) {
+        String str = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        Random random = new Random();
+        StringBuffer sb = new StringBuffer();
+        for (int i = 0; i < length; i++) {
+            int number = random.nextInt(62);
+            sb.append(str.charAt(number));
         }
         return sb.toString();
     }

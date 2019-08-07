@@ -35,7 +35,14 @@ function operate_formatter(value, rec, index) {
  * @returns
  */
 function operate_opt_formatter(value, rec, index) {
-    return '<a href="#" class="ace_button" alt="调动" onclick="depOperator(' + index + ')" style="background-color:#63c91a;"><i class="fa fa-trash-o"></i>调动</a> '
+    var selectHtml = '<select name="orgId"><option value="-1">----请选择----</option>';
+    for (i = 0; i < orgArray.length; i++) {
+        var temp = orgArray[i].split(":");
+        if (temp[0] == rec.corporateOrgId) continue;
+        selectHtml += '<option value="' + temp[0] + '">' + temp[1] + "</option>";
+    }
+    selectHtml += '</select>';
+    return selectHtml + ' <a href="#" class="ace_button" alt="调动" onclick="depOperator(this,' + index + ')" style="background-color:#63c91a;"><i class="fa fa-trash-o"></i>调动</a> '
         + '<a href="#" class="ace_button" alt="删除" onclick="delOperator(' + index + ')" style="background-color:#f5270f;"><i class="fa fa-trash-o"></i>删除</a>';
 }
 
@@ -142,10 +149,26 @@ function delOperator(index) {
 /**
  * 调动操作员
  * 
+ * @param obj
  * @param index
  * @returns
  */
-function depOperator(index) {
+function depOperator(obj, index) {
     $('#' + datagridId2).datagrid('selectRow', index);
     var row = $('#' + datagridId2).datagrid('getSelected');
+    
+    var selectObj = $(obj).prev().val();
+    
+    if(selectObj == '-1'){
+        alert('请选择要调动的支行!');
+        return false;
+    }
+    
+    var selectedIndex = index;
+    createDialogWithCallback('确认', '确认调动', 'corporateOrg/operator.do?dep', {
+        id: row.id,
+        orgId: selectObj
+      }, function() {
+          reloadTable();
+      });
 }
