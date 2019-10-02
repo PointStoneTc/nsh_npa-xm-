@@ -2,17 +2,17 @@ var datagridId = "recallList";
 var hasBtnSettle = false;
 
 $(function() {
-    $.ajax({
-        url: '../autority/btn.do?settle',
-        dataType: 'json',
-        type: 'post',
-        async: false,
-        success: function(data) {
-            hasBtnSettle = data.success;
-        },
-        error: function(data) {
-        }
-    });
+  $.ajax({
+    url: '../autority/btn.do?settle',
+    dataType: 'json',
+    type: 'post',
+    async: false,
+    success: function(data) {
+      hasBtnSettle = data.success;
+    },
+    error: function(data) {
+    }
+  });
 });
 
 /**
@@ -21,7 +21,7 @@ $(function() {
  * @returns
  */
 function reloadTable() {
-    $('#' + datagridId).datagrid('reload');
+  $('#' + datagridId).datagrid('reload');
 }
 
 /**
@@ -33,11 +33,13 @@ function reloadTable() {
  * @returns
  */
 function operate_formatter(value, rec, index) {
-    var res = '<a href="#" class="ace_button" alt="还款登记" onclick="addRecall(' + index + ')" style="background-color:#63c91a;"><i class="fa fa-list"></i>还款登记</a> ';
+  var res = '<a href="#" class="ace_button" alt="还款登记" onclick="addRecall(' + index + ')" style="background-color:#63c91a;"><i class="fa fa-list"></i>还款登记</a> ';
 
-    if (hasBtnSettle)
-        res += '<a href="#" class="ace_button" alt="结清" onclick="endCommit(' + index + ')" style="background-color:#1a7bb9;"><i class="fa fa-handshake-o"></i>结清</a>';
-    return res;
+  if (hasBtnSettle) {
+    res += '<a href="#" class="ace_button" alt="结清" onclick="endCommit(' + index + ')" style="background-color:#1a7bb9;"><i class="fa fa-handshake-o"></i>结清</a> ';
+    res += '<a href="#" class="ace_button" alt="删除(请慎用)" onclick="deleteTemp(' + index + ')" style="background-color:#ff0000;"><i class="fa fa-flash"></i>删除(请慎用)</a>';
+  }
+  return res;
 }
 
 /**
@@ -46,14 +48,14 @@ function operate_formatter(value, rec, index) {
  * @returns
  */
 function addRecall(index) {
-    $('#' + datagridId).datagrid('selectRow', index);
-    var row = $('#' + datagridId).datagrid('getSelected');
-    var sybj = row.amount - row.recoveryPrincipal;
-    if (Math.abs(sybj.toFixed(2)) == 0) {
-        tip("欠款已完全收回!");
-        return false;
-    }
-    openwindow('收回款登记', 'loancontract/recall.do?toAdd&id=' + row.id + '&selectRowIndex=' + index, datagridId, 1600, 700);
+  $('#' + datagridId).datagrid('selectRow', index);
+  var row = $('#' + datagridId).datagrid('getSelected');
+  var sybj = row.amount - row.recoveryPrincipal;
+  if (Math.abs(sybj.toFixed(2)) == 0) {
+    tip("欠款已完全收回!");
+    return false;
+  }
+  openwindow('收回款登记', 'loancontract/recall.do?toAdd&id=' + row.id + '&selectRowIndex=' + index, datagridId, 1600, 700);
 }
 
 /**
@@ -62,13 +64,28 @@ function addRecall(index) {
  * @returns
  */
 function endCommit(index) {
-    $('#' + datagridId).datagrid('selectRow', index);
-    var row = $('#' + datagridId).datagrid('getSelected');
-    createDialogWithCallback('确认', '确认结清合同', 'register.do?endCommit', {
-        id: row.id
-    }, function() {
-        reloadTable();
-    });
+  $('#' + datagridId).datagrid('selectRow', index);
+  var row = $('#' + datagridId).datagrid('getSelected');
+  createDialogWithCallback('确认', '确认结清合同', 'register.do?endCommit', {
+    id: row.id
+  }, function() {
+    reloadTable();
+  });
+}
+
+/**
+ * 临时删除
+ * 
+ * @returns
+ */
+function deleteTemp(index) {
+  $('#' + datagridId).datagrid('selectRow', index);
+  var row = $('#' + datagridId).datagrid('getSelected');
+  createDialogWithCallback('确认', '相关借款人,担保人,和回款明细都会级联删除,确认删除合同?', 'recall.do?deleteTemp', {
+    id: row.id
+  }, function() {
+    reloadTable();
+  });
 }
 
 /**
@@ -77,13 +94,13 @@ function endCommit(index) {
  * @returns
  */
 function termCommit(index) {
-    $('#' + datagridId).datagrid('selectRow', index);
-    var row = $('#' + datagridId).datagrid('getSelected');
-    createDialogWithCallback('确认', '确认终止合同', 'register.do?termCommit', {
-        id: row.id
-    }, function() {
-        reloadTable();
-    });
+  $('#' + datagridId).datagrid('selectRow', index);
+  var row = $('#' + datagridId).datagrid('getSelected');
+  createDialogWithCallback('确认', '确认终止合同', 'register.do?termCommit', {
+    id: row.id
+  }, function() {
+    reloadTable();
+  });
 }
 
 /**
@@ -92,7 +109,7 @@ function termCommit(index) {
  * @returns
  */
 function detailContract() {
-    detail('收回款明细详情', 'loancontract/recall.do?toDetail', datagridId, 800, 500);
+  detail('收回款明细详情', 'loancontract/recall.do?toDetail', datagridId, 800, 500);
 }
 
 /**
@@ -101,11 +118,11 @@ function detailContract() {
  * @returns
  */
 function doQuery() {
-    $('#' + datagridId).datagrid('load', {
-        borrowerName: $('#borrowerName').val(),
-        idNumber: $('#idNumber').val(),
-        numCode: $('#numCode').val()
-    });
+  $('#' + datagridId).datagrid('load', {
+    borrowerName: $('#borrowerName').val(),
+    idNumber: $('#idNumber').val(),
+    numCode: $('#numCode').val()
+  });
 }
 
 /**
@@ -114,25 +131,25 @@ function doQuery() {
  * @returns
  */
 function doClear() {
-    $('#borrowerName').textbox('clear');
-    $('#idNumber').textbox('clear');
-    $('#numCode').textbox('clear');
+  $('#borrowerName').textbox('clear');
+  $('#idNumber').textbox('clear');
+  $('#numCode').textbox('clear');
 }
 
 /**
  * 更新回款信息
  */
 function updateRowAmount(recoveryPrincipal, recoveryInterest, hangInterest, interestDate, index) {
-    var row = $('#' + datagridId).datagrid('getSelected');
-    $('#' + datagridId).datagrid('updateRow', {
-        index: parseInt(index),
-        row: {
-            recoveryPrincipal: recoveryPrincipal,
-            recoveryInterest: recoveryInterest,
-            hangInteres: hangInterest,
-            interestDate: interestDate
-        }
-    });
+  var row = $('#' + datagridId).datagrid('getSelected');
+  $('#' + datagridId).datagrid('updateRow', {
+    index: parseInt(index),
+    row: {
+      recoveryPrincipal: recoveryPrincipal,
+      recoveryInterest: recoveryInterest,
+      hangInteres: hangInterest,
+      interestDate: interestDate
+    }
+  });
 }
 
 /**
@@ -143,7 +160,7 @@ function updateRowAmount(recoveryPrincipal, recoveryInterest, hangInterest, inte
  * @returns
  */
 function amountSurplus(val, row) {
-    var sybj = row.amount - row.recoveryPrincipal;
-    if (Math.abs(sybj.toFixed(2)) == 0) sybj = 0;
-    return '<span class="easyui-formatter-money rmb" style="color:#0c0c0c;font-weight: bold">' + formatNull(sybj, row) + '</span>';
+  var sybj = row.amount - row.recoveryPrincipal;
+  if (Math.abs(sybj.toFixed(2)) == 0) sybj = 0;
+  return '<span class="easyui-formatter-money rmb" style="color:#0c0c0c;font-weight: bold">' + formatNull(sybj, row) + '</span>';
 }
