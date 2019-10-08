@@ -6,7 +6,6 @@ import javax.servlet.http.HttpServletResponse;
 import org.jeecgframework.core.common.controller.BaseController;
 import org.jeecgframework.core.common.model.json.AjaxJson;
 import org.jeecgframework.core.common.model.json.DataGrid;
-import org.jeecgframework.core.util.oConvertUtils;
 import org.jeecgframework.tag.core.easyui.TagUtil;
 import org.jeecgframework.web.system.service.SystemService;
 import org.slf4j.Logger;
@@ -20,7 +19,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import nsh.xinmi.npa.loanContract.service.LoanContractErrorServiceI;
 import nsh.xinmi.npa.loanContract.view.LoanContractRegisterView;
-import nsh.xinmi.npa.naturalPerson.entity.NaturalPerson;
 import nsh.xinmi.npa.naturalPerson.service.NaturalPersonServiceI;
 
 /**

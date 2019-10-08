@@ -17,7 +17,7 @@
 		<thead>
 			<tr>
 				<th data-options="field:'ck',checkbox:true" rowspan="2"></th>
-				<th data-options="field:'id',hidden:true" rowspan="2">id</th>
+				<th data-options="field:'id',align:'center'" rowspan="2">id</th>
 				<th data-options="field:'numCode',align:'center'" rowspan="2">档案编号</th>
 				<th data-options="field:'customerNo',align:'center'" rowspan="2">客户号</th>
 				<th data-options="field:'louNo',align:'center'" rowspan="2">借据号</th>
