@@ -4,6 +4,9 @@
 <html>
 <head>
 <title>更新错误借款合同贷款发放日、到期日信息</title>
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="expires" content="0">
 <t:base type="jquery,easyui,tools,DatePicker,validform"></t:base>
 <script type="text/javascript" src="${webRoot}/static/js/npa/common.js"></script>
 <script type="text/javascript" src="${webRoot}/static/js/npa/numberal.js"></script>
@@ -20,7 +23,7 @@
 						<label class="required_sign">贷款发放日</label>
 					</th>
 					<td><input type="text" class="Wdate"
-						onClick="WdatePicker({isShowClear:false,readOnly:true,minDate:'#F{$dp.$D(\'dueDate\')}'})" name="issueDate"
+						onClick="WdatePicker({isShowClear:false,readOnly:true,maxDate:'#F{$dp.$D(\'dueDate\')}'})" name="issueDate"
 						id="issueDate" value="${issueDate }" datatype="*" sucmsg="贷款发放日验证通过!" nullmsg="请输入贷款发放日!" /></td>
 				</tr>
 				<tr>

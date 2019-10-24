@@ -69,8 +69,9 @@ function initValidform() {
         frameElement.api.close();
         win.tip(data.msg);
         var idNumber = $('#idNumber').val();
+        var address = $('#address').val();
         var indexs = $('#indexs').val();
-        win.updateBorrowerCallBack(indexs, idNumber);
+        win.updateBorrowerCallBack(indexs, idNumber, address);
       } else {
         if (data.responseText == '' || data.responseText == undefined) {
           $.messager.alert('错误', data.msg);

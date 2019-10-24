@@ -4,6 +4,9 @@
 <html>
 <head>
 <title>错误借款合同列表</title>
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="expires" content="0">
 <t:base type="jquery,easyui,tools"></t:base>
 <script type="text/javascript" src="${webRoot}/static/js/npa/currencyformat.js"></script>
 <script type="text/javascript" src="${webRoot}/static/js/npa/numberal.js"></script>
@@ -13,7 +16,7 @@
 </head>
 <body>
 	<table id="errorList" name="errorList" class="easyui-datagrid" title="错误借款合同列表"
-		data-options="rownumbers:true,pagination:true,pageSize:20,fit:true,striped:true,url:'error.do?datagrid&field=id,numCode,customerNo,louNo,borrowerName,idNumber,guaranteesName,guaranteesIdNumber,amount,issueDate,dueDate,interestRate,officer,corporateOrgName,litigationStat,guaranteeMode,disposeMode,interestDate,recoveryPrincipal,recoveryInterest,hangInteres',method:'post',toolbar:'#tb'">
+		data-options="rownumbers:true,pagination:true,pageSize:20,fit:true,striped:true,url:'error.do?datagrid&field=id,numCode,customerNo,louNo,borrowerName,idNumber,address,guaranteesName,guaranteesIdNumber,guaranteesAddresses,amount,issueDate,dueDate,interestRate,officer,corporateOrgName,litigationStat,guaranteeMode,disposeMode,interestDate,recoveryPrincipal,recoveryInterest,hangInteres',method:'post',toolbar:'#tb'">
 		<thead>
 			<tr>
 				<th data-options="field:'ck',checkbox:true" rowspan="2"></th>
@@ -21,8 +24,8 @@
 				<th data-options="field:'numCode',align:'center'" rowspan="2">档案编号</th>
 				<th data-options="field:'customerNo',align:'center'" rowspan="2">客户号</th>
 				<th data-options="field:'louNo',align:'center'" rowspan="2">借据号</th>
-				<th colspan="2">借款人</th>
-				<th colspan="2">担保人</th>
+				<th colspan="3">借款人</th>
+				<th colspan="3">担保人</th>
 				<th colspan="10">贷款信息</th>
 				<th colspan="4">收回款信息</th>
 			</tr>
@@ -31,8 +34,10 @@
 			<tr>
 				<th data-options="field:'borrowerName',align:'center'">姓名</th>
 				<th data-options="field:'idNumber',align:'center'">身份证号</th>
+				<th data-options="field:'address',align:'center'">地址</th>
 				<th data-options="field:'guaranteesName',align:'center'">姓名</th>
 				<th data-options="field:'guaranteesIdNumber',align:'center'">身份证号</th>
+				<th data-options="field:'guaranteesAddresses',align:'center'">地址</th>
 				<th data-options="field:'amount',align:'center',formatter:formatMoney">贷款金额(元)</th>
 				<th data-options="field:'issueDate',align:'center'">贷款发放日</th>
 				<th data-options="field:'dueDate',align:'center'">贷款到期日</th>
@@ -64,19 +69,13 @@
 						<option value="e3">贷款到期日为空</option>
 						<option value="e4">贷款到期日>贷款发放日</option>
 				</select></td>
-				<td class="borderLeft"><a id="search" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-search'"
-					onclick="doQuery()">查询</a></td>
+				<td class="borderLeft"><a id="search" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-search'" onclick="doQuery()">查询</a></td>
 				<td><a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-le-back'" onclick="doClear()">清空</a></td>
-				<td class="borderLeft"><a href="#" class="ace_button" alt="修改借款人" onclick="updateBorrower()"
-					style="background-color: #9e123e;"><i class="fa fa-gavel"></i>修改借款人</a></td>
-				<td class="borderLeft"><a href="#" class="ace_button" alt="修改担保人" onclick="updateGuarantee()"
-					style="background-color: #9e123e;"><i class="fa fa-gavel"></i>修改担保人</a></td>
-				<td class="borderLeft"><a href="#" class="ace_button" alt="修改贷款发放日" onclick="updateIssueDueDate()"
-					style="background-color: #9e123e;"><i class="fa fa-gavel"></i>修改贷款发放日</a></td>
-				<td class="borderLeft"><a href="#" class="ace_button" alt="修改其它信息" onclick="updateOther()"
-					style="background-color: #9e123e;"><i class="fa fa-gavel"></i>修改其它信息</a></td>
-				<td class="borderLeft"><a href="#" class="ace_button" alt="提交" onclick="commit()"
-					style="background-color: #9e123e;"><i class="fa fa-gavel"></i>提交</a></td>
+				<td class="borderLeft"><a href="#" class="ace_button" alt="修改借款人" onclick="updateBorrower()" style="background-color: #9e123e;"><i class="fa fa-gavel"></i>修改借款人</a></td>
+				<td class="borderLeft"><a href="#" class="ace_button" alt="修改担保人" onclick="updateGuarantee()" style="background-color: #9e123e;"><i class="fa fa-gavel"></i>修改担保人</a></td>
+				<td class="borderLeft"><a href="#" class="ace_button" alt="修改贷款发放日" onclick="updateIssueDueDate()" style="background-color: #9e123e;"><i class="fa fa-gavel"></i>修改贷款发放日</a></td>
+				<td class="borderLeft"><a href="#" class="ace_button" alt="修改其它信息" onclick="updateOther()" style="background-color: #9e123e;"><i class="fa fa-gavel"></i>修改其它信息</a></td>
+				<td class="borderLeft"><a href="#" class="ace_button" alt="提交" onclick="commit()" style="background-color: #9e123e;"><i class="fa fa-gavel"></i>提交</a></td>
 			</tr>
 		</table>
 	</div>

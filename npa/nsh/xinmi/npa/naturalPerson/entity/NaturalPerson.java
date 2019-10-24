@@ -51,11 +51,12 @@ public class NaturalPerson implements java.io.Serializable {
     public NaturalPerson() {}
 
     /** minimal constructor */
-    public NaturalPerson(String name, String sex, Date birthday, String idNumber, String isBorrower, String isGuarantee) {
+    public NaturalPerson(String name, String sex, Date birthday, String idNumber, String address, String isBorrower, String isGuarantee) {
         this.name = name;
         this.sex = sex;
         this.birthday = birthday;
         this.idNumber = idNumber;
+        this.address = address;
         this.isBorrower = isBorrower;
         this.isGuarantee = isGuarantee;
     }

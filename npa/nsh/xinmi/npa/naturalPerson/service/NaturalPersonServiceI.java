@@ -25,7 +25,7 @@ public interface NaturalPersonServiceI extends CommonService {
      * @param idNumber 身份证号
      * @return
      */
-    NaturalPerson isExist(String idNumber);
+    NaturalPerson isExist(String name, String idNumber);
 
     /**
      * @Title:选择一个自然人

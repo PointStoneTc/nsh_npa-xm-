@@ -4,6 +4,9 @@
 <html>
 <head>
 <title>选择用户</title>
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="expires" content="0">
 <t:base type="jquery,easyui,tools"></t:base>
 </head>
 <body>

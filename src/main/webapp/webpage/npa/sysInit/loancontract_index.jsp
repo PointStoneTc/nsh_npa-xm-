@@ -4,6 +4,9 @@
 <html>
 <head>
 <title>合同数据导入初始化</title>
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="expires" content="0">
 <t:base type="jquery,easyui,tools"></t:base>
 <script type="text/javascript" src="${webRoot}/static/js/npa/currencyformat.js"></script>
 <script type="text/javascript" src="${webRoot}/static/js/npa/numberal.js"></script>

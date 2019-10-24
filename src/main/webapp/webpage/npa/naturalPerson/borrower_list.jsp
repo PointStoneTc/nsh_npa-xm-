@@ -4,6 +4,9 @@
 <html>
 <head>
 <title>借款人列表</title>
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="expires" content="0">
 <t:base type="jquery,easyui,tools"></t:base>
 <script type="text/javascript" src="${webRoot}/static/js/npa/common.js"></script>
 <script type="text/javascript" src="${webRoot}/static/js/npa/naturalPerson/borrower_list.js"></script>

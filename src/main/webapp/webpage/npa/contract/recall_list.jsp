@@ -4,6 +4,9 @@
 <html>
 <head>
 <title>未完全收回款列表</title>
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="expires" content="0">
 <t:base type="jquery,easyui,tools"></t:base>
 <script type="text/javascript" src="${webRoot}/static/js/npa/currencyformat.js"></script>
 <script type="text/javascript" src="${webRoot}/static/js/npa/numberal.js"></script>

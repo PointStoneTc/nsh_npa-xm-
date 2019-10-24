@@ -4,6 +4,9 @@
 <html>
 <head>
 <title>借款合同详情</title>
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="expires" content="0">
 <t:base type="jquery,easyui,tools"></t:base>
 <link rel="stylesheet" href="${webRoot}/static/style/css/commcon.css">
 </head>
