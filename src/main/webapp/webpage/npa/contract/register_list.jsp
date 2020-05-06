@@ -62,8 +62,7 @@
 		<table>
 			<tr>
 				<td><a id="add" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-add'" onclick="addContract()">新增</a></td>
-				<td><a id="view" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-tip'"
-					onclick="detailContract()">查看详情</a></td>
+				<td><a id="view" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-tip'" onclick="detailContract()">查看详情</a></td>
 				<td><label>借款人</label></td>
 				<td><input name="borrowerName" id="borrowerName" class="easyui-textbox" style="width: 110px" /></td>
 				<td><label>身份证号</label></td>
@@ -80,6 +79,7 @@
 				</select></td>
 				<td><a id="search" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-search'" onclick="doQuery()">查询</a></td>
 				<td><a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-le-back'" onclick="doClear()">清空</a></td>
+				<td><a id="export" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-save'" onclick="exportAll()">导出所有数据</a></td>
 			</tr>
 		</table>
 	</div>

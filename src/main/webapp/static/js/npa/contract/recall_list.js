@@ -164,3 +164,32 @@ function amountSurplus(val, row) {
   if (Math.abs(sybj.toFixed(2)) == 0) sybj = 0;
   return '<span class="easyui-formatter-money rmb" style="color:#0c0c0c;font-weight: bold">' + formatNull(sybj, row) + '</span>';
 }
+
+/**
+ * 保存文件
+ * 
+ * @returns
+ */
+function exportAll() {
+  if ('' == $('#endDate').val()) {
+    alert('请选择开始时间!');
+    return false;
+  }
+
+  if ('' != $('#endDate').val()) {
+    // 2把字符串格式转换为日期类
+    var startTime = new Date(Date.parse($('#startDate').val()));
+    var endTime = new Date(Date.parse($('#endDate').val()));
+    // 3进行比较
+    if (startTime >= endTime) {
+      alert('结束时间不能小于开始时间!');
+      return false;
+    }
+  }
+
+  var url = 'export.do?recovery';
+  var form = $('<form></form>').attr('action', url).attr('method', 'post');
+  form.append($('<input></input>').attr('type', 'hidden').attr('name', 'start').attr('value', $('#startDate').val()));
+  form.append($('<input></input>').attr('type', 'hidden').attr('name', 'end').attr('value', $('#endDate').val()));
+  form.appendTo('body').submit().remove();
+}

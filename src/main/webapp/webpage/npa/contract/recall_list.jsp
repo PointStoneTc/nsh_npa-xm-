@@ -7,7 +7,7 @@
 <meta http-equiv="pragma" content="no-cache">
 <meta http-equiv="cache-control" content="no-cache">
 <meta http-equiv="expires" content="0">
-<t:base type="jquery,easyui,tools"></t:base>
+<t:base type="jquery,easyui,tools,DatePicker"></t:base>
 <script type="text/javascript" src="${webRoot}/static/js/npa/currencyformat.js"></script>
 <script type="text/javascript" src="${webRoot}/static/js/npa/numberal.js"></script>
 <script type="text/javascript" src="${webRoot}/static/js/npa/common.js"></script>
@@ -55,8 +55,7 @@
 	<div id="tb" style="padding: 2px 5px;">
 		<table>
 			<tr>
-				<td><a id="view" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-tip'"
-					onclick="detailContract()">查看详情</a></td>
+				<td><a id="view" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-tip'" onclick="detailContract()">查看详情</a></td>
 				<td><label>借款人</label></td>
 				<td><input name="borrowerName" id="borrowerName" class="easyui-textbox" style="width: 110px" /></td>
 				<td><label>身份证号</label></td>
@@ -65,6 +64,12 @@
 				<td><input name="numCode" id="numCode" class="easyui-textbox" style="width: 110px" /></td>
 				<td><a id="search" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-search'" onclick="doQuery()">查询</a></td>
 				<td><a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-le-back'" onclick="doClear()">清空</a></td>
+
+				<td><label>(导出)开始时间</label></td>
+				<td><input class="easyui-datebox" name="startDate" id="startDate" /></td>
+				<td><label>结束时间</label></td>
+				<td><input class="easyui-datebox" name="endDate" id="endDate" /></td>
+				<td><a id="export" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-save'" onclick="exportAll()">导出数据</a></td>
 			</tr>
 		</table>
 	</div>
