@@ -27,7 +27,8 @@ function operate_formatter(value, rec, index) {
       return '<a href="#" class="ace_button" alt="查看回款记录" onclick="recallList(' + index + ')" style="background-color:#9e123e;"><i class="fa fa-eye"></i>查看回款记录</a>';
     } else if (rec.stat = 'n') { return '<a href="#" class="ace_button" alt="收回款期初值设置" onclick="initRecoveryMoney(' + index
         + ')" style="background-color:#2f3c45e6;"><i class="fa fa-balance-scale"></i>收回款期初值设置</a> ' + '<a href="#" class="ace_button" alt="借冒名设置" onclick="impersonate(' + index
-        + ')" style="background-color:#e3402d;"><i class="fa fa-frown-o"></i>借冒名设置</a> '; }
+        + ')" style="background-color:#e3402d;"><i class="fa fa-frown-o"></i>借冒名设置</a> ' + '<a href="#" class="ace_button" alt="修改" onclick="edit(' + index
+        + ')" style="background-color:#63c91a;"><i class="fa fa-pencil"></i>修改</a> '; }
   } else {
     return '<a href="#" class="ace_button" alt="修改" onclick="edit(' + index + ')" style="background-color:#63c91a;"><i class="fa fa-pencil"></i>修改</a> '
         + '<a href="#" class="ace_button" alt="提交" onclick="commit(' + index + ')" style="background-color:#1a7bb9;"><i class="fa fa-check"></i>提交</a> '

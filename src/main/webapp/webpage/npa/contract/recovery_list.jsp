@@ -15,7 +15,7 @@
 </head>
 <body>
 	<table id="recoverylList" class="easyui-datagrid" title="回款清单"
-		data-options="rownumbers:true,singleSelect:true,fit:true,striped:true,url:'recoveryMoney.do?datagrid&id=${id }&field=id,recoveryDate,recoveryPerson,interestDate,interestRate,interestBearingPrincipal,recoveryPrincipal,recoveryInterest,hangInterest,createBy,createDate',method:'post'">
+		data-options="rownumbers:true,singleSelect:true,fit:true,striped:true,url:'recoveryMoney.do?datagrid&id=${id}&field=id,recoveryDate,recoveryPerson,interestDate,interestRate,interestBearingPrincipal,recoveryPrincipal,recoveryInterest,hangInterest,createBy,createDate',method:'post'">
 		<thead>
 			<tr>
 				<th data-options="field:'id',hidden:true">id</th>

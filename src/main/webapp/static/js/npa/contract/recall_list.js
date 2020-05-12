@@ -33,7 +33,8 @@ function reloadTable() {
  * @returns
  */
 function operate_formatter(value, rec, index) {
-  var res = '<a href="#" class="ace_button" alt="还款登记" onclick="addRecall(' + index + ')" style="background-color:#63c91a;"><i class="fa fa-list"></i>还款登记</a> ';
+  var res = '<a href="#" class="ace_button" alt="还款登记" onclick="addRecall(' + index + ')" style="background-color:#63c91a;"><i class="fa fa-list"></i>还款登记</a> '
+      + '<a href="#" class="ace_button" alt="查看登记明细" onclick="listRem(' + index + ')" style="background-color:#f5270f;"><i class="fa fa-trash-o"></i>查看登记明细</a> ';
 
   if (hasBtnSettle) {
     res += '<a href="#" class="ace_button" alt="结清" onclick="endCommit(' + index + ')" style="background-color:#1a7bb9;"><i class="fa fa-handshake-o"></i>结清</a> ';
@@ -56,6 +57,42 @@ function addRecall(index) {
     return false;
   }
   openwindow('收回款登记', 'loancontract/recall.do?toAdd&id=' + row.id + '&selectRowIndex=' + index, datagridId, 1600, 700);
+}
+
+/**
+ * 查看还款登记
+ * 
+ * @returns
+ */
+function listRem(index) {
+  $('#' + datagridId).datagrid('selectRow', index);
+  var row = $('#' + datagridId).datagrid('getSelected');
+  console.info(row);
+  createWindowWithCallBack('查看还款登记', 'recoveryMoney.do?list1&id=' + row.id + '&index=' + index, 1000, 500);
+}
+
+/**
+ * 更新收回款初始化回调函数
+ * 
+ * @param index
+ * @param recoveryPrincipal
+ * @param recoveryInterest
+ * @param hangInteres
+ * @param interestDate
+ * @returns
+ */
+function initRecoveryMoneyCallBack(index, recoveryPrincipal, recoveryInterest, hangInteres, interestDate) {
+  console.info(index);
+  var row = $('#' + datagridId).datagrid('getSelected');
+  $('#' + datagridId).datagrid('updateRow', {
+    index: parseInt(index),
+    row: {
+      recoveryPrincipal: recoveryPrincipal,
+      recoveryInterest: recoveryInterest,
+      hangInteres: hangInteres,
+      interestDate: interestDate
+    }
+  });
 }
 
 /**

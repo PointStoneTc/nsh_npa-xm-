@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 import org.jeecgframework.core.common.controller.BaseController;
 import org.jeecgframework.core.util.ResourceUtil;
 import org.jeecgframework.web.system.pojo.base.TSUser;
-import org.jeecgframework.web.system.service.SystemService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,9 +45,6 @@ public class LoanContractExportController extends BaseController {
   ============================================*/
   @Autowired
   private LoanContractExportServiceI loanContractExportService;
-
-  @Autowired
-  private SystemService systemService;
 
   /*--------------------------------------------
   |             method                       |
