@@ -10,6 +10,7 @@ import java.util.Date;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.jeecgframework.core.common.controller.BaseController;
+import org.jeecgframework.core.util.DateUtils;
 import org.jeecgframework.core.util.ResourceUtil;
 import org.jeecgframework.web.system.pojo.base.TSUser;
 import org.slf4j.Logger;
@@ -33,7 +34,8 @@ import nsh.xinmi.npa.loanContract.service.LoanContractExportServiceI;
 @RequestMapping("/loancontract/export")
 public class LoanContractExportController extends BaseController {
   private static final Logger log = LoggerFactory.getLogger(LoanContractExportController.class);
-  private static final String EXPORT_PATH = "d:\\all_export_";
+  private static final String EXPORT_PATH_1 = "i:\\黑名单系统导出数据\\all_export_";
+  private static final String EXPORT_PATH_2 = "i:\\黑名单系统导出数据\\rm_export_";
 
   /*--------------------------------------------
   |                            Variable                       |
@@ -63,18 +65,19 @@ public class LoanContractExportController extends BaseController {
     try {
       TSUser loginUser = ResourceUtil.getSessionUser();
       log.info(">>>>>>>>>>(全量)开始导出excel,操作人:" + loginUser.getUserName());
-      String fileName = loanContractExportService.all(EXPORT_PATH);
+      String fileName = loanContractExportService.all(EXPORT_PATH_1);
       if (fileName == null) {
         log.info(">>>>>>>>>>没有可以导出的数据,或者发生了错误!");
         return;
       }
 
-      String filePath = EXPORT_PATH + fileName;
+      String filePath = EXPORT_PATH_1 + fileName;
       fileLength = new File(filePath).length();
       response.setContentType("UTF-8");
       response.setCharacterEncoding("UTF-8");
       response.setContentType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
-      response.setHeader("Content-disposition", "attachment; filename=" + new String((fileName).getBytes("GBK"), "ISO8859-1"));
+      String newFileName = "全行台账导出文件_" + DateUtils.formatDate("yyyyMMdd") + ".xlxs";
+      response.setHeader("Content-disposition", "attachment; filename=" + new String((newFileName).getBytes("GBK"), "ISO8859-1"));
       response.setHeader("Content-Length", String.valueOf(fileLength));
       bis = new BufferedInputStream(new FileInputStream(filePath));
       bos = new BufferedOutputStream(response.getOutputStream());
@@ -118,18 +121,19 @@ public class LoanContractExportController extends BaseController {
     try {
       TSUser loginUser = ResourceUtil.getSessionUser();
       log.info(">>>>>>>>>>(收回款)开始导出excel,操作人:" + loginUser.getUserName());
-      String fileName = loanContractExportService.recovery(startDate, endDate, EXPORT_PATH);
+      String fileName = loanContractExportService.recovery(startDate, endDate, EXPORT_PATH_2);
       if (fileName == null) {
         log.info(">>>>>>>>>>没有可以导出的数据,或者发生了错误!");
         return;
       }
 
-      String filePath = EXPORT_PATH + fileName;
+      String filePath = EXPORT_PATH_2 + fileName;
       fileLength = new File(filePath).length();
       response.setContentType("UTF-8");
       response.setCharacterEncoding("UTF-8");
       response.setContentType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
-      response.setHeader("Content-disposition", "attachment; filename=" + new String((fileName).getBytes("GBK"), "ISO8859-1"));
+      String newFileName = "收回记录导出文件_" + DateUtils.formatDate("yyyyMMdd") + ".xlxs";;
+      response.setHeader("Content-disposition", "attachment; filename=" + new String((newFileName).getBytes("GBK"), "ISO8859-1"));
       response.setHeader("Content-Length", String.valueOf(fileLength));
       bis = new BufferedInputStream(new FileInputStream(filePath));
       bos = new BufferedOutputStream(response.getOutputStream());

@@ -208,7 +208,7 @@ function amountSurplus(val, row) {
  * @returns
  */
 function exportAll() {
-  if ('' == $('#endDate').val()) {
+  if ('' == $('#startDate').val()) {
     alert('请选择开始时间!');
     return false;
   }
