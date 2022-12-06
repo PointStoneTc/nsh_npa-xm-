@@ -59,7 +59,7 @@
 		<commons-lang3.version>3.1</commons-lang3.version>
 		<commons-email.version>1.2</commons-email.version>
 		<commons-collections.version>3.2.2</commons-collections.version>
-		<commons-net.version>3.6</commons-net.version>
+		<commons-net.version>3.9.0</commons-net.version>
 
 		<!-- ehcache -->
 		<ehcache.version>2.4.3</ehcache.version>
